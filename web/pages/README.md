@@ -1,0 +1,1 @@
+All the visual aspects for the Scouting App (HTML)
