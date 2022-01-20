@@ -7,6 +7,14 @@ body {
   background-color: #000000;
 }
 
+#searchDescription {
+  font-size: 20px;
+  color: white;
+  margin-top: 80px;
+  align-content: center;
+  background-color: #000000;
+}
+
 .center {
 text-align: center;
 }
@@ -21,10 +29,26 @@ h1 {
   background-color: #000000;
 }
 
-
-
 p {
   font-family: Andale Mono, monospace;
   padding: 10px;
   margin: 0;
+}
+
+
+/*search bar*/
+input[type="text"] {
+  width: 120px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/*on search bar click, expand*/
+input[type="text"]:focus {
+  width: 400px;
 }
