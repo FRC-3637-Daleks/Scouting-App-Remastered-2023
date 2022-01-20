@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  align-content: center;
+  background-color: #000000;
+}
+
+.center {
+text-align: center;
+}
+/*h1 tag*/
+h1 {
+  font-family: Andale Mono, monospace;
+  font-size: 50px;
+  color: white;
+  margin: 0;
+  margin-top: 30px;
+  align-content: center;
+  background-color: #000000;
+}
+
+
+
+p {
+  font-family: Andale Mono, monospace;
+  padding: 10px;
+  margin: 0;
+}
