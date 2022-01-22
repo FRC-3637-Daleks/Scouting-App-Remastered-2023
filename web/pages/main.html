@@ -78,10 +78,38 @@
         </div>
         <div class = "right-cont">
             <div>
-                <p>
+                <p id = "Teleop">
                     <b>Teleop</b>
                 </p>
             </div> 
+            <div>
+                <p>
+                    High Shots made: <span id = "teleopShotsMadeOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" min="0" max="10" value="0" class="slider" id="teleopShotsMade">
+                <script>
+                    var teleopShotsMade = document.getElementById("teleopShotsMade");
+                    var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
+                    teleopShotsMade.oninput = function() {
+                        teleopShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" min="0" max="10" value="0" class="slider" id="teleopLowShotsMade">
+                <script>
+                    var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
+                    var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
+                    teleopLowShotsMade.oninput = function() {
+                        teleopLowShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
         </div>
     </div>
 </body>
