@@ -31,6 +31,7 @@ justify-content: space-between;
     margin-left: 17%;
 }
 
+
 /* Inserting this collapsed row between two flex items will make 
  * the flex item that comes after it break to a new row */
  .break {
@@ -88,13 +89,13 @@ input[type="text"]:focus {
 }
 
 /*spacing for radio buttons on .left-cont*/
-#autonHighShotButtons, #autonLowShotButtons, #autonBallsButtons, #autonPlatformButtons, #autonBasketballButtons {
+#autonHighShotButtons, #autonLowShotButtons, #autonBallsMissedButtons, #autonPlatformButtons, #autonBasketballButtons {
   font-size: 20px;
   color: white;
   /*spaces in between the buttons*/
   margin-left: 25px;
   /*spaces between the radio button and the next div*/
-  margin-bottom: 30px
+  margin-bottom: 11px
 }
 /*all sliders*/
 .slider {
