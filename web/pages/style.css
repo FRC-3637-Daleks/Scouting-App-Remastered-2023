@@ -16,10 +16,13 @@ body {
 }
 
 .left {
-  float: left;
-  width: 50%;
-  height: 100%;
-  background-color: #000000;
+    align-content: left;
+    left: 0px;
+    width:300px;
+    font-size: 20px;
+    color: white;
+    margin-left: 25px;
+
 }
 
 .center {
@@ -60,7 +63,11 @@ input[type="text"]:focus {
   width: 400px;
 }
 
-#highShotButtons, #lowShotButtons {
+#Auton {
+  margin-left: 60px;
+}
+
+#autonHighShotButtons, #autonLowShotButtons, #autonBallsButtons {
   font-size: 20px;
   color: white;
   margin: 0;
