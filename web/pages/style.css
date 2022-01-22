@@ -18,15 +18,17 @@ body {
 .container {
 display: flex;
 flex-wrap: wrap;
+justify-content: space-between;
 }
 
 .left-cont {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width:300px;
     font-size: 20px;
     color: white;
-    margin-left: 25px;
+    margin-left: 17%;
 }
 
 /* Inserting this collapsed row between two flex items will make 
@@ -43,8 +45,8 @@ flex-wrap: wrap;
     width:300px;
     font-size: 20px;
     color: white;
-    margin-left: 150px;
     text-align: center;
+    margin-right: 17%;
 }
 
 .center {
@@ -85,16 +87,11 @@ input[type="text"]:focus {
   width: 400px;
 }
 
-#Auton {
-  margin-left: 60px;
-}
-
-#autonHighShotButtons, #autonLowShotButtons, #autonBallsButtons {
+/*spacing for radio buttons*/
+#autonHighShotButtons, #autonLowShotButtons, #autonBallsButtons, #autonPlatformButtons, #autonBasketballButtons {
   font-size: 20px;
   color: white;
-  margin: 0;
+  /*spaces in between the buttons*/
   margin-left: 25px;
-  align-content: center;
-  background-color: #000000;
 }
 
