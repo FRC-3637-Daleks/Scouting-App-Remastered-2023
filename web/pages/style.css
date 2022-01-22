@@ -25,10 +25,10 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:300px;
+    width:370px;
     font-size: 20px;
     color: white;
-    margin-left: 17%;
+    margin-left: 15%;
 }
 
 
@@ -40,16 +40,21 @@ justify-content: space-between;
 }
 
 
-.right-cont{
+.right-cont {
     display: flex;
     flex-direction: column;
-    width:300px;
+    width:370px;
     font-size: 20px;
     color: white;
     text-align: center;
-    margin-right: 17%;
+    margin-right: 15%;
 }
 
+.spacer {
+  flex-basis: 100%;
+  height: 0;
+}
+ 
 .center {
 text-align: center;
 }
@@ -88,17 +93,23 @@ input[type="text"]:focus {
   width: 400px;
 }
 
-/*spacing for radio buttons on .left-cont*/
-#autonHighShotButtons, #autonLowShotButtons, #autonBallsMissedButtons, #autonPlatformButtons, #autonBasketballButtons {
+/*spacing for all radio buttons*/
+#autonHighShotButtons, #autonLowShotButtons,
+ #autonBallsMissedButtons, #autonPlatformButtons,
+ #autonBasketballButtons, #teleopLaunchpadButtons,
+#endgameAttemptedClimbButtons, #endgamePrepairedButtons,
+#endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
+#defenseHeldBallsButtons {
   font-size: 20px;
   color: white;
   /*spaces in between the buttons*/
   margin-left: 25px;
   /*spaces between the radio button and the next div*/
-  margin-bottom: 11px
+  margin-bottom: 12px;
 }
 /*all sliders*/
 .slider {
   /*spacing for sliders*/
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }
