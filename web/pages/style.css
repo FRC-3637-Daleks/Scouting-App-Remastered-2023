@@ -15,6 +15,13 @@ body {
   background-color: #000000;
 }
 
+.left {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: #000000;
+}
+
 .center {
 text-align: center;
 }
@@ -52,3 +59,13 @@ input[type="text"] {
 input[type="text"]:focus {
   width: 400px;
 }
+
+#highShotButtons, #lowShotButtons {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  margin-left: 25px;
+  align-content: center;
+  background-color: #000000;
+}
+
