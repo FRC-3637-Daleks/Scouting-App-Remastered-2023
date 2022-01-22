@@ -50,6 +50,23 @@ justify-content: space-between;
     margin-right: 15%;
 }
 
+.center-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bottom-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;  
+}
+
 .spacer {
   flex-basis: 100%;
   height: 40px;
@@ -112,4 +129,23 @@ input[type="text"]:focus {
   /*spacing for sliders*/
   margin-bottom: 12px;
   margin-top: 12px;
+}
+
+#comments {
+  display: block;
+  width: 30%;
+  overflow: hidden;
+  resize: none;
+  min-height: 40px;
+  line-height: 25px;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border: 4px solid white;
+}
+
+#comments[contenteditable]:empty::before {
+  content: "comment here...";
+  color: gray;
 }
