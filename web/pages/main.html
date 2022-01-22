@@ -87,7 +87,7 @@
                     High Shots made: <span id = "teleopShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="10" value="0" class="slider" id="teleopShotsMade">
+                <input type="range" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
                 <script>
                     var teleopShotsMade = document.getElementById("teleopShotsMade");
                     var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
@@ -101,12 +101,40 @@
                     Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="10" value="0" class="slider" id="teleopLowShotsMade">
+                <input type="range" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
                 <script>
                     var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
                     var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
                     teleopLowShotsMade.oninput = function() {
                         teleopLowShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Balls Picked Up: <span id = "teleopBallsPickedUpOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" min="0" max="20" value="0" class="slider" id="teleopBallsPickedUp">
+                <script>
+                    var teleopBallsPickedUp = document.getElementById("teleopBallsPickedUp");
+                    var teleopBallsPickedUpOutput = document.getElementById("teleopBallsPickedUpOutput");
+                    teleopBallsPickedUp.oninput = function() {
+                        teleopBallsPickedUpOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Shots Made at Once: <span id = "teleopShotsMadeAtOnceOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" min="0" max="20" value="0" class="slider" id="teleopShotsMadeAtOnce">
+                <script>
+                    var teleopShotsMadeAtOnce = document.getElementById("teleopShotsMadeAtOnce");
+                    var teleopShotsMadeAtOnceOutput = document.getElementById("teleopShotsMadeAtOnceOutput");
+                    teleopShotsMadeAtOnce.oninput = function() {
+                        teleopShotsMadeAtOnceOutput.innerHTML = this.value;
                     }
                 </script>
             </div>
