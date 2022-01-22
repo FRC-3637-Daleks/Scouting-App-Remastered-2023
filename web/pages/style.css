@@ -149,3 +149,18 @@ input[type="text"]:focus {
   content: "comment here...";
   color: gray;
 }
+
+#submit {
+  /*styles for submit button*/
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
