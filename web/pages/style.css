@@ -87,11 +87,17 @@ input[type="text"]:focus {
   width: 400px;
 }
 
-/*spacing for radio buttons*/
+/*spacing for radio buttons on .left-cont*/
 #autonHighShotButtons, #autonLowShotButtons, #autonBallsButtons, #autonPlatformButtons, #autonBasketballButtons {
   font-size: 20px;
   color: white;
   /*spaces in between the buttons*/
   margin-left: 25px;
+  /*spaces between the radio button and the next div*/
+  margin-bottom: 30px
 }
-
+/*all sliders*/
+.slider {
+  /*spacing for sliders*/
+  margin-bottom: 30px;
+}
