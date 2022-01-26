@@ -1,2 +1,0 @@
-var mongo = require("mongodb");
-
