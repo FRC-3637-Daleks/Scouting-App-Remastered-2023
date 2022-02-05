@@ -88,4 +88,13 @@ In short, if it doesn't appear redo step 3.
 
 ## Part 3.2: Granting Privileges to the User
 
-To ensure that the user can properly execute all the commands that are required you will have to give it root privileges.
+To ensure that the user can properly execute all the commands that are required you will have to give it root privileges in mysql.
+To do this, first grant all of the privileges to that user through mysql
+```
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'dalek'@'localhost';
+```
+Once this is entered you need to flush the privileges for teh changes to be in effect.
+```
+mysql> FLUSH PRIVILEGES;
+```
+That should be it! The user `dalek` now has all privileges and now you should be able to execute the python scripts with ease!
