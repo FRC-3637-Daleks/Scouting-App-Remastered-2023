@@ -5,6 +5,6 @@ from mysql.connector import errorcode
 
 cnx = mysql.connector.connect(user="dalek", password="3637",
                         host="127.0.0.1",
-                        database='scouting')
+                        database='Scouting')
 
 cnx.close()
