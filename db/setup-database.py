@@ -7,7 +7,7 @@ try:
                             host="127.0.0.1")
 
     mycursor = cnx.cursor()
-    mycursor.execute("CREATE DATABASE scouting")
+    mycursor.execute("CREATE DATABASE Scouting")
     mycursor.execute("SHOW DATABASES")
     
     for x in mycursor:
