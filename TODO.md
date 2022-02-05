@@ -21,6 +21,12 @@
 
 ### - make sure python scripts work properly
 
+### - create proper datatables
+look at 
+https://docs.google.com/spreadsheets/d/1lCQqQTsaWcqok09gHu-j7aPdQEGYPZY-G7KIvSE3v24/edit#gid=0
+
 ### - test by making some poor soul to do it to make sure readme is airtight
 
 # **MISC**
+
+- uhhhhhhhh
