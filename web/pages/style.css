@@ -114,7 +114,7 @@ input[type="text"]:focus {
 #autonHighShotButtons, #autonLowShotButtons,
  #autonBallsMissedButtons, #autonPlatformButtons,
  #autonBasketballButtons, #teleopLaunchpadButtons,
-#endgameAttemptedClimbButtons, #endgamePrepairedButtons,
+#endgameAttemptedClimbButtons, #endgamePreparedButtons,
 #endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
 #defenseHeldBallsButtons {
   font-size: 20px;
