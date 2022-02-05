@@ -97,4 +97,11 @@ Once this is entered you need to flush the privileges for teh changes to be in e
 ```
 mysql> FLUSH PRIVILEGES;
 ```
+to leave the mysql terminal, just type quit
+```
+mysql> quit
+```
+to relieve yourself of the mysql terminal.
+
+
 That should be it! The user `dalek` now has all privileges and now you should be able to execute the python scripts with ease!
