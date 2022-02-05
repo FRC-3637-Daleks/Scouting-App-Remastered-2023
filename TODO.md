@@ -1,17 +1,26 @@
 # TODO
 
-# Website
+# **Website Stuff**
 
-## Create a server for the scouting app website to run on
 
-### get info from scouting app into/insert tables in mysql
+### - Create a server for the scouting app website to run on
 
-### replace sliders with dropdowns/typable boxes
+### - get info from scouting app into/insert tables in mysql
 
-### replace number radio buttons with dropdowns
+### - replace sliders with dropdowns/typable boxes
 
-# WSL Testing
-### possibly a VM if its too tough
+### - replace number radio buttons with dropdowns
 
-### Update UI of Scouting app to be more intuitive
+# **WSL Testing**
+### - possibly a VM if its too tough
 
+
+# **mysql**
+
+### - Get mysql readme finished
+
+### - make sure python scripts work properly
+
+### - test by making some poor soul to do it to make sure readme is airtight
+
+# **MISC**
