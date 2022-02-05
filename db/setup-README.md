@@ -1,4 +1,4 @@
-```# How to properly set up and create the Database.
+# How to properly set up and create the Database.
 
 ## Part 1: Check Versions
 
@@ -114,3 +114,7 @@ Once there run this command to run the python scripts. Note that the first one t
 $ python3 setup-database.py
 ```
 This should spit out the current databases into the terminal. There should be one titled `scouting`.
+
+# Part 4: Creating Tables
+
+To create a 
