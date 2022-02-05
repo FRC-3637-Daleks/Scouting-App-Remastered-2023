@@ -1,4 +1,4 @@
-# How to properly set up and create the Database.
+```# How to properly set up and create the Database.
 
 ## Part 1: Check Versions
 
@@ -105,3 +105,12 @@ to relieve yourself of the mysql terminal.
 
 
 That should be it! The user `dalek` now has all privileges and now you should be able to execute the python scripts with ease!
+
+## Part 3.3: Actually Creating the Database
+
+To create the database, first cd into the database directory, aptly named db.
+Once there run this command to run the python scripts. Note that the first one that should be ran is `setup-database.py`, then `database.py` respectively.
+```
+$ python3 setup-database.py
+```
+This should spit out the current databases into the terminal. There should be one titled `scouting`.
