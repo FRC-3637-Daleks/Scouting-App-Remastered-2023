@@ -6,7 +6,7 @@ from mysql.connector import errorcode
 DB_NAME = 'Scouting'
 
 TABLES = {}
-TABLES['scouting'] = (
+TABLES['Scouting'] = (
     "CREATE TABLE 'auton' ("
     "   `high`"
 )
