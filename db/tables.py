@@ -7,6 +7,6 @@ DB_NAME = 'Scouting'
 
 TABLES = {}
 TABLES['Scouting'] = (
-    "CREATE TABLE 'auton' ("
-    "   `high`"
+    "CREATE TABLE `Auton` ("
+    "   `Team` int(4) NOT NULL, "
 )
