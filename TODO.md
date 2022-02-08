@@ -3,16 +3,16 @@
 # **Website Stuff**
 
 
-### - Create a server for the scouting app website to run on
-- using a LAMP config (linux, Apache, MySQL, Python)
+### - ~~Create a server for the scouting app website to run on~~
+- ~~using a LAMP config (linux, Apache, MySQL, Python)~~
 
-using epic tutorial https://ubuntu.com/tutorials/install-and-configure-apache#2-installing-apache
+~~using epic tutorial https://ubuntu.com/tutorials/install-and-configure-apache#2-installing-apache~~
 
 
-- download and install Apache2
-- run Apache2
-- add the html/javascript/css into it
-- run and pray it works
+- ~~download and install Apache2~~
+- ~~run Apache2~~
+- ~~add the html/javascript/css into it~~
+- ~~run and pray it works~~
 
 ### - get info from scouting app into/insert tables in mysql
 
