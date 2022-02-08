@@ -117,4 +117,8 @@ This should spit out the current databases into the terminal. There should be on
 
 # Part 4: Creating Tables
 
-To create a 
+To create a table, just run the `tables.py` script by typing into a terminal
+```
+$ python3 tables.py 
+```
+to run the script and create the tables.
