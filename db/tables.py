@@ -47,3 +47,25 @@ TABLES['Comments'] = (
     "`Team` VARCHAR(10) NOT NULL, "
     "`Insert_Comments` MEDIUMTEXT, "
 )
+
+cnx = mysql.connector.connect(user="dalek", password="3637",
+                        host="127.0.0.1",
+                        database='Scouting')
+
+cursor = cnx.cursor()
+
+for table_name in TABLES:
+    table_description = TABLES[table_name]
+    try:
+        print("creating table {}: ".format(table_name), end='')
+        cursor.execute(table_description)
+    except mysql.connector.Error as err:
+        if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
+            print("That table already exists!")
+        else:
+            print(err.msg)
+    else:
+        print("OK")
+
+cursor.close()
+cnx.close()
