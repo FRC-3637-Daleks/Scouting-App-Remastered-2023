@@ -2,7 +2,7 @@
 
 # **Website Stuff**
 
-
+### - use form tag in html to allow python to get info instead of scraping it with bs4
 ### - ~~Create a server for the scouting app website to run on~~
 - ~~using a LAMP config (linux, Apache, MySQL, Python)~~
 
@@ -18,7 +18,7 @@
 
 ### - replace sliders with dropdowns/typable boxes
 
-### - replace number radio buttons with dropdowns
+### ~~- replace number radio buttons with sliders~~
 
 # ~~**WSL Testing**~~
 ### ~~- possibly a VM if its too tough~~
