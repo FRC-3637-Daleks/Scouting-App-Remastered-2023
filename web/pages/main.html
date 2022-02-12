@@ -52,41 +52,41 @@
                 <p>
                     High Shots made:
                 </p>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="0">0</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="1">1</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="2">2</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="3">3</input>
+                <input type="radio" name="autonHighShots0" id = "autonHighShotButtons" value="0">0</input>
+                <input type="radio" name="autonHighShots1" id = "autonHighShotButtons" value="1">1</input>
+                <input type="radio" name="autonHighShots2" id = "autonHighShotButtons" value="2">2</input>
+                <input type="radio" name="autonHighShots3" id = "autonHighShotButtons" value="3">3</input>
             </div>
             <div>
                 <p>
                     Low Shots made:
                 </p>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="0">0</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="1">1</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="2">2</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="3">3</input>
+                <input type="radio" name="autonLowShots0" id = "autonLowShotButtons" value="0">0</input>
+                <input type="radio" name="autonLowShots1" id = "autonLowShotButtons" value="1">1</input>
+                <input type="radio" name="autonLowShots2" id = "autonLowShotButtons" value="2">2</input>
+                <input type="radio" name="autonLowShots3" id = "autonLowShotButtons" value="3">3</input>
             </div>
             <div>
                 <p>
                     Balls Missed: 
                 </p>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="0">0</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="1">1</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="2">2</input>
+                <input type="radio" name="autonBallsMissed0" id = "autonBallsMissedButtons" value="0">0</input>
+                <input type="radio" name="autonBallsMissed1" id = "autonBallsMissedButtons" value="1">1</input>
+                <input type="radio" name="autonBallsMissed2" id = "autonBallsMissedButtons" value="2">2</input>
             </div>
             <div>
                 <p>
                     Got off the Platform:
                 </p>
-                <input type="radio" name="autonPlatform" id = "autonPlatformButtons" value="Y">Y</input>
-                <input type="radio" name="autonPlatform" id = "autonPlatformButtons" value="N">N</input>
+                <input type="radio" name="autonPlatformY" id = "autonPlatformButtons" value="Y">Y</input>
+                <input type="radio" name="autonPlatformN" id = "autonPlatformButtons" value="N">N</input>
             </div>
             <div>
                 <p>
                     Basketball shot made: 
                 </p>
-                <input type="radio" name="autonBasketball" id = "autonBasketballButtons" value="Y">Y</input>
-                <input type="radio" name="autonBasketball" id = "autonBasketballButtons" value="N">N</input>
+                <input type="radio" name="autonBasketballY" id = "autonBasketballButtons" value="Y">Y</input>
+                <input type="radio" name="autonBasketballN" id = "autonBasketballButtons" value="N">N</input>
             </div>
         </center>
         </div>
@@ -101,7 +101,7 @@
                     High Shots made: <span id = "teleopShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
+                <input type="range" name="teleopHighShotsMade" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
                 <script>
                     var teleopShotsMade = document.getElementById("teleopShotsMade");
                     var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
@@ -115,7 +115,7 @@
                     Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
+                <input type="range" name="teleopLowShotsMade" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
                 <script>
                     var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
                     var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
@@ -129,7 +129,7 @@
                     Balls Missed: <span id = "teleopBallsMissedOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
+                <input type="range" name="teleopBallsMissed" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
                 <script>
                     var teleopBallsMissed = document.getElementById("teleopBallsMissed");
                     var teleopBallsMissedOutput = document.getElementById("teleopBallsMissedOutput");
@@ -143,7 +143,7 @@
                     Burst Shots: <span id = "teleopBurstShotsOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
+                <input type="range" name="teleopBurstShots" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
                 <script>
                     var teleopBurstShots = document.getElementById("teleopBurstShots");
                     var teleopBurstShotsOutput = document.getElementById("teleopBurstShotsOutput");
@@ -156,8 +156,8 @@
                 <p>
                     Shot From Launchpad:
                 </p>
-                <input type="radio" name="teleopLaunchpad" id = "teleopLaunchpadButtons" value="Y">Y</input>
-                <input type="radio" name="teleopLaunchpad" id = "teleopLaunchpadButtons" value="N">N</input>
+                <input type="radio" name="teleopLaunchpadY" id = "teleopLaunchpadButtons" value="Y">Y</input>
+                <input type="radio" name="teleopLaunchpadN" id = "teleopLaunchpadButtons" value="N">N</input>
             </div>
         </div>
         <div class = "spacer"></div>
@@ -172,15 +172,15 @@
                 <p>
                     Attempted Climb: 
                 </p>
-                <input type="radio" name="endgameAttemptedClimb" id = "endgameAttemptedClimbButtons" value="Y">Y</input>
-                <input type="radio" name="endgameAttemptedClimb" id = "endgameAttemptedClimbButtons" value="N">N</input>
+                <input type="radio" name="endgameAttemptedClimbY" id = "endgameAttemptedClimbButtons" value="Y">Y</input>
+                <input type="radio" name="endgameAttemptedClimbN" id = "endgameAttemptedClimbButtons" value="N">N</input>
             </div>
             <div>
                 <p>
                     Successful Climb Tier: <span id = "endgameClimbTierOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
+                <input type="range" name="endgameClimbTier" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
                 <script>
                     var endgameClimbTier = document.getElementById("endgameClimbTier");
                     var endgameClimbTierOutput = document.getElementById("endgameClimbTierOutput");
@@ -193,15 +193,15 @@
                 <p>
                     Prepared in Endgame: 
                 </p>
-                <input type="radio" name="endgamePrepared" id = "endgamePreparedButtons" value="Y">Y</input>
-                <input type="radio" name="endgamePrepared" id = "endgamePreparedButtons" value="N">N</input>
+                <input type="radio" name="endgamePreparedY" id = "endgamePreparedButtons" value="Y">Y</input>
+                <input type="radio" name="endgamePreparedN" id = "endgamePreparedButtons" value="N">N</input>
             </div>
             <div>
                 <p>
                     Climb Faster Than X Seconds: 
                 </p>
-                <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="Y">Y</input>
-                <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="N">N</input>
+                <input type="radio" name="endgameClimbTimeY" id = "endgameClimbTimeButtons" value="Y">Y</input>
+                <input type="radio" name="endgameClimbTimeN" id = "endgameClimbTimeButtons" value="N">N</input>
             </div>
         </div>
         <div class = "right-cont">
@@ -215,15 +215,15 @@
                 <p>
                     Attempted to Block Others: 
                 </p>
-                <input type="radio" name="defenseAttemptedBlock" id = "defenseAttemptedBlockButtons" value="Y">Y</input>
-                <input type="radio" name="defenseAttemptedBlock" id = "defenseAttemptedBlockButtons" value="N">N</input>
+                <input type="radio" name="defenseAttemptedBlockY" id = "defenseAttemptedBlockButtons" value="Y">Y</input>
+                <input type="radio" name="defenseAttemptedBlockN" id = "defenseAttemptedBlockButtons" value="N">N</input>
             </div>
             <div>
                 <p>
                     Held Balls: 
                 </p>
-                <input type="radio" name="defenseHeldBalls" id = "defenseHeldBallsButtons" value="Y">Y</input>
-                <input type="radio" name="defenseHeldBalls" id = "defenseHeldBallsButtons" value="N">N</input>
+                <input type="radio" name="defenseHeldBallsY" id = "defenseHeldBallsButtons" value="Y">Y</input>
+                <input type="radio" name="defenseHeldBallsN" id = "defenseHeldBallsButtons" value="N">N</input>
             </div>
             </center>
         </div>
