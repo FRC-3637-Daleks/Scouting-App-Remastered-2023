@@ -103,22 +103,22 @@ mysql> quit
 ```
 to relieve yourself of the mysql terminal.
 
-
 That should be it! The user `dalek` now has all privileges and now you should be able to execute the python scripts with ease!
 
 ## Part 3.3: Actually Creating the Database
 
-To create the database, first cd into the database directory, aptly named db.
-Once there run this command to run the python scripts. Note that the first one that should be ran is `setup-database.py`, then `database.py` respectively.
+To create the database, first `cd` into the database directory, aptly named db.
+Once there run this command to run the python scripts. Note that the first one that should be ran is `setup-database.py`, then `create-tables.py` respectively.
 ```
 $ python3 setup-database.py
 ```
-This should spit out the current databases into the terminal. There should be one titled `scouting`.
+This should spit out the current databases into the terminal. There should be one titled `Scouting`.
 
 # Part 4: Creating Tables
 
-To create a table, just run the `tables.py` script by typing into a terminal
+To create a table, just run the `create-tables.py` script by typing into a terminal
 ```
-$ python3 tables.py 
+$ python3 create-tables.py 
 ```
-to run the script and create the tables.
+to run the script and create the tables. 
+All of the output within the terminal should say OK or some derivitive of it.
