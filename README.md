@@ -29,3 +29,16 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
     3.2 - Understanding connector pythong is very important, please visit [here](https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html), and [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md)
 
     3.3 - Finally, and arguably the most important informaiton you need to know is a basic knowledge of Python and HTML. Using the Python documentation with MySql will be sufficent. The offial MySql with Python documentation can be found [here](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html). Additionally a "crash course" concerning html and css can be found [here](https://youtube.com/playlist?list=PLblA84xge2_y8F1K0wzPia9V_ULVcfg4k)
+
+### **Section 4 - Installing and Setting Up Pip and BeautifulSoup
+-
+    4.1 - BeautifulSoup utilises the name of the element to pull data, and caches it. This is the method used to pull data from the Scouting App, this data then must be stored in a data table, or equivalent storage container. For more information, such as documewntation please click [here]{https://beautiful-soup-4.readthedocs.io/en/latest/}.
+    
+ 4.2 - BeautifulSoup must be installed by inputing this command into the terminal
+ ```
+
+ ```
+
+    4.3 - If bs4 doesn't work then swith to bs3, as its final release was in December, 2021. 
+
+    https://stackoverflow.com/questions/11783875/importerror-no-module-named-bs4-beautifulsoup
