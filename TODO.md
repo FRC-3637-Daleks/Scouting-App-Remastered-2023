@@ -20,17 +20,23 @@
 
 ### - replace number radio buttons with dropdowns
 
-# **WSL Testing**
-### - possibly a VM if its too tough
+# ~~**WSL Testing**~~
+### ~~- possibly a VM if its too tough~~
 
 
 # **mysql**
 
 ### - Get mysql readme finished
+# ~~- finish create-tables.py~~
+# ~~- finish setup-database.py~~
+# - finish setup-README.md
+    - eh, kinda done?
+    
+# - finish database.py
 
 ### - make sure python scripts work properly
 
-### - create proper datatables
+### ~~- create proper datatables~~
 look at 
 https://docs.google.com/spreadsheets/d/1lCQqQTsaWcqok09gHu-j7aPdQEGYPZY-G7KIvSE3v24/edit#gid=0
 
