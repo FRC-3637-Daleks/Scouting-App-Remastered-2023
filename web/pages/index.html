@@ -50,29 +50,45 @@
             </div>
             <div>
                 <p>
-                    High Shots made:
+                    High Shots Made: <span id = "autonHighShotsMadeOutput">0</span>
                 </p>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="0">0</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="1">1</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="2">2</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="3">3</input>
+                <!--create slider-->
+                <input type="range" name="autonHighShotsMade" min="0" max="10" value="0" class="slider" id="autonHighShots">
+                <script>
+                    var autonHighShotsMade = document.getElementById("autonHighShots");
+                    var autonHighShotsMadeOutput = document.getElementById("autonHighShotsMadeOutput");
+                    autonHighShotsMade.oninput = function() {
+                        autonHighShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
-                    Low Shots made:
+                    Low Shots Made: <span id = "autonLowShotsMadeOutput">0</span>
                 </p>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="0">0</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="1">1</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="2">2</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="3">3</input>
+                <!--create slider-->
+                <input type="range" name="autonLowShotsMade" min="0" max="10" value="0" class="slider" id="autonLowShots">
+                <script>
+                    var autonLowShotsMade = document.getElementById("autonLowShots");
+                    var autonLowShotsMadeOutput = document.getElementById("autonLowShotsMadeOutput");
+                    autonLowShotsMade.oninput = function() {
+                        autonLowShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
-                    Balls Missed: 
+                    Balls Missed: <span id = "autonBallsMissedOutput">0</span>
                 </p>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="0">0</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="1">1</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="2">2</input>
+                <!--create slider-->
+                <input type="range" name="autonBallsMissed" min="0" max="20" value="0" class="slider" id="autonBallsMissed">
+                <script>
+                    var autonBallsMissed = document.getElementById("autonBallsMissed");
+                    var autonBallsMissedOutput = document.getElementById("autonBallsMissedOutput");
+                    autonBallsMissed.oninput = function() {
+                        autonBallsMissedOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
