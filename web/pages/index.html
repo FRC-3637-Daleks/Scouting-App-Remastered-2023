@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='stylesheet' href='style.css'>
+    <!--allows scaling for different screen sizes-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting App</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <center>
+                <p>Scouting App</p>
+            </center>
+        </h1>
+    </div>
+    <div>
+        <center>
+            <p>
+                <b>Remastered</b>
+            </p>
+
+            <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
+                Click me
+            </button>
+        </center>
+    </div>
+    <div>
+        <center>
+            <p id="searchDescription">
+                <b>Search for a team</b>
+            </p>
+            <input type="text" name="search" placeholder="Search Here!"></input>
+        </center>
+    </div>
+</body>
+
+<body>
+    <div class = "container">
+        <div class = "left-cont">
+            <center>
+            <div>
+                <p id = "Auton">
+                    <b>Auton</b>
+                </p>
+            </div>
+            <div>
+                <p>
+                    High Shots made:
+                </p>
+                <input type="radio" name="autonHighShots0" id = "autonHighShotButtons" value="0">0</input>
+                <input type="radio" name="autonHighShots1" id = "autonHighShotButtons" value="1">1</input>
+                <input type="radio" name="autonHighShots2" id = "autonHighShotButtons" value="2">2</input>
+                <input type="radio" name="autonHighShots3" id = "autonHighShotButtons" value="3">3</input>
+            </div>
+            <div>
+                <p>
+                    Low Shots made:
+                </p>
+                <input type="radio" name="autonLowShots0" id = "autonLowShotButtons" value="0">0</input>
+                <input type="radio" name="autonLowShots1" id = "autonLowShotButtons" value="1">1</input>
+                <input type="radio" name="autonLowShots2" id = "autonLowShotButtons" value="2">2</input>
+                <input type="radio" name="autonLowShots3" id = "autonLowShotButtons" value="3">3</input>
+            </div>
+            <div>
+                <p>
+                    Balls Missed: 
+                </p>
+                <input type="radio" name="autonBallsMissed0" id = "autonBallsMissedButtons" value="0">0</input>
+                <input type="radio" name="autonBallsMissed1" id = "autonBallsMissedButtons" value="1">1</input>
+                <input type="radio" name="autonBallsMissed2" id = "autonBallsMissedButtons" value="2">2</input>
+            </div>
+            <div>
+                <p>
+                    Got off the Platform:
+                </p>
+                <input type="radio" name="autonPlatformY" id = "autonPlatformButtons" value="Y">Y</input>
+                <input type="radio" name="autonPlatformN" id = "autonPlatformButtons" value="N">N</input>
+            </div>
+            <div>
+                <p>
+                    Basketball shot made: 
+                </p>
+                <input type="radio" name="autonBasketballY" id = "autonBasketballButtons" value="Y">Y</input>
+                <input type="radio" name="autonBasketballN" id = "autonBasketballButtons" value="N">N</input>
+            </div>
+        </center>
+        </div>
+        <div class = "right-cont">
+            <div>
+                <p id = "Teleop">
+                    <b>Teleop</b>
+                </p>
+            </div> 
+            <div>
+                <p>
+                    High Shots made: <span id = "teleopShotsMadeOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" name="teleopHighShotsMade" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
+                <script>
+                    var teleopShotsMade = document.getElementById("teleopShotsMade");
+                    var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
+                    teleopShotsMade.oninput = function() {
+                        teleopShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" name="teleopLowShotsMade" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
+                <script>
+                    var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
+                    var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
+                    teleopLowShotsMade.oninput = function() {
+                        teleopLowShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Balls Missed: <span id = "teleopBallsMissedOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" name="teleopBallsMissed" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
+                <script>
+                    var teleopBallsMissed = document.getElementById("teleopBallsMissed");
+                    var teleopBallsMissedOutput = document.getElementById("teleopBallsMissedOutput");
+                    teleopBallsMissed.oninput = function() {
+                        teleopBallsMissedOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Burst Shots: <span id = "teleopBurstShotsOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" name="teleopBurstShots" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
+                <script>
+                    var teleopBurstShots = document.getElementById("teleopBurstShots");
+                    var teleopBurstShotsOutput = document.getElementById("teleopBurstShotsOutput");
+                    teleopBurstShots.oninput = function() {
+                        teleopBurstShotsOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Shot From Launchpad:
+                </p>
+                <input type="radio" name="teleopLaunchpadY" id = "teleopLaunchpadButtons" value="Y">Y</input>
+                <input type="radio" name="teleopLaunchpadN" id = "teleopLaunchpadButtons" value="N">N</input>
+            </div>
+        </div>
+        <div class = "spacer"></div>
+        <div class = "left-cont">
+            <center>
+            <div>
+                <p id = "Endgame">
+                    <b>Endgame</b>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Attempted Climb: 
+                </p>
+                <input type="radio" name="endgameAttemptedClimbY" id = "endgameAttemptedClimbButtons" value="Y">Y</input>
+                <input type="radio" name="endgameAttemptedClimbN" id = "endgameAttemptedClimbButtons" value="N">N</input>
+            </div>
+            <div>
+                <p>
+                    Successful Climb Tier: <span id = "endgameClimbTierOutput">0</span>
+                </p>
+                <!--create slider-->
+                <input type="range" name="endgameClimbTier" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
+                <script>
+                    var endgameClimbTier = document.getElementById("endgameClimbTier");
+                    var endgameClimbTierOutput = document.getElementById("endgameClimbTierOutput");
+                    endgameClimbTier.oninput = function() {
+                        endgameClimbTierOutput.innerHTML = this.value;
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Prepared in Endgame: 
+                </p>
+                <input type="radio" name="endgamePreparedY" id = "endgamePreparedButtons" value="Y">Y</input>
+                <input type="radio" name="endgamePreparedN" id = "endgamePreparedButtons" value="N">N</input>
+            </div>
+            <div>
+                <p>
+                    Climb Faster Than X Seconds: 
+                </p>
+                <input type="radio" name="endgameClimbTimeY" id = "endgameClimbTimeButtons" value="Y">Y</input>
+                <input type="radio" name="endgameClimbTimeN" id = "endgameClimbTimeButtons" value="N">N</input>
+            </div>
+        </div>
+        <div class = "right-cont">
+            <center>
+            <div>
+                <p>
+                    <b>Defense</b>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Attempted to Block Others: 
+                </p>
+                <input type="radio" name="defenseAttemptedBlockY" id = "defenseAttemptedBlockButtons" value="Y">Y</input>
+                <input type="radio" name="defenseAttemptedBlockN" id = "defenseAttemptedBlockButtons" value="N">N</input>
+            </div>
+            <div>
+                <p>
+                    Held Balls: 
+                </p>
+                <input type="radio" name="defenseHeldBallsY" id = "defenseHeldBallsButtons" value="Y">Y</input>
+                <input type="radio" name="defenseHeldBallsN" id = "defenseHeldBallsButtons" value="N">N</input>
+            </div>
+            </center>
+        </div>
+        <div class = "spacer"></div>
+        <div class = "center-cont">
+            <center>
+            <div>
+                <p>
+                    <b>Comments:</b>
+                </p>
+                <textarea rows="15" cols="50" id="comments"></textarea>
+            </div>
+            <div>
+                <input type="button" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
+            </div>
+            </center>
+        </div>
+        <div class = "bottom-cont">
+        </div>
+    </div>
+</body>
+<body>
+    
+</body>
+
+</html>
