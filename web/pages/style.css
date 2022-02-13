@@ -94,7 +94,7 @@ p {
 
 
 /*search bar*/
-input[type="text"] {
+input[name="search"] {
   width: 120px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
@@ -105,15 +105,14 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 /*on search bar click, expand*/
-input[type="text"]:focus {
+input[name="search"]:focus {
   width: 400px;
 }
 
 /*spacing for all radio buttons*/
-#autonHighShotButtons, #autonLowShotButtons,
- #autonBallsMissedButtons, #autonPlatformButtons,
- #autonBasketballButtons, #teleopLaunchpadButtons,
+#autonPlatformButtons, #autonBasketballButtons, #teleopLaunchpadButtons,
 #endgameAttemptedClimbButtons, #endgamePreparedButtons,
 #endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
 #defenseHeldBallsButtons {
@@ -127,6 +126,13 @@ input[type="text"]:focus {
 /*all sliders*/
 .slider {
   /*spacing for sliders*/
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+/*all textInput*/
+.textInput {
+  /*spacing for textInput*/
   margin-bottom: 12px;
   margin-top: 12px;
 }
