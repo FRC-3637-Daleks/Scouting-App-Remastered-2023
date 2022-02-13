@@ -52,7 +52,7 @@
                 <p>
                     High Shots Made:
                 </p>
-                <input type="text" class="textInput" name="autonHighShotsMade"  id="autonHighShots">
+                <input type="text" class="textInput" maxlength="2" id="autonHighShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonHighShots").onkeypress = function(e) {
@@ -64,7 +64,7 @@
                 <p>
                     Low Shots Made:
                 </p>
-                <input type="text" class="textInput" name="autonLowShotsMade"  id="autonLowShots">
+                <input type="text" class="textInput" maxlength="2" id="autonLowShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonLowShots").onkeypress = function(e) {
@@ -76,7 +76,7 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" name="autonBallsMissed"  id="autonBallsMissed">
+                <input type="text" class="textInput" maxlength="2" id="autonBallsMissed">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonBallsMissed").onkeypress = function(e) {
@@ -110,7 +110,7 @@
                 <p>
                     High Shots made:
                 </p>
-                <input type="text" class="textInput" name="teleopHighShotsMade"  id="teleopHighShots">
+                <input type="text" class="textInput" maxlength="2" id="teleopHighShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopHighShots").onkeypress = function(e) {
@@ -122,7 +122,7 @@
                 <p>
                     Low Shots made:
                 </p>
-                <input type="text" class="textInput" name="teleopLowShotsMade"  id="teleopLowShots">
+                <input type="text" class="textInput" maxlength="2" id="teleopLowShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopLowShots").onkeypress = function(e) {
@@ -134,7 +134,7 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" id="teleopShotsMissed">
+                <input type="text" class="textInput" maxlength="2" id="teleopShotsMissed">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopShotsMissed").onkeypress = function(e) {
@@ -146,7 +146,7 @@
                 <p>
                     Burst Shots:
                 </p>
-                <input type="text" class="textInput" id="teleopBurstShots">
+                <input type="text" class="textInput" maxlength="2" id="teleopBurstShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopBurstShots").onkeypress = function(e) {
@@ -182,7 +182,7 @@
                 <p>
                     Successful Climb Tier:
                 </p>
-                <input type="text" class="textInput" id="endgameClimbTier">
+                <input type="text" class="textInput" maxlength="1" id="endgameClimbTier">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("endgameClimbTier").onkeypress = function(e) {
@@ -235,6 +235,7 @@
                 <p>
                     <b>Comments:</b>
                 </p>
+                <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
                 <textarea rows="15" cols="50" id="comments"></textarea>
             </div>
             <div>
