@@ -39,7 +39,7 @@
     </div>
 </body>
 
-<body>
+<body>          <!--Change location to var/www/html/cgi-bin/ when moved to apache-->
     <form action = "../../db/database.py" method="post">
     <div class = "container">
         <div class = "left-cont">
@@ -53,7 +53,7 @@
                 <p>
                     High Shots Made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="autonHighShots">
+                <input type="text" class="textInput" maxlength="2" name="AHS" id="autonHighShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonHighShots").onkeypress = function(e) {
@@ -65,7 +65,7 @@
                 <p>
                     Low Shots Made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="autonLowShots">
+                <input type="text" class="textInput" maxlength="2" name="ALS" id="autonLowShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonLowShots").onkeypress = function(e) {
@@ -77,7 +77,7 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="autonBallsMissed">
+                <input type="text" class="textInput" maxlength="2" name="ABS" id="autonBallsMissed">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonBallsMissed").onkeypress = function(e) {
@@ -240,7 +240,7 @@
                 <textarea rows="15" cols="50" id="comments"></textarea>
             </div>
             <div>
-                <input type="button" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
+                <input type="submit" name="submit" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
             </div>
             </center>
         </div>
