@@ -2,7 +2,7 @@ import mysql.connector
 from mysql.connector import (connection)
 from mysql.connector import errorcode
 import requests
-from bs4 import BeautifulSoup
+import cgi
 
 cnx = mysql.connector.connect(user="dalek", password="3637",
                         host="127.0.0.1",
@@ -10,28 +10,16 @@ cnx = mysql.connector.connect(user="dalek", password="3637",
 
 cursor = cnx.cursor()
 
-#request url
-response = requests.get("http://127.0.0.1")
-soup = BeautifulSoup(response.text, "html.parser")
+data=cgi.FieldStorage()
+AHS=data.getvalue('AHS')
+ALS=data.getvalue('ALS')
 
 
-#find value of html slider
-slider = soup.find("span", {"id": "autonHighShotsMadeOutput"})
-print (slider)
+sql = "INSERT INTO Auton (Team, High, Low, Missed, Off_Platform, Basketball_Shots_Made) VALUES (%s, %s, %s, %s, %s, %s)"
+cursor.execute(sql, ('3637', AHS, ALS, '0', '0', '0', '0'))
 
-# print (slider['autonHighShotsOutput'])
-
-slider = soup.find("span", {"id": "autonLowShotsMadeOutput"})
-print (slider)
-
-#slider = soup.find("div", {"class": "slider"})
-#print(slider.get("value"))
-
-# print (soup.find('value',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
+print(AHS)
+print(ALS)
 
 cursor.close()
 cnx.close()
-# https://beautiful-soup-4.readthedocs.io/en/latest/
