@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+
+print ("Content-type: text/html\n")
+print ("Hello World!")
+
 import mysql.connector
 from mysql.connector import (connection)
 from mysql.connector import errorcode
