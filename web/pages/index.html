@@ -19,6 +19,8 @@
         </h1>
     </div>
     <div>
+               <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
+        <form action = "../../db/database.py" method="post">
         <center>
             <p>
                 <b>Remastered</b>
@@ -32,15 +34,14 @@
     <div>
         <center>
             <p id="searchDescription">
-                <b>Search for a team</b>
+                <b>Enter Team ID Here:</b>
             </p>
-            <input type="text" name="search" placeholder="Search Here!"></input>
+            <input type="text" name="teamId" placeholder="Search Here!"></input>
         </center>
     </div>
 </body>
 
-<body>          <!--Change location to var/www/html/cgi-bin/ when moved to apache-->
-    <form action = "../../db/database.py" method="post">
+<body>          
     <div class = "container">
         <div class = "left-cont">
             <center>
@@ -77,7 +78,7 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="ABS" id="autonBallsMissed">
+                <input type="text" class="textInput" maxlength="2" name="ABM" id="autonBallsMissed">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("autonBallsMissed").onkeypress = function(e) {
@@ -111,7 +112,7 @@
                 <p>
                     High Shots made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="teleopHighShots">
+                <input type="text" class="textInput" maxlength="2" name="THS" id="teleopHighShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopHighShots").onkeypress = function(e) {
@@ -123,7 +124,7 @@
                 <p>
                     Low Shots made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="teleopLowShots">
+                <input type="text" class="textInput" maxlength="2" name="TLS" id="teleopLowShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopLowShots").onkeypress = function(e) {
@@ -135,7 +136,7 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="teleopShotsMissed">
+                <input type="text" class="textInput" maxlength="2" name="TBM" id="teleopShotsMissed">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopShotsMissed").onkeypress = function(e) {
@@ -147,7 +148,7 @@
                 <p>
                     Burst Shots:
                 </p>
-                <input type="text" class="textInput" maxlength="2" id="teleopBurstShots">
+                <input type="text" class="textInput" maxlength="2" name="TBS" id="teleopBurstShots">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("teleopBurstShots").onkeypress = function(e) {
@@ -183,7 +184,7 @@
                 <p>
                     Successful Climb Tier:
                 </p>
-                <input type="text" class="textInput" maxlength="1" id="endgameClimbTier">
+                <input type="text" class="textInput" maxlength="1" name="ECT" id="endgameClimbTier">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementById("endgameClimbTier").onkeypress = function(e) {
@@ -237,7 +238,7 @@
                     <b>Comments:</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="comments" id="comments"></textarea>
             </div>
             <div>
                 <input type="submit" name="submit" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
