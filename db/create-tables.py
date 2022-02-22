@@ -8,11 +8,11 @@ TABLES = {}
 TABLES['Auton'] = (
     "CREATE TABLE `Auton` ("
     "   `Team` VARCHAR(10) NOT NULL,"
-    "   `High` int NOT NULL,"
-    "   `Low` int NOT NULL,"
-    "   `Missed` int NOT NULL,"
-    "   `Off_Platform` VARCHAR(1) NOT NULL,"
-    "   `Basketball_Shots_Made` int NOT NULL,"
+    "   `High` int,"
+    "   `Low` int,"
+    "   `Missed` int,"
+    "   `Off_Platform` VARCHAR(1),"
+    "   `Basketball_Shots_Made` int"
     "   PRIMARY KEY (`Team`)"
     ")"
 )
@@ -20,11 +20,11 @@ TABLES['Auton'] = (
 TABLES['Teleop'] = (
     "CREATE TABLE `Teleop` ("
     "   `Team` VARCHAR(10) NOT NULL,"
-    "   `High` int NOT NULL,"
-    "   `Low` int NOT NULL,"
-    "   `Missed` int NOT NULL,"
-    "   `Burst` int NOT NULL,"
-    "   `Launchpad` VARCHAR(1) NOT NULL,"
+    "   `High` int,"
+    "   `Low` int,"
+    "   `Missed` int,"
+    "   `Burst` int,"
+    "   `Launchpad` VARCHAR(1)"
     "   PRIMARY KEY (`Team`)"
     ")"
 )
@@ -32,8 +32,8 @@ TABLES['Teleop'] = (
 TABLES['Defense'] = (
     "CREATE TABLE `Defense` ("
     "   `Team` VARCHAR(10) NOT NULL,"
-    "   `Blocked` VARCHAR(1) NOT NULL,"
-    "   `Held_balls` VARCHAR(1) NOT NULL,"
+    "   `Blocked` VARCHAR(1),"
+    "   `Held_balls` VARCHAR(1)"
     "   PRIMARY KEY (`Team`)"
     ")"
 )
@@ -41,18 +41,18 @@ TABLES['Defense'] = (
 TABLES['Endgame'] = (
     "CREATE TABLE `Endgame` ("
     "   `Team` VARCHAR(10) NOT NULL,"
-    "   `Attempted_Climb` VARCHAR(1) NOT NULL,"
-    "   `Success_Tier` int NOT NULL,"
-    "   `Prepared` VARCHAR(1) NOT NULL,"
-    "   `Climbing_Seconds` int NOT NULL,"
-    "   PRIMARY KEY (`Team`)"    
+    "   `Attempted_Climb` VARCHAR(1),"
+    "   `Success_Tier` int,"
+    "   `Prepared` VARCHAR(1),"
+    "   `Climbing_Seconds` int"
+    "   PRIMARY KEY (`Team`)"
     ")"
 )
 
 TABLES['Comments'] = (
     "CREATE TABLE `Comments` ("
     "   `Team` VARCHAR(10) NOT NULL,"
-    "   `Insert_Comments` MEDIUMTEXT,"
+    "   `Insert_Comments` MEDIUMTEXT"
     "   PRIMARY KEY (`Team`)"
     ")"
 )
