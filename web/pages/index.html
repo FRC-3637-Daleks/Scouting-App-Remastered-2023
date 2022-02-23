@@ -20,7 +20,7 @@
     </div>
     <div>
                <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
-        <form action = "../../db/database.py" method="post">
+        <form action = "/cgi-bin/database.py" method="post">
         <center>
             <p>
                 <b>Remastered</b>
@@ -31,13 +31,24 @@
             </button>
         </center>
     </div>
-    <div>
-        <center>
+    <div class = "container-row">
+        <div class = "header-cont">
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
-            <input type="text" name="teamId" placeholder="Search Here!"></input>
-        </center>
+            <input type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+        </div>
+        <div class = "header-cont">
+            <p id="searchDescription">
+                <b>Enter Match Number Here:</b>
+            </p>
+            <input type="text" name="matchNumber" id="matchNumber" maxlength="2" placeholder="Match Number"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("matchNumber").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
     </div>
 </body>
 
@@ -210,7 +221,7 @@
         <div class = "right-cont">
             <center>
             <div>
-                <p>
+                <p id="Defense">
                     <b>Defense</b>
                 </p>
             </div>
@@ -234,7 +245,7 @@
         <div class = "center-cont">
             <center>
             <div>
-                <p>
+                <p id="Comments">
                     <b>Comments:</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
