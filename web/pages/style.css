@@ -8,9 +8,10 @@ body {
 }
 
 #searchDescription {
-  font-size: 20px;
+  font-size: 30px;
   color: white;
   margin-top: 80px;
+  text-align: center;
   align-content: center;
   background-color: #000000;
 }
@@ -20,11 +21,34 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 }
+/*for header to put team id and etc. in a row*/
+.container-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/*container for header*/
+.header-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  width: 30%;
+  margin-bottom: 60px;
+}
+
+/*makes font size bigger for titles*/
+#Teleop, #Auton, #Endgame, #Defense, #Comments {
+  font-size: 30px;
+}
 
 .left-cont {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     width:370px;
     font-size: 20px;
     color: white;
@@ -69,7 +93,7 @@ justify-content: space-between;
 
 .spacer {
   flex-basis: 100%;
-  height: 40px;
+  height: 80px;
 }
  
 .center {
@@ -78,7 +102,7 @@ text-align: center;
 /*h1 tag*/
 h1 {
   font-family: Andale Mono, monospace;
-  font-size: 50px;
+  font-size: 60px;
   color: white;
   margin: 0;
   margin-top: 30px;
@@ -94,21 +118,17 @@ p {
 
 
 /*search bar*/
-input[name="search"] {
-  width: 120px;
+input[name="teamId"], input[name="matchNumber"] {
+  width: 160px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
-  padding: 12px 20px;
+  padding: 12px 10px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
-
-/*on search bar click, expand*/
-input[name="search"]:focus {
-  width: 400px;
+  text-align: center;
 }
 
 /*spacing for all radio buttons*/
@@ -122,12 +142,6 @@ input[name="search"]:focus {
   margin-left: 25px;
   /*spaces between the radio button and the next div*/
   margin-bottom: 12px;
-}
-/*all sliders*/
-.slider {
-  /*spacing for sliders*/
-  margin-bottom: 12px;
-  margin-top: 12px;
 }
 
 /*all textInput*/
