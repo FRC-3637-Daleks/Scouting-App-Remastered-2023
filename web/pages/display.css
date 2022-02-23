@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    align-content: center;
+    background-color: #000000;
+  }
+  
+  #searchDescription {
+    font-size: 30px;
+    color: white;
+    margin-top: 80px;
+    text-align: center;
+    align-content: center;
+    background-color: #000000;
+  }
+  
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  }
+  
+  .container-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  /*container for header*/
+  .header-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: 30%;
+    margin-bottom: 60px;
+  }
+    
+  .left-cont {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width:370px;
+      font-size: 20px;
+      color: white;
+      margin-left: 15%;
+  }
+  
+  
+  /* Inserting this collapsed row between two flex items will make 
+   * the flex item that comes after it break to a new row */
+   .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+  
+  
+  .right-cont {
+      display: flex;
+      flex-direction: column;
+      width:370px;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      margin-right: 15%;
+  }
+  
+  .center-cont {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .bottom-cont {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;  
+  }
+  
+  .spacer {
+    flex-basis: 100%;
+    height: 80px;
+  }
+   
+  .center {
+  text-align: center;
+  }
+  /*h1 tag*/
+  h1 {
+    font-family: Andale Mono, monospace;
+    font-size: 60px;
+    color: white;
+    margin: 0;
+    margin-top: 30px;
+    align-content: center;
+    background-color: #000000;
+  }
+  
+  p {
+    font-family: Andale Mono, monospace;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  
+  /*search bar*/
+  input[name="something"] {
+    width: 160px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  
+  /*all textInput*/
+  .textInput {
+    /*spacing for textInput*/
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 25px;
+    text-align: center;
+  }
+  
