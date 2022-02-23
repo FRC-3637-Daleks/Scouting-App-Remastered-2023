@@ -4,56 +4,63 @@ from mysql.connector import errorcode
 
 DB_NAME = 'Scouting'
 
-#todo: change primary key to also have a match and have match be put in manually like Team.
-    # aka MATCH 1, Match 2, Match 3 by user input
-    # add primary key above ")" looking like this:
-    # "     PRIMARY KEY (`Team`, `Match`)"
-
 TABLES = {}
 TABLES['Auton'] = (
     "CREATE TABLE `Auton` ("
-    "   `Team` VARCHAR(10) NOT NULL PRIMARY KEY,"
+    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Match_Number` int NOT NULL,"
     "   `High` int,"
     "   `Low` int,"
     "   `Missed` int,"
     "   `Off_Platform` VARCHAR(1),"
-    "   `Basketball_Shots_Made` VARCHAR(1)"
+    "   `Basketball_Shots_Made` VARCHAR(1),"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
 TABLES['Teleop'] = (
     "CREATE TABLE `Teleop` ("
-    "   `Team` VARCHAR(10) NOT NULL PRIMARY KEY,"
+    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Match_Number` int NOT NULL,"
     "   `High` int,"
     "   `Low` int,"
     "   `Missed` int,"
     "   `Burst` int,"
-    "   `Launchpad` VARCHAR(1)"
+    "   `Launchpad` VARCHAR(1),"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
 TABLES['Defense'] = (
     "CREATE TABLE `Defense` ("
-    "   `Team` VARCHAR(10) NOT NULL PRIMARY KEY,"
+    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Match_Number` int NOT NULL,"
     "   `Blocked` VARCHAR(1),"
-    "   `Held_balls` VARCHAR(1)"
+    "   `Held_balls` VARCHAR(1),"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
 TABLES['Endgame'] = (
     "CREATE TABLE `Endgame` ("
-    "   `Team` VARCHAR(10) NOT NULL PRIMARY KEY,"
+    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Match_Number` int NOT NULL,"
     "   `Attempted_Climb` VARCHAR(1),"
     "   `Success_Tier` int,"
     "   `Prepared` VARCHAR(1),"
-    "   `Climbing_Seconds` VARCHAR(1)"
+    "   `Climbing_Seconds` VARCHAR(1),"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
+#todo: set max char of mediumtext in the index script
+
 TABLES['Comments'] = (
     "CREATE TABLE `Comments` ("
-    "   `Team` VARCHAR(10) NOT NULL PRIMARY KEY,"
-    "   `Insert_Comments` MEDIUMTEXT"
+    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Match_Number` int NOT NULL,"
+    "   `Insert_Comments` MEDIUMTEXT,"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
