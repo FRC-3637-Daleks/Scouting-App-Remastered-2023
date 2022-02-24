@@ -11,7 +11,41 @@
 </head>
 
 <body>
-    <div>
-        
-    </div>    
+    <div class="header-cont">
+        <center>
+            <p id="title">
+                title!
+            </p>
+        </center>
+    </div>
+    <div class="container-row">    
+        <div class="left-cont">
+            <p>
+                Search bar!
+            </p>
+            <input type="text" id="teamId" name="Search" maxlength="10" placeholder="Team ID Here">
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("teamId").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
+            <div class="dalek-image">
+                <img src="3637-dalek.png" alt="3637 dalek picture">
+            </div>
+        </div>
+        <div class="right-cont">
+            <p> 
+                Auton
+            </p>
+            <div class="key">
+                <p>Team</p>
+                <p>Match Number</p>
+                <p>High</p>
+                <p>Low</p>
+                <p>Missed</p>
+                <p>Off Platform</p>
+            </div>
+        </div>
+    </div>
 </body>
