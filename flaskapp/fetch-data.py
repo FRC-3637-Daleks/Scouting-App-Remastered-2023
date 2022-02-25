@@ -1,3 +1,5 @@
+# make sure to move this to [where it goes]
+
 # import the flask class
 from flask import Flask, render_template
 from flaskext.mysql import MySQL
