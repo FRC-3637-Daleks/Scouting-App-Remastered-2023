@@ -1,37 +1,131 @@
+#!/usr/bin/python3
+
+print ("Content-type: text/html\r\n\r\n")
+print ("<h1>Hello World!</h1>")
+redirectURL = "http://127.0.0.1/display/display.html"
+print('    <meta http-equiv="refresh" content="5;url='+str(redirectURL)+'" />') 
+
+
 import mysql.connector
 from mysql.connector import (connection)
 from mysql.connector import errorcode
 import requests
-from bs4 import BeautifulSoup
+import cgi
 
+
+#setup connector
 cnx = mysql.connector.connect(user="dalek", password="3637",
                         host="127.0.0.1",
                         database='Scouting')
 
+#setup cursor to execute queries
 cursor = cnx.cursor()
 
-#request url
-response = requests.get("http://127.0.0.1")
-soup = BeautifulSoup(response.text, "html.parser")
+#get form data from html form and store in variables for use in sql query
+data=cgi.FieldStorage()
+newData=str(data)
+print ("<p>", newData, "</p>")
+#get team number from form
+TEAM=data.getvalue('teamId')
+print ("<p>The team number is %s</p>" % TEAM)
+
+#get match number
+MN=data.getvalue('matchNumber')
+
+#auton high shots
+AHS=data.getvalue('AHS')
+#auton low shots
+ALS=data.getvalue('ALS')
+#auton balls missed
+ABM=data.getvalue('ABM')
+#this one is for Off_Platform, radio buttons
+AP=data.getvalue('autonPlatform')
+#auton basketball radio buttons
+AB=data.getvalue('autonBasketball')
+
+#teleop
+#teleop high shots
+THS=data.getvalue('THS')
+#teleop low shots
+TLS=data.getvalue('TLS')
+#teleop balls missed
+TBM=data.getvalue('TBM')
+#teleop burst shots
+TBS=data.getvalue('TBS')
+#teleop launchpad radio buttons
+TLP=data.getvalue('teleopLaunchpad')
 
 
-#find value of html slider
-slider = soup.find("span", {"id": "autonHighShotsMadeOutput"})
-print (slider)
+#Endgame Climb, radio buttons 
+EAC =data.getvalue('endgameAttemptedClimb')
+#endgame climb tier input
+ECT = data.getvalue('ECT')
+# Prepared in Endgame, radio buttons
+EPE = data.getvalue('endgamePrepared')
+# Climb faster than x seconds, radio buttons
+ECXS = data.getvalue('endgameClimbTime')
 
-# print (slider['autonHighShotsOutput'])
+# defense attempted to block others, radio buttons
+DAB = data.getvalue('defenseAttemptedBlock')
+# defense held balls, radio buttons
+DHB = data.getvalue('defenseHeldBalls')
 
-slider = soup.find("span", {"id": "autonLowShotsMadeOutput"})
-print (slider)
+#comments
+COMMENTS = data.getvalue('comments')
 
-#slider = soup.find("div", {"class": "slider"})
-#print(slider.get("value"))
 
-# print (soup.find('value',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
-# print (soup.find('input',attrs={'name':'autonHighShots'}).has_attr('checked'))
+try:
+ 
+    add_Auton = "INSERT INTO Auton (Team, Match_Number, High, Low, Missed, Off_Platform, Basketball_Shots_Made) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(add_Auton, (TEAM, MN, AHS, ALS, ABM, AP, AB))
 
-cursor.close()
-cnx.close()
-# https://beautiful-soup-4.readthedocs.io/en/latest/
+except:
+    print ("<p>Error adding Auton data</p>")
+
+finally:
+
+    try:
+
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(add_Teleop, (TEAM, MN, THS, TLS, TBM, TBS, TLP))
+
+    except:
+        print ("<p>Error adding Teleop data</p>")
+    
+    finally:
+
+        try:
+
+            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds) VALUES (%s, %s, %s, %s, %s, %s)"
+            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS))
+
+        except:
+            print ("<p>Error adding Endgame data</p>")
+
+        finally:
+
+            try:
+
+                add_Defense = "INSERT INTO Defense (Team, Match_Number, Blocked, Held_balls) VALUES (%s, %s, %s, %s)"
+                cursor.execute(add_Defense, (TEAM, MN, DAB, DHB))
+
+            except:
+                print ("<p>Error adding Defense data</p>")
+
+            finally:
+                
+                try:
+
+                    add_Comments = "INSERT INTO Comments (Team, Match_Number, Insert_Comments) VALUES (%s, %s, %s)"
+                    cursor.execute(add_Comments, (TEAM, MN, COMMENTS))
+
+                except:
+                    print ("<p>Error adding Comments data</p>")
+
+                finally:
+
+                    print("<p>DONE :D</p>")
+                    cnx.commit()
+                    cursor.commit()
+                    cursor.close()
+                    cnx.close()

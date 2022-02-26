@@ -23,23 +23,36 @@
             <p>
                 <b>Remastered</b>
             </p>
-
+            <!--TODO: make video offline ;p-->
             <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
                 Click me
             </button>
         </center>
     </div>
-    <div>
-        <center>
+    <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
+    <form action = "/cgi-bin/database.py" method="post">
+    <div class = "container-row">
+        <div class = "header-cont">
             <p id="searchDescription">
-                <b>Search for a team</b>
+                <b>Enter Team ID Here:</b>
             </p>
-            <input type="text" name="search" placeholder="Search Here!"></input>
-        </center>
+            <input type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+        </div>
+        <div class = "header-cont">
+            <p id="searchDescription">
+                <b>Enter Match Number Here:</b>
+            </p>
+            <input type="text" name="matchNumber" id="matchNumber" maxlength="2" placeholder="Match Number"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("matchNumber").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
     </div>
 </body>
 
-<body>
+<body>          
     <div class = "container">
         <div class = "left-cont">
             <center>
@@ -50,43 +63,37 @@
             </div>
             <div>
                 <p>
-                    High Shots Made: <span id = "autonHighShotsMadeOutput">0</span>
+                    High Shots Made:
                 </p>
-                <!--create slider-->
-                <input type="range" name="autonHighShotsMade" min="0" max="10" value="0" class="slider" id="autonHighShots">
+                <input type="text" class="textInput" maxlength="2" name="AHS" id="autonHighShots">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var autonHighShotsMade = document.getElementById("autonHighShots");
-                    var autonHighShotsMadeOutput = document.getElementById("autonHighShotsMadeOutput");
-                    autonHighShotsMade.oninput = function() {
-                        autonHighShotsMadeOutput.innerHTML = this.value;
+                    document.getElementById("autonHighShots").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Low Shots Made: <span id = "autonLowShotsMadeOutput">0</span>
+                    Low Shots Made:
                 </p>
-                <!--create slider-->
-                <input type="range" name="autonLowShotsMade" min="0" max="10" value="0" class="slider" id="autonLowShots">
+                <input type="text" class="textInput" maxlength="2" name="ALS" id="autonLowShots">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var autonLowShotsMade = document.getElementById("autonLowShots");
-                    var autonLowShotsMadeOutput = document.getElementById("autonLowShotsMadeOutput");
-                    autonLowShotsMade.oninput = function() {
-                        autonLowShotsMadeOutput.innerHTML = this.value;
+                    document.getElementById("autonLowShots").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Balls Missed: <span id = "autonBallsMissedOutput">0</span>
+                    Balls Missed:
                 </p>
-                <!--create slider-->
-                <input type="range" name="autonBallsMissed" min="0" max="20" value="0" class="slider" id="autonBallsMissed">
+                <input type="text" class="textInput" maxlength="2" name="ABM" id="autonBallsMissed">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var autonBallsMissed = document.getElementById("autonBallsMissed");
-                    var autonBallsMissedOutput = document.getElementById("autonBallsMissedOutput");
-                    autonBallsMissed.oninput = function() {
-                        autonBallsMissedOutput.innerHTML = this.value;
+                    document.getElementById("autonBallsMissed").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
@@ -114,57 +121,49 @@
             </div> 
             <div>
                 <p>
-                    High Shots made: <span id = "teleopShotsMadeOutput">0</span>
+                    High Shots made:
                 </p>
-                <!--create slider-->
-                <input type="range" name="teleopHighShotsMade" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
+                <input type="text" class="textInput" maxlength="2" name="THS" id="teleopHighShots">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var teleopShotsMade = document.getElementById("teleopShotsMade");
-                    var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
-                    teleopShotsMade.oninput = function() {
-                        teleopShotsMadeOutput.innerHTML = this.value;
+                    document.getElementById("teleopHighShots").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
+                    Low Shots made:
                 </p>
-                <!--create slider-->
-                <input type="range" name="teleopLowShotsMade" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
+                <input type="text" class="textInput" maxlength="2" name="TLS" id="teleopLowShots">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
-                    var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
-                    teleopLowShotsMade.oninput = function() {
-                        teleopLowShotsMadeOutput.innerHTML = this.value;
+                    document.getElementById("teleopLowShots").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Balls Missed: <span id = "teleopBallsMissedOutput">0</span>
+                    Balls Missed:
                 </p>
-                <!--create slider-->
-                <input type="range" name="teleopBallsMissed" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
+                <input type="text" class="textInput" maxlength="2" name="TBM" id="teleopShotsMissed">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var teleopBallsMissed = document.getElementById("teleopBallsMissed");
-                    var teleopBallsMissedOutput = document.getElementById("teleopBallsMissedOutput");
-                    teleopBallsMissed.oninput = function() {
-                        teleopBallsMissedOutput.innerHTML = this.value;
+                    document.getElementById("teleopShotsMissed").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Burst Shots: <span id = "teleopBurstShotsOutput">0</span>
+                    Burst Shots:
                 </p>
-                <!--create slider-->
-                <input type="range" name="teleopBurstShots" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
+                <input type="text" class="textInput" maxlength="2" name="TBS" id="teleopBurstShots">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var teleopBurstShots = document.getElementById("teleopBurstShots");
-                    var teleopBurstShotsOutput = document.getElementById("teleopBurstShotsOutput");
-                    teleopBurstShots.oninput = function() {
-                        teleopBurstShotsOutput.innerHTML = this.value;
+                    document.getElementById("teleopBurstShots").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
@@ -192,16 +191,15 @@
                 <input type="radio" name="endgameAttemptedClimb" id = "endgameAttemptedClimbButtons" value="N">N</input>
             </div>
             <div>
+                <!--Maybe make a dropdown like <option> or <select>-->
                 <p>
-                    Successful Climb Tier: <span id = "endgameClimbTierOutput">0</span>
+                    Successful Climb Tier:
                 </p>
-                <!--create slider-->
-                <input type="range" name="endgameClimbTier" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
+                <input type="text" class="textInput" maxlength="1" name="ECT" id="endgameClimbTier">
+                <!--only allow integer inputs in text-->
                 <script>
-                    var endgameClimbTier = document.getElementById("endgameClimbTier");
-                    var endgameClimbTierOutput = document.getElementById("endgameClimbTierOutput");
-                    endgameClimbTier.oninput = function() {
-                        endgameClimbTierOutput.innerHTML = this.value;
+                    document.getElementById("endgameClimbTier").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
@@ -223,7 +221,7 @@
         <div class = "right-cont">
             <center>
             <div>
-                <p>
+                <p id="Defense">
                     <b>Defense</b>
                 </p>
             </div>
@@ -247,19 +245,21 @@
         <div class = "center-cont">
             <center>
             <div>
-                <p>
+                <p id="Comments">
                     <b>Comments:</b>
                 </p>
-                <textarea rows="15" cols="50" id="comments"></textarea>
+                <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
+                <textarea rows="15" cols="50" name="comments" id="comments"></textarea>
             </div>
             <div>
-                <input type="button" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
+                <input type="submit" name="submit" value="Submit All" id="submit" onclick="confirm('Are you sure you are ready to submit?')"></input>
             </div>
             </center>
         </div>
         <div class = "bottom-cont">
         </div>
     </div>
+</form>
 </body>
 <body>
     
