@@ -50,29 +50,45 @@
             </div>
             <div>
                 <p>
-                    High Shots made:
+                    High Shots Made: <span id = "autonHighShotsMadeOutput">0</span>
                 </p>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="0">0</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="1">1</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="2">2</input>
-                <input type="radio" name="autonHighShots" id = "autonHighShotButtons" value="3">3</input>
+                <!--create slider-->
+                <input type="range" name="autonHighShotsMade" min="0" max="10" value="0" class="slider" id="autonHighShots">
+                <script>
+                    var autonHighShotsMade = document.getElementById("autonHighShots");
+                    var autonHighShotsMadeOutput = document.getElementById("autonHighShotsMadeOutput");
+                    autonHighShotsMade.oninput = function() {
+                        autonHighShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
-                    Low Shots made:
+                    Low Shots Made: <span id = "autonLowShotsMadeOutput">0</span>
                 </p>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="0">0</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="1">1</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="2">2</input>
-                <input type="radio" name="autonLowShots" id = "autonLowShotButtons" value="3">3</input>
+                <!--create slider-->
+                <input type="range" name="autonLowShotsMade" min="0" max="10" value="0" class="slider" id="autonLowShots">
+                <script>
+                    var autonLowShotsMade = document.getElementById("autonLowShots");
+                    var autonLowShotsMadeOutput = document.getElementById("autonLowShotsMadeOutput");
+                    autonLowShotsMade.oninput = function() {
+                        autonLowShotsMadeOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
-                    Balls Missed: 
+                    Balls Missed: <span id = "autonBallsMissedOutput">0</span>
                 </p>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="0">0</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="1">1</input>
-                <input type="radio" name="autonBallsMissed" id = "autonBallsMissedButtons" value="2">2</input>
+                <!--create slider-->
+                <input type="range" name="autonBallsMissed" min="0" max="20" value="0" class="slider" id="autonBallsMissed">
+                <script>
+                    var autonBallsMissed = document.getElementById("autonBallsMissed");
+                    var autonBallsMissedOutput = document.getElementById("autonBallsMissedOutput");
+                    autonBallsMissed.oninput = function() {
+                        autonBallsMissedOutput.innerHTML = this.value;
+                    }
+                </script>
             </div>
             <div>
                 <p>
@@ -101,7 +117,7 @@
                     High Shots made: <span id = "teleopShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
+                <input type="range" name="teleopHighShotsMade" min="0" max="20" value="0" class="slider" id="teleopShotsMade">
                 <script>
                     var teleopShotsMade = document.getElementById("teleopShotsMade");
                     var teleopShotsMadeOutput = document.getElementById("teleopShotsMadeOutput");
@@ -115,7 +131,7 @@
                     Low Shots made: <span id = "teleopLowShotsMadeOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
+                <input type="range" name="teleopLowShotsMade" min="0" max="20" value="0" class="slider" id="teleopLowShotsMade">
                 <script>
                     var teleopLowShotsMade = document.getElementById("teleopLowShotsMade");
                     var teleopLowShotsMadeOutput = document.getElementById("teleopLowShotsMadeOutput");
@@ -129,7 +145,7 @@
                     Balls Missed: <span id = "teleopBallsMissedOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
+                <input type="range" name="teleopBallsMissed" min="0" max="20" value="0" class="slider" id="teleopBallsMissed">
                 <script>
                     var teleopBallsMissed = document.getElementById("teleopBallsMissed");
                     var teleopBallsMissedOutput = document.getElementById("teleopBallsMissedOutput");
@@ -143,7 +159,7 @@
                     Burst Shots: <span id = "teleopBurstShotsOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
+                <input type="range" name="teleopBurstShots" min="0" max="20" value="0" class="slider" id="teleopBurstShots">
                 <script>
                     var teleopBurstShots = document.getElementById("teleopBurstShots");
                     var teleopBurstShotsOutput = document.getElementById("teleopBurstShotsOutput");
@@ -180,7 +196,7 @@
                     Successful Climb Tier: <span id = "endgameClimbTierOutput">0</span>
                 </p>
                 <!--create slider-->
-                <input type="range" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
+                <input type="range" name="endgameClimbTier" min="0" max="4" value="0" class="slider" id="endgameClimbTier">
                 <script>
                     var endgameClimbTier = document.getElementById("endgameClimbTier");
                     var endgameClimbTierOutput = document.getElementById("endgameClimbTierOutput");
