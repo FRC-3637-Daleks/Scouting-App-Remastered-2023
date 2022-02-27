@@ -7,6 +7,10 @@ from flaskext.mysql import MySQL
 # create an instance of the flask class 
 app=Flask(__name__)
 
+@app.route('/') 
+def index():
+    return render_template("index.html")
+
 mysql = MySQL()
  
 # configuring MySQL for the web application
@@ -23,7 +27,7 @@ conn = mysql.connect()
 
 # define the route() decorator to link with a valid URL in the application
 #keep it as /, since its alias is changed in the 000-default.conf in sites-enabled.
-@app.route('/') 
+@app.route('/display')
 
 # define a function that is triggered when this URL appears in the browser address bar
 def dropdown(): 
