@@ -37,6 +37,12 @@
                 <b>Enter Team ID Here:</b>
             </p>
             <input type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("matchNumber").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
         </div>
         <div class = "header-cont">
             <p id="searchDescription">
