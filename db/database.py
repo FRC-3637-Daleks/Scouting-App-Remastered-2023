@@ -2,7 +2,7 @@
 
 print ("Content-type: text/html\r\n\r\n")
 print ("<h1>Hello World!</h1>")
-redirectURL = "http://127.0.0.1/display/display.html"
+redirectURL = "http://127.0.0.1/display"
 print('    <meta http-equiv="refresh" content="3;url='+str(redirectURL)+'" />') 
 
 
@@ -126,6 +126,5 @@ finally:
 
                     print("<p>DONE :D</p>")
                     cnx.commit()
-                    cursor.commit()
                     cursor.close()
                     cnx.close()
