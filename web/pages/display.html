@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel='stylesheet' href='display.css'>
+    <link rel='stylesheet' href="{{ url_for('static',filename='display.css') }}">
     <!--allows scaling for different screen sizes-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scouting App Data</title>
@@ -14,7 +14,10 @@
     <div class="header-cont">
         <center>
             <p id="title">
-                title!
+                DISCLAIMER: This page is still a work in progress, the things you type will NOT appear here for the time being.
+                If you would like to go back to the original page, either delete the /display in the URL or just retype the IP Address.
+                Thanks!
+                    The Scouting App Team
             </p>
         </center>
     </div>
@@ -31,7 +34,7 @@
                 }
             </script>
             <div class="dalek-image">
-                <img src="3637-dalek.png" alt="3637 dalek picture">
+                <img src="{{ url_for('static',filename='3637-dalek.png') }}" alt="3637 dalek picture">
             </div>
         </div>
         <div class="right-cont">
