@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 print ("Content-type: text/html\r\n\r\n")
-print ("<h1>Hello World!</h1>")
-redirectURL = "http://127.0.0.1/display"
+print ("<h1>Redirecting...</h1>")
+# change redirect url to current ip address of server running
+redirectURL = "http://192.168.0.103/display"
 print('    <meta http-equiv="refresh" content="3;url='+str(redirectURL)+'" />') 
 
 
