@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
     <!--allows scaling for different screen sizes-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scouting App</title>
@@ -24,9 +23,9 @@
                 <b>Remastered</b>
             </p>
             <!--TODO: make video offline ;p-->
-            <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
-                Click me
-            </button>
+            <a href="http://192.168.0.103/display">
+                To Display Page
+            </a>
         </center>
     </div>
     <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
@@ -39,7 +38,7 @@
             <input type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
             <!--only allow integer inputs in text-->
             <script>
-                document.getElementById("matchNumber").onkeypress = function(e) {
+                document.getElementById("teamId").onkeypress = function(e) {
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
