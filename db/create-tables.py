@@ -49,6 +49,7 @@ TABLES['Endgame'] = (
     "   `Success_Tier` int,"
     "   `Prepared` VARCHAR(1),"
     "   `Climbing_Seconds` VARCHAR(1),"
+    "   `Win` VARCHAR(1),"
     "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
