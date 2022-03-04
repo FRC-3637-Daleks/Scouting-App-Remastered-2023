@@ -65,6 +65,8 @@ ECT = data.getvalue('ECT')
 EPE = data.getvalue('endgamePrepared')
 # Climb faster than x seconds, radio buttons
 ECXS = data.getvalue('endgameClimbTime')
+# Did they win? radio buttons
+WIN = data.getvalue('endgameWin')
 
 # defense attempted to block others, radio buttons
 DAB = data.getvalue('defenseAttemptedBlock')
@@ -97,8 +99,8 @@ finally:
 
         try:
 
-            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds) VALUES (%s, %s, %s, %s, %s, %s)"
-            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS))
+            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds, Win) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS, WIN))
 
         except:
             print ("<p>Error adding Endgame data</p>")
