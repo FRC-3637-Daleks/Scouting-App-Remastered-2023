@@ -29,6 +29,18 @@ body {
     flex-direction: row;
   }
   
+  .back-button-cont {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    margin-left: 5%;
+    margin-top: 2%;
+  }
+
+  a {
+    font-size: 40px;
+  }
+
   /*container for header*/
   .header-cont {
     display: flex;
