@@ -135,7 +135,7 @@ input[name="teamId"], input[name="matchNumber"] {
 #autonPlatformButtons, #autonBasketballButtons, #teleopLaunchpadButtons,
 #endgameAttemptedClimbButtons, #endgamePreparedButtons,
 #endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
-#defenseHeldBallsButtons {
+#defenseHeldBallsButtons, #endgameWinButtons {
   font-size: 20px;
   color: white;
   /*spaces in between the buttons*/

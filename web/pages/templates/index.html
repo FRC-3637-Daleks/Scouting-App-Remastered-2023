@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
     <!--allows scaling for different screen sizes-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scouting App</title>
@@ -24,9 +23,9 @@
                 <b>Remastered</b>
             </p>
             <!--TODO: make video offline ;p-->
-            <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')">
-                Click me
-            </button>
+            <a href="http://192.168.0.103/display">
+                To Display Page
+            </a>
         </center>
     </div>
     <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
@@ -36,7 +35,13 @@
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
-            <input type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+            <input type="text" name="teamId" id="teamId" maxlength="10" placeholder="Team Number"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("teamId").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
         </div>
         <div class = "header-cont">
             <p id="searchDescription">
@@ -212,10 +217,18 @@
             </div>
             <div>
                 <p>
-                    Climb Faster Than X Seconds: 
+                    Climbed Faster Than 30 Seconds: 
                 </p>
                 <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="Y">Y</input>
                 <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="N">N</input>
+            </div>
+            <div>
+                <p>
+                    Did They Win?
+                </p>
+                <input type="radio" name="endgameWin" id = "endgameWinButtons" value="Y">Y</input>
+                <input type="radio" name="endgameWin" id="endgameWinButtons" value="N">N</input>
+
             </div>
         </div>
         <div class = "right-cont">

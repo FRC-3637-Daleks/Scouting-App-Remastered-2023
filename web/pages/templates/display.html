@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='stylesheet' href="{{ url_for('static',filename='display.css') }}">
+    <!--allows scaling for different screen sizes-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static',filename='jquery-3.6.0.js') }}"></script>
+    <title>Scouting App Data</title>
+</head>
+
+<body>
+    <div class="back-button-cont">
+        <a href="http://192.168.0.103">Go Back</a>
+    </div>
+    <div class="header-cont">
+        <center>
+            <p id="title">
+                DISCLAIMER: This page is still a work in progress, the things you type will NOT appear here for the time being.
+                If you would like to go back to the original page, either delete the /display in the URL or just retype the IP Address.
+                Thanks! - The Scouting App Team
+            </p>
+            <p>Also the search function is still a work in progress.</p>
+        </center>
+    </div>
+    <div class="container-row">    
+        <div class="left-cont">
+            <p>
+                Search bar!
+            </p>
+            <input type="text" id="teamId" name="Search" maxlength="10" placeholder="Team ID Here">
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementById("teamId").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+                $(document).ready(function() {
+                    $("#teamId").on("input", function(e) {
+                        searchbox = $("#teamId").val();
+                        $.ajax({
+                            method:"POST",
+                            url:"/display",
+                            data:{searchbox:searchbox},
+                            success:function(res) {
+                                console.log(res)
+                            }
+                        })
+                    });
+                })
+            </script>
+            <div class="dalek-image">
+                <img src="{{ url_for('static',filename='3637-dalek.png') }}" alt="3637 dalek picture">
+            </div>
+        </div>
+        <div class="right-cont">
+            <p id = "table-title"> 
+                Auton
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Match Number</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Missed</th>
+                        <th>Off Platform</th> 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in auton_1 %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-row">
+        <div class="left-cont">
+            <p id = "table-title"> 
+                Teleop
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Match Number</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Missed</th>
+                        <th>Burst</th>
+                        <th>Launchpad</th> 
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in teleop_1 %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[6]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right-cont">
+            <p id = "table-title"> 
+                Endgame
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Match Number</th>
+                        <th>Attempted Climb</th>
+                        <th>Success Tier</th>
+                        <th>Prepared</th>
+                        <th>Climbing Seconds</th>
+                        <th>Win?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in endgame_1 %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <td>{{row[6]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container-row">
+        <div class="left-cont">
+            <p id = "table-title"> 
+                Defense
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Match Number</th>
+                        <th>Attempt Block</th>
+                        <th>Held Balls</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in defense_1 %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="right-cont">
+            <p id = "table-title"> 
+                Comments
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Match Number</th>
+                        <th>Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in comments_1 %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>

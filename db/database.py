@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
 print ("Content-type: text/html\r\n\r\n")
-print ("<h1>Hello World!</h1>")
-redirectURL = "http://127.0.0.1/display/display.html"
-print('    <meta http-equiv="refresh" content="5;url='+str(redirectURL)+'" />') 
+print ("<h1>Redirecting...</h1>")
+# change redirect url to current ip address of server running
+redirectURL = "http://192.168.0.103/display"
+print('    <meta http-equiv="refresh" content="3;url='+str(redirectURL)+'" />') 
 
 
 import mysql.connector
@@ -64,6 +65,8 @@ ECT = data.getvalue('ECT')
 EPE = data.getvalue('endgamePrepared')
 # Climb faster than x seconds, radio buttons
 ECXS = data.getvalue('endgameClimbTime')
+# Did they win? radio buttons
+WIN = data.getvalue('endgameWin')
 
 # defense attempted to block others, radio buttons
 DAB = data.getvalue('defenseAttemptedBlock')
@@ -96,8 +99,8 @@ finally:
 
         try:
 
-            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds) VALUES (%s, %s, %s, %s, %s, %s)"
-            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS))
+            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds, Win) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS, WIN))
 
         except:
             print ("<p>Error adding Endgame data</p>")
@@ -126,6 +129,5 @@ finally:
 
                     print("<p>DONE :D</p>")
                     cnx.commit()
-                    cursor.commit()
                     cursor.close()
                     cnx.close()
