@@ -3,16 +3,19 @@ The new and improved scouting app with complete documentation and instructions (
 The scouting app utilises HTML, CSS, Apache, and MySql. It is very important that all of these are installed, where applicable. It is very IMPORTANT to note that these instructions are intended for Linux. 
 
 ### **Section 1 - Installing Necessary software** 
-- You must install the aproprate version fo Apache, this can be done in 2 ways
+- You must install the appropriate version fo Apache, this can be done in 2 ways
+    PLEASE note that downloading things may NOT work on school wifi because of Smoothwall, you may have to use either a VPN or a phone hotspot.
 
-    1.1 - Using ```sudo apt install apache2``` 
+    1.1 - Install apache using ```sudo apt install apache2``` 
 
     1.1.2 - Download Apache directly from [here](https://httpd.apache.org/download.cgi), note that the original version used is 2.4.52, newer versions may not be supported.
 
 - You must install MySql, this can be done in 2 ways
-    1.2 - Using ```sudo apt install MySql```, this may install the most recent version, which may deprecate the code
+    1.2 - Using ```sudo apt install mysql-server```, this may install the most recent version, which may deprecate the code
 
-    1.2.1 - Download MySql from the [here](https://dev.mysql.com/downloads/mysql/), note that the original version used is 8.0.28, newer versions may not be supported
+    1.2.1 - Download MySql from the [here](https://dev.mysql.com/downloads/mysql/), note that the original version used is 8.0.28 on ubuntu 21.10, newer versions may not be supported.
+
+    1.3 - Check and confirm that MySql is running by entering ```sudo systemctl status mysql```. It should say that it is running.
 
 - Finally please note that to test if these are installed correctly please go [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md), it is important to note further instructions on items usch as connector pything are listed here. These should be installed. 
 
