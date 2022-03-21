@@ -27,6 +27,8 @@ The correct version of Python that you should have installed is Python *_3.9.7_*
 
 ### **Python Connector**
 
+To download the python connector, simply visit the same website [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md). Make sure to check that you install the Ubuntu linux version as well as the correct python connector for the current Ubuntu version (21.10).
+
 To check the Python Connector, the first thing you do is to open a terminal and type the following to use Python's terminal:
 ```
 $ python3
