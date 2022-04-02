@@ -45,6 +45,8 @@ AP=data.getvalue('autonPlatform')
 AB=data.getvalue('autonBasketball')
 
 #teleop
+#teleop robot move, radio buttons
+TM=data.getvalue('teleopMove')
 #teleop high shots
 THS=data.getvalue('THS')
 #teleop low shots
@@ -89,8 +91,8 @@ finally:
 
     try:
 
-        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(add_Teleop, (TEAM, MN, THS, TLS, TBM, TBS, TLP))
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Moved, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(add_Teleop, (TEAM, MN, TM, THS, TLS, TBM, TBS, TLP))
 
     except:
         print ("<p>Error adding Teleop data</p>")
