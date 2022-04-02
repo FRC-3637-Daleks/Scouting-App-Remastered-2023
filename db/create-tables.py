@@ -22,6 +22,7 @@ TABLES['Teleop'] = (
     "CREATE TABLE `Teleop` ("
     "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
+    "   `Moved` VARCHAR(1),"
     "   `High` int,"
     "   `Low` int,"
     "   `Missed` int,"
