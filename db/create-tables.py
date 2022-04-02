@@ -7,7 +7,7 @@ DB_NAME = 'Scouting'
 TABLES = {}
 TABLES['Auton'] = (
     "CREATE TABLE `Auton` ("
-    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
     "   `High` int,"
     "   `Low` int,"
@@ -20,7 +20,7 @@ TABLES['Auton'] = (
 
 TABLES['Teleop'] = (
     "CREATE TABLE `Teleop` ("
-    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
     "   `High` int,"
     "   `Low` int,"
@@ -33,7 +33,7 @@ TABLES['Teleop'] = (
 
 TABLES['Defense'] = (
     "CREATE TABLE `Defense` ("
-    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
     "   `Blocked` VARCHAR(1),"
     "   `Held_balls` VARCHAR(1),"
@@ -43,7 +43,7 @@ TABLES['Defense'] = (
 
 TABLES['Endgame'] = (
     "CREATE TABLE `Endgame` ("
-    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
     "   `Attempted_Climb` VARCHAR(1),"
     "   `Success_Tier` int,"
@@ -58,7 +58,7 @@ TABLES['Endgame'] = (
 
 TABLES['Comments'] = (
     "CREATE TABLE `Comments` ("
-    "   `Team` VARCHAR(10) NOT NULL,"
+    "   `Team` int NOT NULL,"
     "   `Match_Number` int NOT NULL,"
     "   `Insert_Comments` MEDIUMTEXT,"
     "   PRIMARY KEY (`Team`, `Match_Number`)"
