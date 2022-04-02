@@ -31,6 +31,13 @@
     <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
     <form action = "/cgi-bin/database.py" method="post">
     <div class = "container-row">
+        <div class = "teamColor-cont">
+            <p id="teamColorText">
+                <b>Team Color:</b>
+            </p>
+            <input type="radio" name="teamColor" id = "teamColorButtons" value="R">Red</input>
+            <input type="radio" name="teamColor" id = "teamColorButtons" value="B">Blue</input>
+        </div> 
         <div class = "header-cont">
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
@@ -54,6 +61,7 @@
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
+        </div> 
     </div>
 </body>
 
@@ -231,10 +239,11 @@
             </div>
             <div>
                 <p>
-                    Did They Win?
+                    Win Status:
                 </p>
-                <input type="radio" name="endgameWin" id = "endgameWinButtons" value="Y">Y</input>
-                <input type="radio" name="endgameWin" id="endgameWinButtons" value="N">N</input>
+                <input type="radio" name="endgameWin" id = "endgameWinButtons" value="W">Won</input>
+                <input type="radio" name="endgameWin" id="endgameWinButtons" value="T">Tied</input>
+                <input type="radio" name="endgameWin" id="endgameWinButtons" value="L">Lost</input>
 
             </div>
         </div>
