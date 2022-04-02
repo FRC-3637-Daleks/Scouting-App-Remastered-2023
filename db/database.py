@@ -27,6 +27,10 @@ data=cgi.FieldStorage()
 newData=str(data)
 print ("<p>", newData, "</p>")
 #get team number from form
+
+#get color
+TC=data.getvalue('teamColor')
+
 TEAM=data.getvalue('teamId')
 print ("<p>The team number is %s</p>" % TEAM)
 
@@ -81,8 +85,8 @@ COMMENTS = data.getvalue('comments')
 
 try:
  
-    add_Auton = "INSERT INTO Auton (Team, Match_Number, High, Low, Missed, Off_Platform, Basketball_Shots_Made) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    cursor.execute(add_Auton, (TEAM, MN, AHS, ALS, ABM, AP, AB))
+    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High, Low, Missed, Off_Platform, Basketball_Shots_Made) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(add_Auton, (TEAM, MN, TC, AHS, ALS, ABM, AP, AB))
 
 except:
     print ("<p>Error adding Auton data</p>")
@@ -91,8 +95,8 @@ finally:
 
     try:
 
-        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Moved, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(add_Teleop, (TEAM, MN, TM, THS, TLS, TBM, TBS, TLP))
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THS, TLS, TBM, TBS, TLP))
 
     except:
         print ("<p>Error adding Teleop data</p>")
@@ -101,8 +105,8 @@ finally:
 
         try:
 
-            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds, Win) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-            cursor.execute(add_Endgame, (TEAM, MN, EAC, ECT, EPE, ECXS, WIN))
+            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Color, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds, Win) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(add_Endgame, (TEAM, MN, TC, EAC, ECT, EPE, ECXS, WIN))
 
         except:
             print ("<p>Error adding Endgame data</p>")
@@ -111,8 +115,8 @@ finally:
 
             try:
 
-                add_Defense = "INSERT INTO Defense (Team, Match_Number, Blocked, Held_balls) VALUES (%s, %s, %s, %s)"
-                cursor.execute(add_Defense, (TEAM, MN, DAB, DHB))
+                add_Defense = "INSERT INTO Defense (Team, Match_Number, Color, Blocked, Held_balls) VALUES (%s, %s, %s, %s, %s)"
+                cursor.execute(add_Defense, (TEAM, MN, TC, DAB, DHB))
 
             except:
                 print ("<p>Error adding Defense data</p>")
@@ -121,8 +125,8 @@ finally:
                 
                 try:
 
-                    add_Comments = "INSERT INTO Comments (Team, Match_Number, Insert_Comments) VALUES (%s, %s, %s)"
-                    cursor.execute(add_Comments, (TEAM, MN, COMMENTS))
+                    add_Comments = "INSERT INTO Comments (Team, Match_Number, Color, Insert_Comments) VALUES (%s, %s, %s, %s)"
+                    cursor.execute(add_Comments, (TEAM, MN, TC, COMMENTS))
 
                 except:
                     print ("<p>Error adding Comments data</p>")
