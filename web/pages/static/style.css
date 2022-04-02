@@ -141,7 +141,7 @@ input[name="teamId"], input[name="matchNumber"] {
 
 /*spacing for all radio buttons*/
 #autonPlatformButtons, #autonBasketballButtons, #teleopLaunchpadButtons,
-#endgameAttemptedClimbButtons, #endgamePreparedButtons,
+#teleopMoveButtons, #endgameAttemptedClimbButtons, #endgamePreparedButtons,
 #endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
 #defenseHeldBallsButtons, #endgameWinButtons {
   font-size: 20px;
