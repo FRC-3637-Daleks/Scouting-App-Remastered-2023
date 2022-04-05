@@ -156,6 +156,8 @@
     margin-left: 25px;
     /*spaces between the radio button and the next div*/
     margin-bottom: 12px;
+    /*makes buttons 1.5x bigger. Looks nice :)*/
+    transform: scale(1.5);
   }
 
   /*all textInput*/
