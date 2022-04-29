@@ -23,11 +23,13 @@ To check the version of Python and its Connector, the first thing you'll need to
 $ python3 -V
 ```
 
-The correct version of Python that you should have installed is Python *_3.9.7_* or later. Note that this doesn't have to be exact, as long as the verion number is *_8.0.27_* or greater, you'll be fine.
+The correct version of Python3 that you should have installed is Python *_3.9.7_* or later. Note that this doesn't have to be exact, as long as the verion number is around *3.9.7_* or greater, you'll be fine.
 
 ### **Python Connector**
 
-To download the python connector, simply visit the same website [here](https://dev.mysql.com/downloads/connector/python/8.0.html). Make sure to check that you install the Ubuntu linux version as well as the correct python connector for the current Ubuntu version (21.10).
+To download the python connector, simply [visit the same website](https://dev.mysql.com/downloads/connector/python/8.0.html). Make sure to check that you install the Ubuntu linux version as well as the correct python connector for the current Ubuntu version (21.10) or (20.04) depending on the version you choose.
+
+Next, actually unpack the file by finding it within your downloads folder. Clicking it should bring up Eddy, then click install.
 
 To check the Python Connector, the first thing you do is to open a terminal and type the following to use Python's terminal:
 ```
@@ -38,14 +40,14 @@ $ python3
 >>> print(get_python_lib())
 ```
 This should print out where it is located.
-the correct python connector is *(connector version _8.0.28_)*
-To exit the python3 terminal, simply hit CTRL + d
+the correct python connector is *connector version _8.0.28_* or greater
+To exit the python3 terminal, simply hit `CTRL + d`
 
 ## Part 2: Starting Up the Database
 
 First check if mySQL is already started, which is usually the case since mySQL likes to autostart. Through the Linux terminal, you can check the status of mySQL usinng the following command:
 ```
-$ sudo systemctl status mysql
+$ systemctl status mysql
 ```
 You can also do `mysql.service` in place of `mysql`.
 If the command returns something that shows that mysql is offline, then run
@@ -130,3 +132,5 @@ after moving `database.py` to `/usr/lib/cgi-bin` you must make it executable by 
 ```
 $ chmod 755 /usr/lib/cgi-bin/database.py
 ```
+
+Yay you're done this section! Give yourself a pat on the back and return to the main [README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022#readme) for further instructions.
