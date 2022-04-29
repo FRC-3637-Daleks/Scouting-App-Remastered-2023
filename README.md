@@ -16,26 +16,13 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
 
 - Finally please go to test if these are installed correctly and to install further applications (like the connector python) visit the [setup-README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md) located in the `db/` folder. 
 
-### **Section 2 - Double Check That All Dependencies Are Installed**
--  
-    2.1  - Go to [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md)
-
-    2.2 - Triple check all databases are present 
-
-### **Section 3 - Understanding Databases With Examples**
+### **Section 2 - Understanding and Setting Up CGI**
 - 
-    3.1 - Databases use tables and other items to well, store data. In the original version of the scouting app we used a 2d table, to store information utilising rows and columns. The columns would contain the data types and the rows would contain said data. Essentially a whole row would be allocated to a team, making it much simpler than a 3d table. For more information, please click [here](https://docs.google.com/spreadsheets/d/1lCQqQTsaWcqok09gHu-j7aPdQEGYPZY-G7KIvSE3v24/edit?usp=sharing). For more information, go to [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md) and [here](https://dev.mysql.com/doc/connector-python/en/connector-python-example-ddl.html)
+    4.1 - CGI, also known as the Common Gateway Interface, gives a server the ability to execute external programs, in our case these are `.py` files. 
+    This allows apache2 to pull information from a submitted form using python. This is espcially helpful when pulling information from multiple forms, which need to be submitted into a database.
     
-    3.2 - Understanding connector python is very important, please visit [here](https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html), and [here](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md)
-
-    3.3 - Finally, and arguably the most important information you need to know is a basic knowledge of Python and HTML. Using the Python documentation with MySql will be sufficent. The offial MySql with Python documentation can be found [here](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html). Additionally a "crash course" concerning html and css can be found [here](https://youtube.com/playlist?list=PLblA84xge2_y8F1K0wzPia9V_ULVcfg4k)
-
-### **Section 4 - Understanding and Setting Up CGI**
-- 
-    4.1 - CGI, also known as the Common Gateway Interface Port, alllows a server to execute external programs. This allows apache2 to pull information from a submitted form using python. This is espcially helpful when pulling information from multiple forms, which need to be submitted into a database. To install CGI, read further.
-    
-    4.2 - Setting Up CGI. To set up CGI multiple changes must be made to apache2, as apache2 already includes comatability for CGI that isn't turned on. 
-    This activates the cgi.load which will enable apache2 to start looking for the the submitted form. 
+    4.2 - Setting Up CGI. To set up CGI multiple changes must be made to apache2, as apache2 already includes comatability for CGI that isn't turned on by default. 
+    The command below activates the `cgi.load` which will enable apache2 to use CGI.
     ```
     sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/
     ```
@@ -61,15 +48,12 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
         </IfDefine>
     </IfModule>
     ```
-    Finally restart apache 2
+    Finally, restart apache 2.
     ```
     sudo systemctl restart apache2
     ```
-### **Section 5 - Setting Up Forms**
-- 
-    5.1 Information taken in from items such as radio buttons are usally added as inputs which then python handles, and sequentially sends to your `database.py`. For some additonal help and information vist here[https://www.tutorialspoint.com/passing-radio-button-data-to-cgi-program-in-python].
 
-### **Section 6 - Flask**
+### **Section 3- Flask**
 
     6.1  - Flask is a micro web framework written in Python. To install Flask, you first need to install pip, a package manager for Python. To aquire pip, type
     ```
@@ -126,3 +110,11 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
     sudo pip install flask-mysql
     ```
     for good measure, restart apache as well with a good ol' `sudo systemctl restart apache2` and see if it runs by typing `127.0.0.1` into your internet browser of choice!
+
+### **Miscellaneous - Understanding Scouting App With Examples** 
+- 
+    3.1 - Databases use tables and other items to well, store data. Here is how we [set up the data to be stored](https://docs.google.com/spreadsheets/d/1lCQqQTsaWcqok09gHu-j7aPdQEGYPZY-G7KIvSE3v24/edit?usp=sharing).
+    
+    3.2 - If you are unfamiliar with MySQL, there are some [sources](https://dev.mysql.com/doc/connector-python/en/connector-python-example-ddl.html) to get your started, mainly the structure and how to edit an already existing file. There are also [some information](https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html) on how the connector-python works in case you're a lol' bookworm.
+
+    3.3 - Finally, and arguably the most important information you need to know, a basic knowledge of Python and HTML. The offial MySql with Python documentation can be found [here](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html). Additionally a "crash course" concerning html and css can be found [here](https://youtube.com/playlist?list=PLblA84xge2_y8F1K0wzPia9V_ULVcfg4k) if you are unfamilliar.
