@@ -54,17 +54,17 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
     ```
 
 ### **Section 3- Flask**
-
-    6.1  - Flask is a micro web framework written in Python. To install Flask, you first need to install pip, a package manager for Python. To aquire pip, type
+-
+    6.1  - Flask is a micro web framework written in Python. To install Flask you first need to install pip, a package manager for Python. To aquire pip, type
     ```
     sudo apt install python3-pip
     ```
-    in the terminal.
+    into the terminal.
     Once the download completes, install Flask through pip by typing
     ```
     sudo pip install Flask
     ```
-    to install Flask via pip. Also install WSGI which is the Web Server Gateway Interface and does exactly what you expect it to do. To install it, type the following into the terminal
+    to install Flask via pip. Also install WSGI which is the Web Server Gateway Interface and does exactly what you expect it to do, [interface with the web server gateway](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface). To install it, type the following into the terminal
     ```
     sudo apt-get install libapache2-mod-wsgi-py3
     ```
