@@ -68,9 +68,10 @@ The scouting app utilises HTML, CSS, Apache, and MySql. It is very important tha
     ```
     sudo apt-get install libapache2-mod-wsgi-py3
     ```
-    Then enable it with `sudo a2enmod wsgi`
+    Usually it will automatically be invoked, saying so within the Terminal.
+    For good measure attempt to enable it again with `sudo a2enmod wsgi`
 
-    6.2 - Moving files to the right place. To get everything to work, some files need to move to certain locations. The first thing you want to do is remove the `index.html` file within the `/var/www/html` file. Before you do, go to a browser and type `127.0.0.1` and see if the generic ubuntu thing comes up, it should. Then remove the html file within `/var/www/html` by typing 
+    6.2 - Moving files to the right place. To get everything to work, some files need to move to certain locations. The first thing you want to do is remove the `index.html` file within the `/var/www/html` file. Before you do, go to a browser and type `127.0.0.1` and see if the generic ubuntu thing comes up, as it should. Then remove the html file within `/var/www/html` by typing 
     
     ```
     sudo rm /var/www/html/index.html
