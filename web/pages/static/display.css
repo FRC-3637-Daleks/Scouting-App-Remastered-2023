@@ -71,6 +71,12 @@ body {
     margin-left: 5%;
   }
   
+  .teams-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .right-cont {
     display: flex;
     flex-wrap: nowrap;
@@ -84,7 +90,7 @@ body {
     margin-left: 5%;
   }
 
-  .dalek-image {
+  #dalek-image {
     margin-top: 20px;
   }
   
@@ -102,8 +108,9 @@ body {
     justify-content: space-evenly;
   }
   
-  tr {
-    width: 20px;
+  /*to deal with gigantic comments*/
+  #comments {
+    overflow-wrap: break-word;
   }
 
   th {
@@ -112,6 +119,7 @@ body {
 
   td {
     border-bottom: 3px solid white;
+    max-width: 950px;
   }
 
   #table-title {
