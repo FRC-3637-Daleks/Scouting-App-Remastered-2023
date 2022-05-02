@@ -25,22 +25,59 @@ mysql.init_app(app)
 #create connection to access data
 conn = mysql.connect()
 
+@app.route('/display', methods=["GET", "POST"])
 
+# define a function that is triggered when this URL appears in the browser address bar
+def display():
+    result = False
+    if request.method == 'POST':
+        form = request.form
+        result = getData(form)
     
+    # literally just getting the team
+    cursor = conn.cursor()
+    cursor.execute('SELECT Team FROM Auton;')
+    team_1 = cursor.fetchall()
+    team_1 = tuple(set(team_1))
+    return render_template('display.html', result=result, team_1=team_1)
 
-# define the route() decorator to link with a valid URL in the application
-#keep it as /, since its alias is changed in the 000-default.conf in sites-enabled.
-@app.route('/display') 
+def getData(form):
 
-# # define a function that is triggered when this URL appears in the browser address bar
+    # grab user input from form
+    team = request.form['Search']
+
+    # create a cursor
+    cursor = conn.cursor()
+    # execute select statement to fetch data to be displayed in combo/dropdown
+    cursor.execute('SELECT * FROM Auton WHERE Team = %s', team)
+    # fetch all rows and store it
+    auton_1 = cursor.fetchall()
+    cursor.execute('SELECT * FROM Teleop WHERE Team = %s', team)
+    teleop_1 = cursor.fetchall()
+    cursor.execute('SELECT * FROM Endgame WHERE Team = %s', team)
+    endgame_1 = cursor.fetchall()
+    cursor.execute('SELECT * FROM Defense WHERE Team = %s', team)
+    defense_1 = cursor.fetchall()
+    cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
+    comments_1 = cursor.fetchall()
+    cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
+    # storing queries as a set of tuples
+    auton_1=auton_1
+    comments_1=comments_1
+    defense_1=defense_1
+    endgame_1=endgame_1
+    teleop_1=teleop_1
+    return (auton_1, teleop_1, endgame_1, defense_1, comments_1)
+
+
 def dropdown(): 
 
-    #create a cursor
+    
     cursor = conn.cursor() 
     
-    #execute select statement to fetch data to be displayed in combo/dropdown
+    
     cursor.execute('SELECT * FROM Auton ORDER BY CAST(Team AS unsigned);') 
-    #fetch all rows and store as a set of tuples 
+     
     auton_1 = cursor.fetchall()
     cursor.execute('SELECT * FROM Comments ORDER BY CAST(Team AS unsigned);') 
     comments_1 = cursor.fetchall()
