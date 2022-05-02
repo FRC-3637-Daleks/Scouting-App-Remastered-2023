@@ -18,43 +18,41 @@
     <div class="header-cont">
         <center>
             <p id="title">
-                DISCLAIMER: This page is still a work in progress, the things you type will NOT appear here for the time being.
-                If you would like to go back to the original page, either delete the /display in the URL or just retype the IP Address.
-                Thanks! - The Scouting App Team
+                Search
             </p>
-            <p>Also the search function is still a work in progress.</p>
         </center>
     </div>
-    <div class="container-row">    
+    <div class="container-row">
         <div class="left-cont">
             <p>
                 Search bar!
             </p>
-            <input type="text" id="teamId" name="Search" maxlength="10" placeholder="Team ID Here">
-            <!--only allow integer inputs in text-->
-            <script>
+            <form action="{{ url_for('display') }}" method = "POST">
+                <input type="text" id="teamId" name="Search" maxlength="10" placeholder="Team ID Here">
+                <!--only allow integer inputs in text-->
+                <script>
                 document.getElementById("teamId").onkeypress = function(e) {
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
-                $(document).ready(function() {
-                    $("#teamId").on("input", function(e) {
-                        searchbox = $("#teamId").val();
-                        $.ajax({
-                            method:"POST",
-                            url:"/display",
-                            data:{searchbox:searchbox},
-                            success:function(res) {
-                                console.log(res)
-                            }
-                        })
-                    });
-                })
             </script>
-            <div class="dalek-image">
-                <img src="{{ url_for('static',filename='3637-dalek.png') }}" alt="3637 dalek picture">
-            </div>
+                <button type="submit">click me to submit</button>
+            </form>
+                <img src="{{ url_for('static',filename='3637-dalek.png') }}" alt="3637 dalek picture" id="dalek-image">
         </div>
         <div class="right-cont">
+            <p>All Teams:</p>
+            <div class="teams-cont">
+                {% for row in team_1 %}
+                {{row[0]}}
+                {% endfor %}
+            </div>
+        </div> 
+    </div>
+    <div class="container-row">
+        <div class="left-cont">
+            {% if not(result[0])%}
+            <p id = "table-title">NO DATA</p>
+            {% else %}
             <p id = "table-title"> 
                 Auton
             </p>
@@ -72,24 +70,25 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for row in auton_1 %}
-                    <tr>
-                        <td>{{row[0]}}</td>
-                        <td>{{row[1]}}</td>
-                        <td>{{row[2]}}</td>
-                        <td>{{row[3]}}</td>
-                        <td>{{row[4]}}</td>
-                        <td>{{row[5]}}</td>
-                        <td>{{row[6]}}</td>
-                    </tr>
-                    {% endfor %}
+                        {% for row in result[0] %}
+                        <tr>
+                            <td>{{row[0]}}</td>
+                            <td>{{row[1]}}</td>
+                            <td>{{row[2]}}</td>
+                            <td>{{row[3]}}</td>
+                            <td>{{row[4]}}</td>
+                            <td>{{row[5]}}</td>
+                            <td>{{row[6]}}</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
+                {% endif %}
             </div>
         </div>
-    </div>
-    <div class="container-row">
-        <div class="left-cont">
+        <div class="right-cont">
+            {% if not (result[1]) %}
+            {% else %}
             <p id = "table-title"> 
                 Teleop
             </p>
@@ -109,7 +108,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for row in teleop_1 %}
+                    {% for row in result[1] %}
                     <tr>
                         <td>{{row[0]}}</td>
                         <td>{{row[1]}}</td>
@@ -124,9 +123,14 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                {% endif %}
             </div>
         </div>
-        <div class="right-cont">
+    </div>
+    <div class="container-row">
+        <div class="left-cont">
+            {% if not(result[2]) %}
+            {% else %}
             <p id = "table-title"> 
                 Endgame
             </p>
@@ -145,7 +149,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for row in endgame_1 %}
+                    {% for row in result[2] %}
                     <tr>
                         <td>{{row[0]}}</td>
                         <td>{{row[1]}}</td>
@@ -159,11 +163,12 @@
                     {% endfor %}
                     </tbody>
                 </table>
+            {% endif %}
             </div>
         </div>
-    </div>
-    <div class="container-row">
-        <div class="left-cont">
+        <div class="right-cont">
+            {% if not(result[3]) %}
+            {% else %}
             <p id = "table-title"> 
                 Defense
             </p>
@@ -179,7 +184,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for row in defense_1 %}
+                    {% for row in result[3] %}
                     <tr>
                         <td>{{row[0]}}</td>
                         <td>{{row[1]}}</td>
@@ -190,10 +195,15 @@
                     {% endfor %}
                     </tbody>
                 </table>
+            {% endif %}
             </div>
         </div>
+    </div>
+    <div class="container-row">
         <div class="right-cont">
-            <p id = "table-title"> 
+            {% if not(result[4]) %}
+            {% else %}
+            <p id = "table-title">
                 Comments
             </p>
             <div class="key">
@@ -207,16 +217,17 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for row in comments_1 %}
+                    {% for row in result[4] %}
                     <tr>
                         <td>{{row[0]}}</td>
                         <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
-                        <td>{{row[3]}}</td>
+                        <td id="comments">{{row[3]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
                 </table>
+            {% endif %}
             </div>
         </div>
     </div>
