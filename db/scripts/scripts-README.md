@@ -12,4 +12,6 @@ life just a little bit easier.
 Thats it.
 
 ### replace-null-values.py ###
-This script is intended to be used AFTER competition is done to clean the database.
+-
+This script is intended to be used AFTER competition is done to clean the database of NULLS. Later on this script may not be useful as I, PastForward, will
+be confident enough to negate any null values entering the database in the first place.
