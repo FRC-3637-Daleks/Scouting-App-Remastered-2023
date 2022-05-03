@@ -112,7 +112,8 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
     for good measure, restart Apache as well with a good ol' `sudo systemctl restart apache2` and see if it runs by typing `127.0.0.1` into your internet browser of choice!
 
 ### **Miscellaneous - Understanding Scouting App With Examples** 
-- 
+- General information to know.
+
     - Databases use tables and other items to well, store data. Here is how we [set up the data to be stored](https://docs.google.com/spreadsheets/d/1lCQqQTsaWcqok09gHu-j7aPdQEGYPZY-G7KIvSE3v24/edit?usp=sharing).
     
     - If you are unfamiliar with MySQL, there are some [sources](https://dev.mysql.com/doc/connector-python/en/connector-python-example-ddl.html) to get your started, mainly the structure and how to edit an already existing file. There are also [some information](https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html) on how the connector-python works in case you're a lil' bookworm.
