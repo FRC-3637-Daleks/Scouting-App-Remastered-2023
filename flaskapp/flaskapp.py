@@ -69,27 +69,5 @@ def getData(form):
     teleop_1=teleop_1
     return (auton_1, teleop_1, endgame_1, defense_1, comments_1)
 
-
-def dropdown(): 
-
-    
-    cursor = conn.cursor() 
-    
-    
-    cursor.execute('SELECT * FROM Auton ORDER BY CAST(Team AS unsigned);') 
-     
-    auton_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Comments ORDER BY CAST(Team AS unsigned);') 
-    comments_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Defense ORDER BY CAST(Team AS unsigned);')
-    defense_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Endgame ORDER BY CAST(Team AS unsigned);')
-    endgame_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Teleop ORDER BY CAST(Team AS unsigned);')
-    teleop_1 = cursor.fetchall()
-    
-     #render template and send the set of tuples to the HTML file for displaying
-    return render_template("display.html",auton_1=auton_1, comments_1=comments_1, defense_1=defense_1, endgame_1=endgame_1, teleop_1=teleop_1)
-
 if __name__ == '__main__':
    app.run()
