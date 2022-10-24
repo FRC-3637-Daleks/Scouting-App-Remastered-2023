@@ -4,6 +4,7 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
+    <script src="{{url_for('static',filename='jquery-3.6.0.js') }}"></script>
     <!--allows scaling for different screen sizes-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scouting App</title>
@@ -23,14 +24,13 @@
                 <b style="color: #d90429;">Remastered</b>
             </p>
             <!--TODO: make video offline ;p-->
-            <a href="http://192.168.0.103/display">
+            <a href="/display">
                 To Display Page
             </a>
         </center>
     </div>
     <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
     <form action = "/cgi-bin/database.py" method="post">
-    <div class = "container-row">
         <div class = "teamColor-cont">
             <p id="teamColorText">
                 <b>Team Color:</b>
@@ -38,7 +38,8 @@
             <input type="radio" name="teamColor" id = "teamColorButtons" value="R">Red</input>
             <input type="radio" name="teamColor" id = "teamColorButtons" value="B">Blue</input>
         </div> 
-        <div class = "header-cont">
+    <div class = "container-row">
+        <div class = "header-left">
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
@@ -50,7 +51,7 @@
                 }
             </script>
         </div>
-        <div class = "header-cont">
+        <div class = "header-right">
             <p id="searchDescription">
                 <b>Enter Match Number Here:</b>
             </p>
@@ -61,7 +62,7 @@
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
-        </div> 
+        </div>
     </div>
 </body>
 
@@ -281,7 +282,14 @@
                 <textarea rows="15" cols="50" name="comments" maxlength = "300" id="comments"></textarea>
             </div>
             <div>
-                <input type="submit" name="submit" value="Submit All" id="submit" onclick="return confirm('Are you ready to submit?')"></input>
+                <input type="submit" name="submit" value="Submit All" id="submit"></input>
+                <script>
+                    $(document).ready(function () {
+                        $("#submit").click(function () {
+                            return confirm("Are You Ready to Submit?");
+                        });
+                    });
+                </script>
             </div>
             </center>
         </div>
