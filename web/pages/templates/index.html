@@ -35,15 +35,15 @@
             <p id="teamColorText">
                 <b>Team Color:</b>
             </p>
-            <input type="radio" name="teamColor" id = "teamColorButtons" value="R">Red</input>
-            <input type="radio" name="teamColor" id = "teamColorButtons" value="B">Blue</input>
+            <input required type="radio" name="teamColor" id = "teamColorButtons" value="R">Red</input>
+            <input required type="radio" name="teamColor" id = "teamColorButtons" value="B">Blue</input>
         </div> 
     <div class = "container-row">
         <div class = "header-left">
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
-            <input type="text" name="teamId" id="teamId" maxlength="10" placeholder="Team Number"></input>
+            <input required type="text" name="teamId" id="teamId" maxlength="10" placeholder="Team Number"></input>
             <!--only allow integer inputs in text-->
             <script>
                 document.getElementById("teamId").onkeypress = function(e) {
@@ -55,7 +55,7 @@
             <p id="searchDescription">
                 <b>Enter Match Number Here:</b>
             </p>
-            <input type="text" name="matchNumber" id="matchNumber" maxlength="3" placeholder="Match Number"></input>
+            <input required type="text" name="matchNumber" id="matchNumber" maxlength="3" placeholder="Match Number"></input>
             <!--only allow integer inputs in text-->
             <script>
                 document.getElementById("matchNumber").onkeypress = function(e) {
@@ -242,9 +242,9 @@
                 <p>
                     Win Status:
                 </p>
-                <input type="radio" name="endgameWin" id = "endgameWinButtons" value="W">Won</input>
-                <input type="radio" name="endgameWin" id="endgameWinButtons" value="T">Tied</input>
-                <input type="radio" name="endgameWin" id="endgameWinButtons" value="L">Lost</input>
+                <input required type="radio" name="endgameWin" id = "endgameWinButtons" value="W">Won</input>
+                <input required type="radio" name="endgameWin" id="endgameWinButtons" value="T">Tied</input>
+                <input required type="radio" name="endgameWin" id="endgameWinButtons" value="L">Lost</input>
 
             </div>
         </div>
