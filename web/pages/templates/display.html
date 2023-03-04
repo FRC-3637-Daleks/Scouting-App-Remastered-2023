@@ -64,9 +64,10 @@
                         <th>Match Number</th>
                         <th>Color</th>
                         <th>High</th>
+                        <th>Mid</th>
                         <th>Low</th>
-                        <th>Missed</th>
-                        <th>Off Platform</th> 
+                        <th>Left Platform</th>
+                        <th>Out of Community</th> 
                     </tr>
                     </thead>
                     <tbody>
@@ -79,6 +80,7 @@
                             <td>{{row[4]}}</td>
                             <td>{{row[5]}}</td>
                             <td>{{row[6]}}</td>
+                            <td>{{row[7]}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -101,10 +103,8 @@
                         <th>Color</th>
                         <th>Moved</th>
                         <th>High</th>
+                        <th>Mid</th>
                         <th>Low</th>
-                        <th>Missed</th>
-                        <th>Burst</th>
-                        <th>Launchpad</th> 
                     </tr>
                     </thead>
                     <tbody>
@@ -117,8 +117,6 @@
                         <td>{{row[4]}}</td>
                         <td>{{row[5]}}</td>
                         <td>{{row[6]}}</td>
-                        <td>{{row[7]}}</td>
-                        <td>{{row[8]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
@@ -141,10 +139,7 @@
                         <th>Team</th>
                         <th>Match Number</th>
                         <th>Color</th>
-                        <th>Attempted Climb</th>
-                        <th>Success Tier</th>
-                        <th>Prepared</th>
-                        <th>Climbing Seconds</th>
+                        <th>Charge Status</th>
                         <th>Win?</th>
                     </tr>
                     </thead>
@@ -156,10 +151,6 @@
                         <td>{{row[2]}}</td>
                         <td>{{row[3]}}</td>
                         <td>{{row[4]}}</td>
-                        <td>{{row[5]}}</td>
-                        <td>{{row[6]}}</td>
-                        <td>{{row[7]}}</td>
-                    </tr>
                     {% endfor %}
                     </tbody>
                 </table>
@@ -179,8 +170,7 @@
                         <th>Team</th>
                         <th>Match Number</th>
                         <th>Color</th>
-                        <th>Attempt Block</th>
-                        <th>Held Balls</th>
+                        <th>Blocked Others</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -190,7 +180,6 @@
                         <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
                         <td>{{row[3]}}</td>
-                        <td>{{row[4]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
