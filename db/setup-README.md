@@ -122,11 +122,6 @@ Then, move the `database.py` file into your `/usr/lib/cgi-bin/` folder with this
 ```
 $ sudo cp database.py /usr/lib/cgi-bin/database.py
 ```
-To make it executable, enter in this next command
-```
-$ sudo chmod o+rx /usr/lib/cgi-bin/database.py
-```
-
 # Part 4: Creating Tables
 
 To create a table, just run the `create-tables.py` script by typing into a terminal
