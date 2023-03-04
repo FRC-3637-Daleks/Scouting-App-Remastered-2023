@@ -112,11 +112,20 @@ That should be it! The user `dalek` now has all privileges and now you should be
 ## Part 3.3: Actually Creating the Database
 
 To create the database, first `cd` into the database directory, aptly named db.
-Once there run this command to run the python scripts. Note that the first one that should be ran is `setup-database.py`, then `create-tables.py` respectively.
+Once there run this command to run the python scripts. Note that the first one that should be ran is `setup-database.py`.
 ```
 $ python3 setup-database.py
 ```
 This should spit out the current databases into the terminal. There should be one titled `Scouting`.
+
+Then, move the `database.py` file into your `/usr/lib/cgi-bin/` folder with this command
+```
+$ sudo cp database.py /usr/lib/cgi-bin/database.py
+```
+To make it executable, enter in this next command
+```
+$ sudo chmod o+rx /usr/lib/cgi-bin/database.py
+```
 
 # Part 4: Creating Tables
 
