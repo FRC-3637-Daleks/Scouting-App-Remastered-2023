@@ -35,18 +35,18 @@
             <p id="teamColorText">
                 <b>Team Color:</b>
             </p>
-            <input required type="radio" name="teamColor" id = "teamColorButtons" value="R">Red</input>
-            <input required type="radio" name="teamColor" id = "teamColorButtons" value="B">Blue</input>
+            <input required type="radio" name="teamColor" value="R">Red</input>
+            <input required type="radio" name="teamColor" value="B">Blue</input>
         </div> 
     <div class = "container-row">
         <div class = "header-left">
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
-            <input required type="text" name="teamId" id="teamId" maxlength="10" placeholder="Team Number"></input>
+            <input required type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
             <!--only allow integer inputs in text-->
             <script>
-                document.getElementById("teamId").onkeypress = function(e) {
+                document.getElementByName("teamId").onkeypress = function(e) {
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
@@ -55,10 +55,10 @@
             <p id="searchDescription">
                 <b>Enter Match Number Here:</b>
             </p>
-            <input required type="text" name="matchNumber" id="matchNumber" maxlength="3" placeholder="Match Number"></input>
+            <input required type="text" name="matchNumber" maxlength="3" placeholder="Match Number"></input>
             <!--only allow integer inputs in text-->
             <script>
-                document.getElementById("matchNumber").onkeypress = function(e) {
+                document.getElementByName("matchNumber").onkeypress = function(e) {
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
@@ -71,30 +71,42 @@
         <div class = "left-cont">
             <center>
             <div>
-                <p id = "Auton">
+                <p id="Auton">
                     <b>Auton</b>
                 </p>
             </div>
             <div>
                 <p>
-                    High Shots Made:
+                    High Cube/Cones Placed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="AHS" id="autonHighShots">
+                <input type="text" class="textInput" maxlength="2" name="AHS">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("autonHighShots").onkeypress = function(e) {
+                    document.getElementByName("AHS").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Low Shots Made:
+                    Mid Cube/Cones Placed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="ALS" id="autonLowShots">
+                <input type="text" class="textInput" maxlength="2" name="ALS" >
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("autonLowShots").onkeypress = function(e) {
+                    document.getElementByName("ALS").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Low Cube/Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="ALS">
+                <!--only allow integer inputs in text-->
+                <script>
+                    document.getElementByName("ALS").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -103,10 +115,10 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="ABM" id="autonBallsMissed">
+                <input type="text" class="textInput" maxlength="2" name="ABM">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("autonBallsMissed").onkeypress = function(e) {
+                    document.getElementByName("ABM").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -115,21 +127,21 @@
                 <p>
                     Got off the Platform:
                 </p>
-                <input type="radio" name="autonPlatform" id = "autonPlatformButtons" value="Y">Y</input>
-                <input type="radio" name="autonPlatform" id = "autonPlatformButtons" value="N">N</input>
+                <input type="radio" name="autonPlatform" value="Y">Y</input>
+                <input type="radio" name="autonPlatform" value="N">N</input>
             </div>
             <div>
                 <p>
                     Basketball shot made: 
                 </p>
-                <input type="radio" name="autonBasketball" id = "autonBasketballButtons" value="Y">Y</input>
-                <input type="radio" name="autonBasketball" id = "autonBasketballButtons" value="N">N</input>
+                <input type="radio" name="autonBasketball" value="Y">Y</input>
+                <input type="radio" name="autonBasketball" value="N">N</input>
             </div>
         </center>
         </div>
         <div class = "right-cont">
             <div>
-                <p id = "Teleop">
+                <p id="Teleop">
                     <b>Teleop</b>
                 </p>
             </div>
@@ -137,17 +149,17 @@
                 <p>
                     Did The Robot Move?:
                 </p>
-                <input type="radio" name="teleopMove" id = "teleopMoveButtons" value="Y">Y</input>
-                <input type="radio" name="teleopMove" id = "teleopMoveButtons" value="N">N</input>
+                <input type="radio" name="teleopMove" value="Y">Y</input>
+                <input type="radio" name="teleopMove" value="N">N</input>
             </div>
             <div>
                 <p>
                     High Shots made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="THS" id="teleopHighShots">
+                <input type="text" class="textInput" maxlength="2" name="THS">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("teleopHighShots").onkeypress = function(e) {
+                    document.getElementByName("THS").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -156,10 +168,10 @@
                 <p>
                     Low Shots made:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="TLS" id="teleopLowShots">
+                <input type="text" class="textInput" maxlength="2" name="TLS">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("teleopLowShots").onkeypress = function(e) {
+                    document.getElementByName("TLS").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -168,10 +180,10 @@
                 <p>
                     Balls Missed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="TBM" id="teleopShotsMissed">
+                <input type="text" class="textInput" maxlength="2" name="TBM">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("teleopShotsMissed").onkeypress = function(e) {
+                    document.getElementByName("TBM").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -180,10 +192,10 @@
                 <p>
                     Burst Shots:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="TBS" id="teleopBurstShots">
+                <input type="text" class="textInput" maxlength="2" name="TBS">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("teleopBurstShots").onkeypress = function(e) {
+                    document.getElementByName("TBM").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -192,15 +204,15 @@
                 <p>
                     Shot From Launchpad:
                 </p>
-                <input type="radio" name="teleopLaunchpad" id = "teleopLaunchpadButtons" value="Y">Y</input>
-                <input type="radio" name="teleopLaunchpad" id = "teleopLaunchpadButtons" value="N">N</input>
+                <input type="radio" name="teleopLaunchpad" value="Y">Y</input>
+                <input type="radio" name="teleopLaunchpad" value="N">N</input>
             </div>
         </div>
         <div class = "spacer"></div>
         <div class = "left-cont">
             <center>
             <div>
-                <p id = "Endgame">
+                <p id="Endgame">
                     <b>Endgame</b>
                 </p>
             </div>
@@ -208,18 +220,18 @@
                 <p>
                     Attempted Climb: 
                 </p>
-                <input type="radio" name="endgameAttemptedClimb" id = "endgameAttemptedClimbButtons" value="Y">Y</input>
-                <input type="radio" name="endgameAttemptedClimb" id = "endgameAttemptedClimbButtons" value="N">N</input>
+                <input type="radio" name="endgameAttemptedClimb" value="Y">Y</input>
+                <input type="radio" name="endgameAttemptedClimb" value="N">N</input>
             </div>
             <div>
                 <!--Maybe make a dropdown like <option> or <select>-->
                 <p>
                     Successful Climb Tier:
                 </p>
-                <input type="text" class="textInput" maxlength="1" name="ECT" id="endgameClimbTier">
+                <input type="text" class="textInput" maxlength="1" name="ECT">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementById("endgameClimbTier").onkeypress = function(e) {
+                    document.getElementByName("ECT").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -228,23 +240,23 @@
                 <p>
                     Prepared in Endgame: 
                 </p>
-                <input type="radio" name="endgamePrepared" id = "endgamePreparedButtons" value="Y">Y</input>
-                <input type="radio" name="endgamePrepared" id = "endgamePreparedButtons" value="N">N</input>
+                <input type="radio" name="endgamePrepared" value="Y">Y</input>
+                <input type="radio" name="endgamePrepared" value="N">N</input>
             </div>
             <div>
                 <p>
                     Climbed Faster Than 30 Seconds: 
                 </p>
-                <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="Y">Y</input>
-                <input type="radio" name="endgameClimbTime" id = "endgameClimbTimeButtons" value="N">N</input>
+                <input type="radio" name="endgameClimbTime" value="Y">Y</input>
+                <input type="radio" name="endgameClimbTime" value="N">N</input>
             </div>
             <div>
                 <p>
                     Win Status:
                 </p>
-                <input required type="radio" name="endgameWin" id = "endgameWinButtons" value="W">Won</input>
-                <input required type="radio" name="endgameWin" id="endgameWinButtons" value="T">Tied</input>
-                <input required type="radio" name="endgameWin" id="endgameWinButtons" value="L">Lost</input>
+                <input required type="radio" name="endgameWin" value="W">Won</input>
+                <input required type="radio" name="endgameWin" value="T">Tied</input>
+                <input required type="radio" name="endgameWin" value="L">Lost</input>
 
             </div>
         </div>
@@ -259,15 +271,15 @@
                 <p>
                     Attempted to Block Others: 
                 </p>
-                <input type="radio" name="defenseAttemptedBlock" id = "defenseAttemptedBlockButtons" value="Y">Y</input>
-                <input type="radio" name="defenseAttemptedBlock" id = "defenseAttemptedBlockButtons" value="N">N</input>
+                <input type="radio" name="defenseAttemptedBlock" value="Y">Y</input>
+                <input type="radio" name="defenseAttemptedBlock" value="N">N</input>
             </div>
             <div>
                 <p>
                     Held Balls: 
                 </p>
-                <input type="radio" name="defenseHeldBalls" id = "defenseHeldBallsButtons" value="Y">Y</input>
-                <input type="radio" name="defenseHeldBalls" id = "defenseHeldBallsButtons" value="N">N</input>
+                <input type="radio" name="defenseHeldBalls" value="Y">Y</input>
+                <input type="radio" name="defenseHeldBalls" value="N">N</input>
             </div>
             </center>
         </div>

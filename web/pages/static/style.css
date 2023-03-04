@@ -147,10 +147,7 @@
   }
 
   /*spacing for all radio buttons*/
-  #teamColorButtons, #autonPlatformButtons, #autonBasketballButtons, #teleopLaunchpadButtons,
-  #teleopMoveButtons, #endgameAttemptedClimbButtons, #endgamePreparedButtons,
-  #endgameClimbTimeButtons, #defenseAttemptedBlockButtons,
-  #defenseHeldBallsButtons, #endgameWinButtons {
+  input[type="radio"] {
     font-size: 20px;
     color: white;
     /*spaces in between the buttons*/
