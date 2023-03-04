@@ -14,7 +14,7 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
 
     1.3 - Check and confirm that MySQL is running by entering `sudo systemctl status mysql`. It should say that it is running.
 
-- Finally please go to test if these are installed correctly and to install further applications (like the connector python) visit the [setup-README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2023/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md) located in the `db/` folder. 
+- Finally please go to test if these are installed correctly and to install further applications (like the connector python) visit the [setup-README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2023/blob/main/db/setup-README.md) located in the `db/` folder.
 
 ### **Section 2 - Understanding and Setting Up CGI**
 - 
