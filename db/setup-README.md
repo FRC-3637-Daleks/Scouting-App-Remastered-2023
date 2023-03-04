@@ -133,4 +133,4 @@ after moving `database.py` to `/usr/lib/cgi-bin` you must make it executable by 
 $ chmod 755 /usr/lib/cgi-bin/database.py
 ```
 
-Yay you're done this section! Give yourself a pat on the back and return to the main [README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022#readme) for further instructions.
+Yay you're done this section! Give yourself a pat on the back and return to the main [README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2023#readme) for further instructions.
