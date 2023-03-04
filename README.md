@@ -1,4 +1,4 @@
-# Scouting-App-Remastered-2022
+# Scouting-App-Remastered-2023
 The new and improved scouting app with complete documentation and instructions (hopefully)
 The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important that all of these are installed, where applicable. It is very IMPORTANT to note that these instructions are intended for Linux. 
 
@@ -14,7 +14,7 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
 
     1.3 - Check and confirm that MySQL is running by entering `sudo systemctl status mysql`. It should say that it is running.
 
-- Finally please go to test if these are installed correctly and to install further applications (like the connector python) visit the [setup-README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2022/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md) located in the `db/` folder. 
+- Finally please go to test if these are installed correctly and to install further applications (like the connector python) visit the [setup-README.md](https://github.com/FRC-3637-Daleks/Scouting-App-Remastered-2023/blob/14f0c79bc9d863b82ffda5790914cf5350550fc0/db/setup-README.md) located in the `db/` folder. 
 
 ### **Section 2 - Understanding and Setting Up CGI**
 - 
@@ -80,13 +80,13 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
 
     Next you want to copy over the flaskapp folder in the Scouting App Remastered folder to the root directory. If you aren't there already, you can get to the root directory by typing `cd ~` in the terminal, then copy the flaskapp folder by typing
     ```
-    sudo cp -r Scouting-App-Remastered-2022/flaskapp ./
+    sudo cp -r Scouting-App-Remastered-2023/flaskapp ./
     ```
  
     after that, copy the other two critical files located in the scouting app folder called `web/pages/static` and `web/pages/templates` into the flaskapp foder in the root directory by typing
     ```
-    sudo cp -r Scouting-App-Remastered-2022/web/pages/static flaskapp/
-    sudo cp -r Scouting-App-Remastered-2022/web/pages/templates flaskapp/
+    sudo cp -r Scouting-App-Remastered-2023/web/pages/static flaskapp/
+    sudo cp -r Scouting-App-Remastered-2023/web/pages/templates flaskapp/
     ```
 
     6.3 - config files. The first config file you will want to change would be `/etc/apache2/sites-enabled/000-default.conf` by copying the CONTENTS INSIDE the `000-default.conf` in the `copies` folder into the `000-default.conf` in `sites-enabled`, NOT the folder itself.
