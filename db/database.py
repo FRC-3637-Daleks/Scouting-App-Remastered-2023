@@ -38,47 +38,35 @@ print ("<p>The team number is %s</p>" % TEAM)
 #get match number
 MN=data.getvalue('matchNumber')
 
-#auton high shots
-AHS=data.getvalue('AHS')
-#auton low shots
-ALS=data.getvalue('ALS')
-#auton balls missed
-ABM=data.getvalue('ABM')
-#this one is for Off_Platform, radio buttons
+#auton high cube/cones placed
+AHCP=data.getvalue('AHCP')
+#auton mid cube/cones placed
+AMCP=data.getvalue('AMCP')
+#auton low cube/cones placed
+ALCP=data.getvalue('ALCP')
+#this one is for on platform, radio buttons
 AP=data.getvalue('autonPlatform')
-#auton basketball radio buttons
-AB=data.getvalue('autonBasketball')
+#auton Out of Community radio buttons
+AOC=data.getvalue('autonOutOfComminity')
 
 #teleop
 #teleop robot move, radio buttons
 TM=data.getvalue('teleopMove')
-#teleop high shots
-THS=data.getvalue('THS')
-#teleop low shots
-TLS=data.getvalue('TLS')
-#teleop balls missed
-TBM=data.getvalue('TBM')
-#teleop burst shots
-TBS=data.getvalue('TBS')
-#teleop launchpad radio buttons
-TLP=data.getvalue('teleopLaunchpad')
+#teleop high cube/cones placed
+THCP=data.getvalue('THCP')
+#teleop mid cube/cones placed
+TMCP=data.getvalue('TMCP')
+#teleop low cube/cones placed
+TLCP=data.getvalue('TLCP')
 
 
-#Endgame Climb, radio buttons 
-EAC =data.getvalue('endgameAttemptedClimb')
-#endgame climb tier input
-ECT = data.getvalue('ECT')
-# Prepared in Endgame, radio buttons
-EPE = data.getvalue('endgamePrepared')
-# Climb faster than x seconds, radio buttons
-ECXS = data.getvalue('endgameClimbTime')
+#Endgame charge status, radio buttons 
+ECS =data.getvalue('endgameChargeStatus')
 # Did they win? radio buttons
 WIN = data.getvalue('endgameWin')
 
 # defense attempted to block others, radio buttons
 DAB = data.getvalue('defenseAttemptedBlock')
-# defense held balls, radio buttons
-DHB = data.getvalue('defenseHeldBalls')
 
 #comments
 COMMENTS = data.getvalue('comments')
@@ -86,8 +74,8 @@ COMMENTS = data.getvalue('comments')
 
 try:
  
-    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High, Low, Missed, Off_Platform, Basketball_Shots_Made) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    cursor.execute(add_Auton, (TEAM, MN, TC, AHS, ALS, ABM, AP, AB))
+    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High, Mid, Low, Left_Platform, Out_of_Community) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(add_Auton, (TEAM, MN, TC, AHCP, AMCP, ALCP, AP, AOC))
 
 except:
     print ("<p>Error adding Auton data</p>")
@@ -96,8 +84,8 @@ finally:
 
     try:
 
-        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High, Low, Missed, Burst, Launchpad) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THS, TLS, TBM, TBS, TLP))
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High, Mid, Low) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THCP, TMCP, TLCP))
 
     except:
         print ("<p>Error adding Teleop data</p>")
@@ -106,8 +94,8 @@ finally:
 
         try:
 
-            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Color, Attempted_Climb, Success_Tier, Prepared, Climbing_Seconds, Win) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-            cursor.execute(add_Endgame, (TEAM, MN, TC, EAC, ECT, EPE, ECXS, WIN))
+            add_Endgame = "INSERT INTO Endgame (Team, Match_Number, Color, Charge_Status, Win) VALUES (%s, %s, %s, %s, %s)"
+            cursor.execute(add_Endgame, (TEAM, MN, TC, ECS, WIN))
 
         except:
             print ("<p>Error adding Endgame data</p>")
@@ -116,8 +104,8 @@ finally:
 
             try:
 
-                add_Defense = "INSERT INTO Defense (Team, Match_Number, Color, Blocked, Held_balls) VALUES (%s, %s, %s, %s, %s)"
-                cursor.execute(add_Defense, (TEAM, MN, TC, DAB, DHB))
+                add_Defense = "INSERT INTO Defense (Team, Match_Number, Color, Blocked_Others) VALUES (%s, %s, %s, %s)"
+                cursor.execute(add_Defense, (TEAM, MN, TC, DAB))
 
             except:
                 print ("<p>Error adding Defense data</p>")
