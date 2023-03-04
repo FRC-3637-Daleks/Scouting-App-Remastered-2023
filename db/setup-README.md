@@ -118,10 +118,6 @@ $ python3 setup-database.py
 ```
 This should spit out the current databases into the terminal. There should be one titled `Scouting`.
 
-Then, move the `database.py` file into your `/usr/lib/cgi-bin/` folder with this command
-```
-$ sudo cp database.py /usr/lib/cgi-bin/database.py
-```
 # Part 4: Creating Tables
 
 To create a table, just run the `create-tables.py` script by typing into a terminal
