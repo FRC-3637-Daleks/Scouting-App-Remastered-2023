@@ -20,7 +20,7 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
     4.1 - CGI, also known as the Common Gateway Interface, gives a server the ability to execute external programs, in our case these are `.py` files. 
     This allows Apache2 to pull information from a submitted form using python. This is espcially helpful when pulling information from multiple forms, which need to be submitted into a database.
     
-    4.2 - Setting Up CGI. To set up CGI, multiple changes must be made to Apache2, as Apache2 already includes comatability for CGI that isn't turned on by default. 
+    4.2 - Setting Up CGI. To set up CGI, multiple changes must be made to Apache2, as Apache2 already includes compatibility for CGI that isn't turned on by default. 
     The command below activates the `cgi.load` with a symbolic link that enables Apache2 to use CGI.
     ```
     sudo ln -s /etc/apache2/mods-available/cgi.load /etc/apache2/mods-enabled/
@@ -55,7 +55,7 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
 
 ### **Section 3- Flask**
 -
-    6.1  - Flask is a micro web framework written in Python. To install Flask you first need to install pip, a package manager for Python. To aquire pip, type
+    6.1  - Flask is a micro web framework written in Python. To install Flask you first need to install pip, a package manager for Python. To acquire pip, type
     ```
     sudo apt install python3-pip
     ```
@@ -117,4 +117,4 @@ The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important tha
     
     - If you are unfamiliar with MySQL, there are some [sources](https://dev.mysql.com/doc/connector-python/en/connector-python-example-ddl.html) to get your started, mainly the structure and how to edit an already existing file. There are also [some information](https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html) on how the connector-python works in case you're a lil' bookworm.
 
-    - Finally, and arguably the most important information you need to know, a basic knowledge of Python and HTML. The offial MySQL with Python documentation can be found [here](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html). Additionally a "crash course" concerning html and css can be found [here](https://youtube.com/playlist?list=PLblA84xge2_y8F1K0wzPia9V_ULVcfg4k) if you are unfamilliar with these instruments.
+    - Finally, and arguably the most important information you need to know, a basic knowledge of Python and HTML. The offial MySQL with Python documentation can be found [here](https://dev.mysql.com/doc/connector-python/en/connector-python-examples.html). Additionally a "crash course" concerning html and css can be found [here](https://youtube.com/playlist?list=PLblA84xge2_y8F1K0wzPia9V_ULVcfg4k) if you are unfamiliar with these instruments.
