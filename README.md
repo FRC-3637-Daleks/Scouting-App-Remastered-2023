@@ -1,5 +1,4 @@
-# Scouting-App-Remastered-2023
-The new and improved scouting app with complete documentation and instructions (hopefully)
+# Scouting-App-2023
 The scouting app utilises HTML, CSS, Apache, and MySQL. It is very important that all of these are installed, where applicable. It is very IMPORTANT to note that these instructions are intended for Linux. 
 
 ### **Section 1 - Installing Necessary software** 
