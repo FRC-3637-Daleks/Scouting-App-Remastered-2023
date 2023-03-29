@@ -6,7 +6,7 @@
     <link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
     <script src="{{url_for('static',filename='jquery-3.6.0.js') }}"></script>
     <!--allows scaling for different screen sizes-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="PSWD=device-PSWD, initial-scale=1.0">
     <title>Scouting App</title>
 </head>
 
@@ -26,6 +26,9 @@
             <!--TODO: make video offline ;p-->
             <a href="/display">
                 To Display Page
+            </a>
+            <a href="/">
+                To Main Page
             </a>
         </center>
     </div>
@@ -48,10 +51,10 @@
             <p id="searchDescription">
                 <b>Robot Weight Here:</b>
             </p>
-            <input required type="text" name="weight" maxlength="4" placeholder="Weight"></input>
+            <input required type="text" name="PSW" maxlength="4" placeholder="Weight"></input>
             <!--only allow integer inputs in text-->
             <script>
-                document.getElementByName("weight").onkeypress = function(e) {
+                document.getElementByName("PSW").onkeypress = function(e) {
                     return /\d/.test(String.fromCharCode(e.charCode));
                 }
             </script>
@@ -72,10 +75,10 @@
                 <p>
                     Length:
                 </p>
-                <input type="text" class="textInput" maxlength="4" name="length" placeholder="Length">
+                <input type="text" class="textInput" maxlength="4" name="PSL" placeholder="Length">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementByName("length").onkeypress = function(e) {
+                    document.getElementByName("PSL").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -84,10 +87,10 @@
                 <p>
                     Width:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="width" placeholder="Width">
+                <input type="text" class="textInput" maxlength="2" name="PSWD" placeholder="Width">
                 <!--only allow integer inputs in text-->
                 <script>
-                    document.getElementByName("width").onkeypress = function(e) {
+                    document.getElementByName("PSWD").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -100,7 +103,7 @@
                     <b>Intake</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="intakeDescription" maxlength = "300" id="intakeDescription"></textarea>
+                <textarea rows="15" cols="50" name="PSID" maxlength = "300" id="comments"></textarea>
             </div>
         </div>
         <div class = "spacer"></div>
@@ -111,7 +114,7 @@
                     <b>Scoring Method</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="scoringDescription" maxlength = "300" id="scoringDescription"></textarea>
+                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="comments"></textarea>
             </div>
         </div>
         <div class = "right-cont">
@@ -121,7 +124,7 @@
                     <b>Drivebase/b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="driveDescription" maxlength = "300" id="driveDescription"></textarea>
+                <textarea rows="15" cols="50" name="PSDD" maxlength = "300" id="comments"></textarea>
             </div>
             </center>
         </div>

@@ -72,12 +72,12 @@ DAB = data.getvalue('defenseAttemptedBlock')
 COMMENTS = data.getvalue('comments')
 
 #pit scouting stuff
-WEIGHT = data.getvalue('weight')
-LENGTH = data.getvalue('length')
-WIDTH = data.getvalue('width')
-INTAKE_DESC = data.getvalue('intakeDescription')
-SCORING_DESC = data.getvalue('scoringDescription')
-DRIVE_DESC = data.getvalue('driveDescription')
+WEIGHT = data.getvalue('PSW')
+LENGTH = data.getvalue('PSL')
+WIDTH = data.getvalue('PSWD')
+INTAKE_DESC = data.getvalue('PSID')
+SCORING_DESC = data.getvalue('PSSD')
+DRIVE_DESC = data.getvalue('PSDD')
 
 
 try:
