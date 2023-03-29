@@ -60,14 +60,16 @@ def getData(form):
     defense_1 = cursor.fetchall()
     cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
     comments_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
+    cursor.execute('SELECT * FROM Pit WHERE Team = %s', team)
+    pit_1 = cursor.fetchall()
     # storing queries as a set of tuples
     auton_1=auton_1
     comments_1=comments_1
     defense_1=defense_1
     endgame_1=endgame_1
     teleop_1=teleop_1
-    return (auton_1, teleop_1, endgame_1, defense_1, comments_1)
+    pit_1 = pit_1
+    return (auton_1, teleop_1, endgame_1, defense_1, comments_1, pit_1)
 
 if __name__ == '__main__':
    app.run()

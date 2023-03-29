@@ -71,6 +71,14 @@ DAB = data.getvalue('defenseAttemptedBlock')
 #comments
 COMMENTS = data.getvalue('comments')
 
+#pit scouting stuff
+WEIGHT = data.getvalue('weight')
+LENGTH = data.getvalue('length')
+WIDTH = data.getvalue('width')
+INTAKE_DESC = data.getvalue('intakeDescription')
+SCORING_DESC = data.getvalue('scoringDescription')
+DRIVE_DESC = data.getvalue('driveDescription')
+
 
 try:
  
@@ -122,7 +130,15 @@ finally:
 
                 finally:
 
-                    print("<p>DONE :D</p>")
-                    cnx.commit()
-                    cursor.close()
-                    cnx.close()
+                    try:
+                        add_Pit = "INSERT INTO Pit (Team, Length, Width, Weight, Intake, Scoring, Drivebase) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                        cursor.execute(add_Pit, (TEAM, LENGTH, WIDTH, WEIGHT, INTAKE_DESC, SCORING_DESC, DRIVE_DESC))
+                    
+                    except:
+                        print("<p>Error adding Pit data</p>")
+                    
+                    finally:
+                        print("<p>DONE :D</p>")
+                        cnx.commit()
+                        cursor.close()
+                        cnx.close()

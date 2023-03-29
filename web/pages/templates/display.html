@@ -220,4 +220,42 @@
             </div>
         </div>
     </div>
+    <div class="container-row">
+        <div class="right-cont">
+            {% if not(result[5]) %}
+            {% else %}
+            <p id = "table-title">
+                Pit
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Length</th>
+                        <th>Width</th>
+                        <th>Weight</th>
+                        <th>Intake</th>
+                        <th>Scoring</th>
+                        <th>Drivebase</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in result[5] %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td id="comments">{{row[4]}}</td>
+                        <td id="comments">{{row[5]}}</td>
+                        <td id="comments">{{row[6]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            </div>
+        </div>
+    </div>
 </body>

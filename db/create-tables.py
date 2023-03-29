@@ -65,6 +65,19 @@ TABLES['Comments'] = (
     ")"
 )
 
+TABLES['Pit'] = (
+    "CREATE TABLE `Pit`("
+    "   `Team` int NOT NULL,"
+    "   `Length` int NOT NULL,"
+    "   `Width` int NOT NULL,"
+    "   `Weight` int NOT NULL,"
+    "   `Intake` MEDIUMTEXT,"
+    "   `Scoring` MEDIUMTEXT,"
+    "   `Drivebase` MEDIUMTEXT,"
+    "   PRIMARY KEY (`Team`)"
+    ")"
+)
+
 cnx = mysql.connector.connect(user="dalek", password="3637",
                         host="127.0.0.1",
                         database='Scouting')
