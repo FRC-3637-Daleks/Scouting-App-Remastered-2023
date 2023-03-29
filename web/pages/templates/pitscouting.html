@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='stylesheet' href="{{ url_for('static',filename='style.css') }}">
+    <script src="{{url_for('static',filename='jquery-3.6.0.js') }}"></script>
+    <!--allows scaling for different screen sizes-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting App</title>
+</head>
+
+<body>
+    <div>
+        <h1>
+            <center>
+                <p>Scouting App</p>
+            </center>
+        </h1>
+    </div>
+    <div>
+        <center>
+            <p>
+                <b style="color: #d90429;">Remastered</b>
+            </p>
+            <!--TODO: make video offline ;p-->
+            <a href="/display">
+                To Display Page
+            </a>
+        </center>
+    </div>
+    <!--Change location to /cgi-bin/database.py when moved to /usr/lib/cgi-bin/-->
+    <form action = "/cgi-bin/database.py" method="post">
+    <div class = "container-row">
+        <div class = "header-left">
+            <p id="searchDescription">
+                <b>Enter Team ID Here:</b>
+            </p>
+            <input required type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementByName("teamId").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
+        </div>
+        <div class = "header-right">
+            <p id="searchDescription">
+                <b>Robot Weight Here:</b>
+            </p>
+            <input required type="text" name="weight" maxlength="4" placeholder="Weight"></input>
+            <!--only allow integer inputs in text-->
+            <script>
+                document.getElementByName("weight").onkeypress = function(e) {
+                    return /\d/.test(String.fromCharCode(e.charCode));
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+<body>          
+    <div class = "container">
+        <div class = "left-cont">
+            <center>
+            <div>
+                <p id="Size">
+                    <b>Size</b>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Length:
+                </p>
+                <input type="text" class="textInput" maxlength="4" name="length" placeholder="Length">
+                <!--only allow integer inputs in text-->
+                <script>
+                    document.getElementByName("length").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Width:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="width" placeholder="Width">
+                <!--only allow integer inputs in text-->
+                <script>
+                    document.getElementByName("width").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                </script>
+            </div>
+        </center>
+        </div>
+        <div class = "right-cont">
+            <div>
+                <p id="Intake">
+                    <b>Intake</b>
+                </p>
+                <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
+                <textarea rows="15" cols="50" name="intakeDescription" maxlength = "300" id="intakeDescription"></textarea>
+            </div>
+        </div>
+        <div class = "spacer"></div>
+        <div class = "left-cont">
+            <center>
+            <div>
+                <p id="Scoring Method">
+                    <b>Scoring Method</b>
+                </p>
+                <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
+                <textarea rows="15" cols="50" name="scoringDescription" maxlength = "300" id="scoringDescription"></textarea>
+            </div>
+        </div>
+        <div class = "right-cont">
+            <center>
+            <div>
+                <p id="Drivebase">
+                    <b>Drivebase/b>
+                </p>
+                <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
+                <textarea rows="15" cols="50" name="driveDescription" maxlength = "300" id="driveDescription"></textarea>
+            </div>
+            </center>
+        </div>
+        <div class = "spacer"></div>
+        <div class = "center-cont">
+            <center>
+            <div>
+                <input type="submit" name="submit" value="Submit All" id="submit"></input>
+                <script>
+                    $(document).ready(function () {
+                        $("#submit").click(function () {
+                            return confirm("Are You Ready to Submit?");
+                        });
+                    });
+                </script>
+            </div>
+            </center>
+        </div>
+        <div class = "bottom-cont">
+        </div>
+    </div>
+</form>
+</body>
+<body>
+    
+</body>
+
+</html>
