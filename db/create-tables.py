@@ -67,7 +67,7 @@ TABLES['Comments'] = (
 
 TABLES['Pit'] = (
     "CREATE TABLE `Pit`("
-    "   `Team` int,"
+    "   `Pit_Id` int NOT NULL,"
     "   `Length` int,"
     "   `Width` int,"
     "   `Weight` int,"
