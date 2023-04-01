@@ -76,6 +76,7 @@ TABLES['Pit'] = (
     "   `Drivebase` MEDIUMTEXT,"
     "   `Auton Description` MEDIUMTEXT,"
     "   `Comments` MEDIUMTEXT,"
+    "   `Photo' = MEDIUMBLOB,"
     "   PRIMARY KEY (`Team`)"
     ")"
 )
