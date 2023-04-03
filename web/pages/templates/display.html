@@ -221,7 +221,7 @@
         </div>
     </div>
     <div class="container-row">
-        <div class="right-cont">
+        <div class="left-cont">
             {% if not(result[5]) %}
             {% else %}
             <p id = "table-title">
@@ -238,6 +238,11 @@
                         <th>Intake</th>
                         <th>Scoring</th>
                         <th>Drivebase</th>
+                        <th>Auton</th>
+                        <th>Defense</th>
+                        <th>Triple Balance</th>
+                        <th>Preferred Piece</th>
+                        <th>Comments</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -250,6 +255,11 @@
                         <td id="comments">{{row[4]}}</td>
                         <td id="comments">{{row[5]}}</td>
                         <td id="comments">{{row[6]}}</td>
+                        <td id="comments">{{row[7]}}</td>
+                        <td>{{row[8]}}</td>
+                        <td>{{row[9]}}</td>
+                        <td>{{row[10]}}</td>
+                        <td id="comments">{{row[11]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
