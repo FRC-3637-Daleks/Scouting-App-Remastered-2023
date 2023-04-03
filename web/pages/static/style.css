@@ -50,8 +50,17 @@
   }
 
   /*makes font size bigger for titles*/
-  #Teleop, #Auton, #Endgame, #Defense, #Comments {
+  #Teleop, #Auton, #Endgame, #Defense, #Comments, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
     font-size: 30px;
+  }
+
+  #Pit-Comments, #Pit-Auton, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
+    font-size: 30px;
+    color: white; 
+  }
+
+  #Pit-Text{
+    color:white;
   }
 
   .left-cont {
@@ -93,6 +102,33 @@
     justify-content: center;
     width: 100%;
     border-radius: 30px;
+  }
+
+  .left-text-cont {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: #EF233C;
+    justify-content: center;
+    width: 370px;
+    border-radius: 30px;
+    height: 50%;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #EF233C;
+  }
+  .right-text-cont {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: #EF233C;
+    justify-content: center;
+    width: 370px;
+    height: 50%;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #EF233C;
   }
 
   .bottom-cont {
@@ -184,6 +220,25 @@
   }
 
   #comments[contenteditable]:empty::before {
+    content: "comment here...";
+    color: gray;
+  }
+
+  #pit-comments{
+    display: block;
+    width: 70%;
+    overflow: hidden;
+    resize: none;
+    min-height: 40px;
+    line-height: 25px;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 4px solid white;
+  }
+
+  #pit-comments[contenteditable]:empty::before {
     content: "comment here...";
     color: gray;
   }

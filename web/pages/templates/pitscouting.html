@@ -64,18 +64,18 @@
 
 <body>          
     <div class = "container">
-        <div class = "left-cont">
+        <div class = "left-text-cont">
             <center>
             <div>
                 <p id="Size">
                     <b>Size</b>
                 </p>
             </div>
-            <div>
+            <div id="Pit-Text">
                 <p>
                     Length:
                 </p>
-                <input type="text" class="textInput" maxlength="4" name="PSL" placeholder="Length">
+                <input type="text" class="searchDescription" maxlength="4" name="PSL" placeholder="Length">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementByName("PSL").onkeypress = function(e) {
@@ -83,11 +83,11 @@
                     }
                 </script>
             </div>
-            <div>
+            <div id="Pit-Text">
                 <p>
                     Width:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="PSWD" placeholder="Width">
+                <input type="text" class="searchDescription" maxlength="2" name="PSWD" placeholder="Width">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementByName("PSWD").onkeypress = function(e) {
@@ -97,68 +97,93 @@
             </div>
         </center>
         </div>
-        <div class = "right-cont">
+        <div class = "right-text-cont">
             <div>
+                <center>               
                 <p id="Intake">
                     <b>Intake</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSID" maxlength = "300" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="PSID" maxlength = "300" id="pit-comments"></textarea>
+            </center>
             </div>
+            
         </div>
         <div class = "spacer"></div>
-        <div class = "left-cont">
+        <div class = "left-text-cont">
             <center>
             <div>
-                <p id="Scoring Method">
+                <p id="Scoring_Method">
                     <b>Scoring Method</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="pit-comments"></textarea>
+            </div>
+            <div id="Pit-Text">
+                <p>
+                    <b>Cubes, Cones, or Both?</b>
+                </p>
+                <input required type="radio" name="PP" value="CONE">Cone</input>
+                <input required type="radio" name="PP" value="CUBE">Cube</input>
+                <input required type="radio" name="PP" value="BOTH">Both</input>
             </div>
         </div>
-        <div class = "right-cont">
+        <div class = "right-text-cont">
             <center>
             <div>
                 <p id="Drivebase">
-                    <b>Drivebase/b>
+                    <b>Drivebase</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSDD" maxlength = "300" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="PSDD" maxlength = "300" id="pit-comments"></textarea>
+            </div>
+            <div id="Pit-Text">
+                <p>
+                    <b>Plays Defense?</b>
+                </p>
+                <input required type="radio" name="DEF" value="Y">Yes</input>
+                <input required type="radio" name="DEF" value="N">No</input>
+            </div> 
+            <div id="Pit-Text">
+                <p>
+                    <b>Can Triple Balence?</b>
+                </p>
+                <input required type="radio" name="TB" value="Y">Yes</input>
+                <input required type="radio" name="TB" value="N">No</input>
             </div>
             </center>
         </div>
         <div class = "spacer"></div>
-        <div class = "left-cont">
+        <div class = "left-text-cont">
             <center>
             <div>
-                <p id="Auton">
+                <p id="Pit-Auton">
                     <b>Auton</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSAD" maxlength = "300" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="PSAD" maxlength = "300" id="pit-comments"></textarea>
             </div>
             </center>
         </div>
-        <div class = "right-cont">
+        <div class = "right-text-cont">
             <center>
             <div>
-                <p id="Comments">
+                <p id="Pit-Comments">
                     <b>Comments</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSCD" maxlength = "300" id="comments"></textarea>
+                <textarea rows="15" cols="50" name="PSCD" maxlength = "300" id="pit-comments"></textarea>
             </div>
             </center>
         </div>
         <div class = "spacer"></div>
-        <div class = "center-cont">
+        <div class = "left-text-cont">
             <center>
                 <div>
                     <p id = "Photo">
                         <b>Photo</b>
                     </p>
-                    <input type="image" name="PSP" accept="image/*">
+                    <input type="file" name="PSP" accept="image/*">
                 </div>
             </center>
         </div>

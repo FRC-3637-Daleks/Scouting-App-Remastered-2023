@@ -26,6 +26,10 @@ mysql.init_app(app)
 conn = mysql.connect()
 
 @app.route('/display', methods=["GET", "POST"])
+@app.route('/pitscouting')
+
+def pitscouting():
+    return render_template("pitscouting.html")
 
 # define a function that is triggered when this URL appears in the browser address bar
 def display():
@@ -60,7 +64,7 @@ def getData(form):
     defense_1 = cursor.fetchall()
     cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
     comments_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Pit WHERE Team = %s', team)
+    cursor.execute('SELECT * FROM Pit WHERE Pit_Id = %s', team)
     pit_1 = cursor.fetchall()
     # storing queries as a set of tuples
     auton_1=auton_1

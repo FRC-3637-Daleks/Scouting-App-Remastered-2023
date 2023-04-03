@@ -80,6 +80,9 @@ INTAKE_DESC = data.getvalue('PSID')
 SCORING_DESC = data.getvalue('PSSD')
 DRIVE_DESC = data.getvalue('PSDD')
 AUTON_DESC = data.getvalue('PSAD')
+DEFENSE = data.getvalue('DEF')
+TRIPLE_BALANCE = data.getvalue('TB')
+PREFERRED_PIECE = data.getvalue('PP')
 COMMENTS_DESC = data.getvalue('PSCD')
 PHOTO = data.getvalue('PSP')
 
@@ -135,8 +138,8 @@ finally:
                 finally:
 
                     try:
-                        add_Pit = "INSERT INTO Pit (Pit_Id, Length, Width, Weight, Intake, Scoring, Drivebase, Auton, Comments, Photo) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-                        cursor.execute(add_Pit, (PIT_ID, LENGTH, WIDTH, WEIGHT, INTAKE_DESC, SCORING_DESC, DRIVE_DESC, AUTON_DESC, COMMENTS_DESC, PHOTO))
+                        add_Pit = "INSERT INTO Pit (Pit_Id, Length, Width, Weight, Intake, Scoring, Drivebase, Auton, Defense, Triple_Balance, Preferred_Piece, Comments, Photo) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+                        cursor.execute(add_Pit, (PIT_ID, LENGTH, WIDTH, WEIGHT, INTAKE_DESC, SCORING_DESC, DRIVE_DESC, AUTON_DESC, DEFENSE, TRIPLE_BALANCE, PREFERRED_PIECE, COMMENTS_DESC, PHOTO))
                     
                     except:
                         print("<p>Error adding Pit data</p>")
