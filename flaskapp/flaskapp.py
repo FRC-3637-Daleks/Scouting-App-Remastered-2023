@@ -64,7 +64,7 @@ def getData(form):
     defense_1 = cursor.fetchall()
     cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
     comments_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Pit WHERE Pit_Id = %s', team)
+    cursor.execute('SELECT * FROM Pit WHERE Team = %s', team)
     pit_1 = cursor.fetchall()
     # storing queries as a set of tuples
     auton_1=auton_1

@@ -72,19 +72,30 @@ DAB = data.getvalue('defenseAttemptedBlock')
 COMMENTS = data.getvalue('comments')
 
 #pit scouting stuff
-PIT_ID = data.getvalue('PITID')
-WEIGHT = data.getvalue('PSW')
-LENGTH = data.getvalue('PSL')
-WIDTH = data.getvalue('PSWD')
-INTAKE_DESC = data.getvalue('PSID')
-SCORING_DESC = data.getvalue('PSSD')
-DRIVE_DESC = data.getvalue('PSDD')
-AUTON_DESC = data.getvalue('PSAD')
-DEFENSE = data.getvalue('DEF')
-TRIPLE_BALANCE = data.getvalue('TB')
-PREFERRED_PIECE = data.getvalue('PP')
-COMMENTS_DESC = data.getvalue('PSCD')
-PHOTO = data.getvalue('PSP')
+#Weight
+PSW = data.getvalue('PSW')
+#Length
+PSL = data.getvalue('PSL')
+#Width
+PSWD = data.getvalue('PSWD')
+#Intake
+PSID = data.getvalue('PSID')
+#Scoring Description
+PSSD = data.getvalue('PSSD')
+#Drive Base
+PSDD = data.getvalue('PSDD')
+#Auton
+PSAD = data.getvalue('PSAD')
+#Defense
+DEF = data.getvalue('DEF')
+#Triple Balance
+TB = data.getvalue('TB')
+#Preffered Piece
+PP = data.getvalue('PP')
+#Comments
+PSCD = data.getvalue('PSCD')
+#Photo
+PSP = data.getvalue('PSP')
 
 
 try:
@@ -136,16 +147,20 @@ finally:
                     print ("<p>Error adding Comments data</p>")
 
                 finally:
+                    print("<p>DONE :D</p>")
+                    cnx.commit()
+                    cursor.close()
+                    cnx.close()
 
-                    try:
-                        add_Pit = "INSERT INTO Pit (Pit_Id, Length, Width, Weight, Intake, Scoring, Drivebase, Auton, Defense, Triple_Balance, Preferred_Piece, Comments, Photo) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-                        cursor.execute(add_Pit, (PIT_ID, LENGTH, WIDTH, WEIGHT, INTAKE_DESC, SCORING_DESC, DRIVE_DESC, AUTON_DESC, DEFENSE, TRIPLE_BALANCE, PREFERRED_PIECE, COMMENTS_DESC, PHOTO))
+try:
+    add_Pit = "INSERT INTO Pit (TEAM, Match_Number, Length, Width, Weight, Intake, Scoring, Drivebase, Auton, Defense, Triple_Balance, Preferred_Piece, Comments, Photo) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(add_Pit, (TEAM, MN, PSL, PSW, PSWD, PSID, PSSD, PSDD, PSAD,  PSDD, TB, PP, PSCD, PSP))
                     
-                    except:
-                        print("<p>Error adding Pit data</p>")
+except:
+    print("<p>Error adding Pit data</p>")
                     
-                    finally:
-                        print("<p>DONE :D</p>")
-                        cnx.commit()
-                        cursor.close()
-                        cnx.close()
+finally:
+    print("<p>DONE :D</p>")
+    cnx.commit()
+    cursor.close()
+    cnx.close()

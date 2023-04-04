@@ -67,7 +67,8 @@ TABLES['Comments'] = (
 
 TABLES['Pit'] = (
     "CREATE TABLE `Pit`("
-    "   `Pit_Id` int NOT NULL,"
+    "   `Team` int NOT NULL,"
+    "   `Match_Number` int NOT NULL DEFAULT 0,"    # Sets defualt match number to 0
     "   `Length` int,"
     "   `Width` int,"
     "   `Weight` int,"
@@ -80,7 +81,7 @@ TABLES['Pit'] = (
     "   `Preferred_Piece` VARCHAR(4),"
     "   `Comments` MEDIUMTEXT,"
     "   `Photo' = MEDIUMBLOB,"
-    "   PRIMARY KEY (`Team`)"
+    "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )
 
