@@ -81,36 +81,63 @@
             </div>
             <div>
                 <p>
-                    High Cube/Cones Placed:
+                    High Cubes Placed:
                 </p>
                 <input type="text" class="textInput" maxlength="2" name="AHCP">
+                <p>
+                    High Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="AHCO">
                 <!--only allow integer inputs in text-->
                 <script>
+                    // Cubes
                     document.getElementByName("AHCP").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
-                </script>
-            </div>
-            <div>
-                <p>
-                    Mid Cube/Cones Placed:
-                </p>
-                <input type="text" class="textInput" maxlength="2" name="AMCP" >
-                <!--only allow integer inputs in text-->
-                <script>
-                    document.getElementByName("AMCP").onkeypress = function(e) {
+                    // Cones
+                    document.getElementByName("AHCO").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Low Cube/Cones Placed:
+                    Mid Cubes Placed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="ALCP">
+                <input type="text" class="textInput" maxlength="2" name="AMCP" >
+                <p>
+                    Mid Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="AMCO" >
                 <!--only allow integer inputs in text-->
                 <script>
+                    // Cubes
+                    document.getElementByName("AMCP").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                    // Cones
+                    document.getElementByName("AMCO").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Low Cubes Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="ALCP">
+                <p>
+                    Low Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="ALCO">
+                <!--only allow integer inputs in text-->
+                <script>
+                    // Cubes
                     document.getElementByName("ALCP").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                    // Cones
+                    document.getElementByName("ALCO").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
@@ -146,36 +173,66 @@
             </div>
             <div>
                 <p>
-                    High Cube/Cones Placed:
+                    High Cubes Placed:
                 </p>
                 <input type="text" class="textInput" maxlength="2" name="THCP">
+
+                <p>
+                    High Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="THCO">
                 <!--only allow integer inputs in text-->
                 <script>
+                    //Cubes
                     document.getElementByName("THCP").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
-                </script>
-            </div>
-            <div>
-                <p>
-                    Mid Cube/Cones Placed:
-                </p>
-                <input type="text" class="textInput" maxlength="2" name="TMCP" >
-                <!--only allow integer inputs in text-->
-                <script>
-                    document.getElementByName("TMCP").onkeypress = function(e) {
+                    // Cones
+                    document.getElementByName("THCO").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
             </div>
             <div>
                 <p>
-                    Low Cube/Cones Placed:
+                    Mid Cubes Placed:
                 </p>
-                <input type="text" class="textInput" maxlength="2" name="TLCP">
+                <input type="text" class="textInput" maxlength="2" name="TMCP" >
+
+                <p>
+                    Mid Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="TMCO" >
                 <!--only allow integer inputs in text-->
                 <script>
+                    // Cubes
+                    document.getElementByName("TMCP").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                    // Cones
+                    document.getElementByName("TMCO").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                </script>
+            </div>
+            <div>
+                <p>
+                    Low Cubes Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="TLCP">
+
+                <p>
+                    Low Cones Placed:
+                </p>
+                <input type="text" class="textInput" maxlength="2" name="TLCO">
+                <!--only allow integer inputs in text-->
+                <script>
+                    // Cubes
                     document.getElementByName("TLCP").onkeypress = function(e) {
+                        return /\d/.test(String.fromCharCode(e.charCode));
+                    }
+                    // Cones
+                    document.getElementByName("TLCO").onkeypress = function(e) {
                         return /\d/.test(String.fromCharCode(e.charCode));
                     }
                 </script>
