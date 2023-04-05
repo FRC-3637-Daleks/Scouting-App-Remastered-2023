@@ -80,7 +80,7 @@ TABLES['Pit'] = (
     "   `Triple_Balance` VARCHAR(1),"
     "   `Preferred_Piece` VARCHAR(4),"
     "   `Comments` MEDIUMTEXT,"
-    "   `Photo' = MEDIUMBLOB,"
+    "   `Photo` MEDIUMBLOB,"
     "   PRIMARY KEY (`Team`, `Match_Number`)"
     ")"
 )

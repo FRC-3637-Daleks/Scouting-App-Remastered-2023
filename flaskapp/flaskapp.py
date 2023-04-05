@@ -25,11 +25,12 @@ mysql.init_app(app)
 #create connection to access data
 conn = mysql.connect()
 
-@app.route('/display', methods=["GET", "POST"])
 @app.route('/pitscouting')
 
 def pitscouting():
     return render_template("pitscouting.html")
+
+@app.route('/display', methods=["GET", "POST"])
 
 # define a function that is triggered when this URL appears in the browser address bar
 def display():
