@@ -232,17 +232,18 @@
                     <thead>
                     <tr>
                         <th>Team</th>
-                        <th>Match Number</th>
                         <th>Length</th>
                         <th>Width</th>
                         <th>Weight</th>
+                        <th>Defense</th>
+                        <th>Start Position</th>
+                        <th>Preferred Substation</th>
+                        <th>Triple Balance</th>
+                        <th>Preferred Piece</th>
                         <th>Intake</th>
                         <th>Scoring</th>
                         <th>Drivebase</th>
                         <th>Auton</th>
-                        <th>Defense</th>
-                        <th>Triple Balance</th>
-                        <th>Preferred Piece</th>
                         <th>Comments</th>
                     </tr>
                     </thead>
@@ -250,17 +251,19 @@
                     {% for row in result[5] %}
                     <tr>
                         <td>{{row[0]}}</td>
-                        <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
                         <td>{{row[3]}}</td>
-                        <td id="comments">{{row[4]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[9]}}</td>
+                        <td>{{row[10]}}</td>
+                        <td>{{row[11]}}</td>
+                        <td>{{row[12]}}</td>
+                        <td>{{row[13]}}</td>
                         <td id="comments">{{row[5]}}</td>
                         <td id="comments">{{row[6]}}</td>
                         <td id="comments">{{row[7]}}</td>
-                        <td>{{row[8]}}</td>
-                        <td>{{row[9]}}</td>
-                        <td>{{row[10]}}</td>
-                        <td id="comments">{{row[11]}}</td>
+                        <td id="comments">{{row[8]}}</td>
+			            <td id="comments">{{row[14]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>

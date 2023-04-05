@@ -52,7 +52,7 @@
             <p id="searchDescription">
                 <b>Robot Weight Here:</b>
             </p>
-            <input required type="text" name="PSW" maxlength="4" placeholder="Weight"></input>
+            <input required type="text" name="PSW" maxlength="4" placeholder="Weight (lbs)"></input>
             <!--only allow integer inputs in text-->
             <script>
                 document.getElementByName("PSW").onkeypress = function(e) {
@@ -69,14 +69,14 @@
             <center>
             <div>
                 <p id="Size">
-                    <b>Size</b>
+                    <b>Size (WITH BUMPERS)</b>
                 </p>
             </div>
             <div id="Pit-Text">
                 <p>
                     Length:
                 </p>
-                <input type="text" class="searchDescription" maxlength="4" name="PSL" placeholder="Length">
+                <input type="text" class="searchDescription" maxlength="4" name="PSL" placeholder="Length (inches)">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementByName("PSL").onkeypress = function(e) {
@@ -88,7 +88,7 @@
                 <p>
                     Width:
                 </p>
-                <input type="text" class="searchDescription" maxlength="2" name="PSWD" placeholder="Width">
+                <input type="text" class="searchDescription" maxlength="2" name="PSWD" placeholder="Width (inches)">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementByName("PSWD").onkeypress = function(e) {
@@ -105,7 +105,7 @@
                     <b>Intake</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSID" maxlength = "300" id="pit-comments"></textarea>
+                <textarea rows="15" cols="50" name="PSID" maxlength = "300" id="pit-comments" placeholder="How do they intake pieces?"></textarea>
             </center>
             </div>
             
@@ -118,7 +118,7 @@
                     <b>Scoring Method</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="pit-comments"></textarea>
+                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="pit-comments" placeholder="How do they score pieces? Which nodes can they go for?"></textarea>
             </div>
             <div id="Pit-Text">
                 <p>
@@ -128,6 +128,14 @@
                 <input required type="radio" name="PP" value="CUBE">Cube</input>
                 <input required type="radio" name="PP" value="BOTH">Both</input>
             </div>
+            <div id="Pit-Text">
+                <p>
+                    <b>Preferred Substation?</b>
+                </p>
+                <input required type="radio" name="PS" value="DS">Double(Shelf)</input>
+                <input required type="radio" name="PS" value="DF">Double(Floor)</input>
+                <input required type="radio" name="PS" value="SF">Single</input>
+            </div>
         </div>
         <div class = "right-text-cont">
             <center>
@@ -136,7 +144,7 @@
                     <b>Drivebase</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSDD" maxlength = "300" id="pit-comments"></textarea>
+                <textarea rows="15" cols="50" name="PSDD" maxlength = "300" id="pit-comments" placeholder="What kind of drivebase do they have? How fast can their robot go?"></textarea>
             </div>
             <div id="Pit-Text">
                 <p>
@@ -147,7 +155,7 @@
             </div> 
             <div id="Pit-Text">
                 <p>
-                    <b>Can Triple Balence?</b>
+                    <b>Can Triple Balance?</b>
                 </p>
                 <input required type="radio" name="TB" value="Y">Yes</input>
                 <input required type="radio" name="TB" value="N">No</input>
@@ -162,7 +170,15 @@
                     <b>Auton</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSAD" maxlength = "300" id="pit-comments"></textarea>
+                <textarea rows="15" cols="50" name="PSAD" maxlength = "300" id="pit-comments" placeholder="What do they do during Auton?"></textarea>
+                <div id="Pit-Text">
+                <p>
+                    <b>Preferred Start Position?</b>
+                </p>
+                <input required type="radio" name="SP" value="C">Cable Side</input>
+                <input required type="radio" name="SP" value="M">Middle</input>
+                <input required type="radio" name="SP" value="S">Substation Side</input>
+            </div>
             </div>
             </center>
         </div>
@@ -173,7 +189,7 @@
                     <b>Comments</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSCD" maxlength = "300" id="pit-comments"></textarea>
+                <textarea rows="15" cols="50" name="PSCD" maxlength = "300" id="pit-comments" placeholder="What else is noteworthy about their robot?"></textarea>
             </div>
             </center>
         </div>

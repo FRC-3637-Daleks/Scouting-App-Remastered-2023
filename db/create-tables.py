@@ -77,6 +77,8 @@ TABLES['Pit'] = (
     "   `Drivebase` MEDIUMTEXT,"
     "   `Auton` MEDIUMTEXT,"
     "   `Defense` VARCHAR(1),"
+    "   `Start_Position` VARCHAR(1),"
+    "   `Preferred_Substation` VARCHAR(2),"
     "   `Triple_Balance` VARCHAR(1),"
     "   `Preferred_Piece` VARCHAR(4),"
     "   `Comments` MEDIUMTEXT,"
