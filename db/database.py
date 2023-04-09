@@ -50,7 +50,6 @@ AHCO=data.getvalue('AHCO')
 AMCO=data.getvalue('AMCO')
 #auton low cones placed
 ALCO=data.getvalue('ALCO')
-
 #this one is for on platform, radio buttons
 AP=data.getvalue('autonPlatform')
 #auton Out of Community radio buttons
@@ -66,11 +65,11 @@ TMCP=data.getvalue('TMCP')
 #teleop low cube placed
 TLCP=data.getvalue('TLCP')
 #teleop high cones placed
-THCP=data.getvalue('THCO')
+THCO=data.getvalue('THCO')
 #teleop mid cones placed
-TMCP=data.getvalue('TMCO')
+TMCO=data.getvalue('TMCO')
 #teleop low cones placed
-TLCP=data.getvalue('TLCO')
+TLCO=data.getvalue('TLCO')
 
 
 #Endgame charge status, radio buttons 
@@ -117,7 +116,7 @@ PSP = data.getvalue('PSP')
 
 try:
  
-    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone, Left_Platform, Out_of_Community) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone, Left_Platform, Out_of_Community) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     cursor.execute(add_Auton, (TEAM, MN, TC, AHCP, AHCO, AMCP, AMCO, ALCP, ALCO, AP, AOC))
 
 except:
@@ -127,7 +126,7 @@ finally:
 
     try:
 
-        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THCP, THCO, TMCP, TMCO, TLCP, TLCO))
 
     except:

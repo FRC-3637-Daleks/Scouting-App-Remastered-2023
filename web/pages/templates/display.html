@@ -50,8 +50,8 @@
     </div>
     <div class="container-row">
         <div class="left-cont">
-            {% if not(result[0])%}
-            <p id = "table-title">NO DATA</p>
+            {% if not(result[0]) or not(result[5])%}
+            <p id = "table-title">NO MATCH DATA</p>
             {% else %}
             <p id = "table-title"> 
                 Auton
@@ -64,10 +64,10 @@
                         <th>Match Number</th>
                         <th>Color</th>
                         <th>High Cubes</th>
-                        <th>Mid Cubes</th>
-                        <th>Low Cubes</th>
                         <th>High Cones</th>
+                        <th>Mid Cubes</th>
                         <th>Mid Cones</th>
+                        <th>Low Cubes</th>
                         <th>Low Cones</th>
                         <th>Left Platform</th>
                         <th>Out of Community</th> 
@@ -109,10 +109,10 @@
                         <th>Color</th>
                         <th>Moved</th>
                         <th>High Cubes</th>
-                        <th>Mid Cubes</th>
-                        <th>Low Cubes</th>
                         <th>High Cones</th>
+                        <th>Mid Cubes</th>
                         <th>Mid Cones</th>
+                        <th>Low Cubes</th>
                         <th>Low Cones</th>
                     </tr>
                     </thead>

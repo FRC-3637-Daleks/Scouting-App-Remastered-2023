@@ -1,259 +1,259 @@
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    margin: 0;
-    align-content: center;
-    color: #EF233C;
-    background-color:rgb(27, 27, 27);
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  align-content: center;
+  color: #EF233C;
+  background-color:rgb(27, 27, 27);
+}
 
-  #searchDescription, #teamColorText {
-    font-size: 30px;
-    color: #ffffff;
-    margin-top: 60px;
-    text-align: center;
-    align-content: center;
-  }
+#searchDescription, #teamColorText {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 60px;
+  text-align: center;
+  align-content: center;
+}
 
-  .container {
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+}
+/*for header to put team id and etc. in a row*/
+.container-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  }
-  /*for header to put team id and etc. in a row*/
-  .container-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-    margin-bottom: 60px;
-  }
+  flex-direction: row;
+  margin-bottom: 60px;
+}
 
-  .teamColor-cont {
+.teamColor-cont {
+  text-align: center;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+/*makes font size bigger for titles*/
+#Teleop, #Auton, #Endgame, #Defense, #Comments, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
+  font-size: 30px;
+}
+
+#Pit-Comments, #Pit-Auton, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
+  font-size: 30px;
+  color: white; 
+}
+
+#Pit-Text{
+  color:white !important;
+}
+
+.left-cont {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    width: 100%;
-    border-radius: 30px;
-  }
-
-  .header-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-  }
-
-  .header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-  }
-
-  /*makes font size bigger for titles*/
-  #Teleop, #Auton, #Endgame, #Defense, #Comments, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
-    font-size: 30px;
-  }
-
-  #Pit-Comments, #Pit-Auton, #Intake, #Size, #Scoring_Method, #Drivebase, #Photo {
-    font-size: 30px;
-    color: white; 
-  }
-
-  #Pit-Text{
-    color:white;
-  }
-
-  .left-cont {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      width:370px;
-      font-size: 20px;
-      color: #ffffff;
-      background-color:#EF233C;
-      border-radius: 30px;
-  }
-
-
-  /* Inserting this collapsed row between two flex items will make 
-  * the flex item that comes after it break to a new row */
-  .break {
-    flex-basis: 100%;
-    height: 0;
-  }
-
-
-  .right-cont {
-    display: flex;
-    flex-direction: column;
     width:370px;
     font-size: 20px;
     color: #ffffff;
-    text-align: center;
-    background-color: #EF233C;
+    background-color:#EF233C;
     border-radius: 30px;
-  }
+}
 
-  .center-cont {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    color: #EF233C;
-    justify-content: center;
-    width: 100%;
-    border-radius: 30px;
-  }
 
-  .left-text-cont {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    color: #EF233C;
-    justify-content: center;
-    width: 370px;
-    border-radius: 30px;
-    height: 50%;
-    padding-bottom: 10px;
-    text-align: center;
-    background-color: #EF233C;
-  }
-  .right-text-cont {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    color: #EF233C;
-    justify-content: center;
-    width: 370px;
-    height: 50%;
-    padding-bottom: 10px;
-    border-radius: 30px;
-    text-align: center;
-    background-color: #EF233C;
-  }
+/* Inserting this collapsed row between two flex items will make 
+* the flex item that comes after it break to a new row */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
 
-  .bottom-cont {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    color: #EF233C;
-    width: 100%;
-    height: 80px;  
-    border-radius: 30px;
-  }
 
-  .spacer {
-    flex-basis: 100%;
-    height: 80px;
-  }
-  
-  .center {
+.right-cont {
+  display: flex;
+  flex-direction: column;
+  width:370px;
+  font-size: 20px;
+  color: #ffffff;
   text-align: center;
-  }
-  /*h1 tag*/
-  h1 {
-    font-family: Andale Mono, monospace;
-    font-size: 60px;
-    color: #ffff;
-    margin: 0;
-    padding: 25px;
-    align-content: center;
-    background-color:#EF233C ;
-  }
+  background-color: #EF233C;
+  border-radius: 30px;
+}
 
-  p {
-    font-family: Andale Mono, monospace;
-    padding: 10px;
-    margin: 0;
-  }
+.center-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #EF233C;
+  justify-content: center;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.left-text-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #EF233C;
+  justify-content: center;
+  width: 470px;
+  border-radius: 30px;
+  height: 50%;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: #EF233C;
+}
+.right-text-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #EF233C;
+  justify-content: center;
+  width: 470px;
+  height: 50%;
+  padding-bottom: 30px;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #EF233C;
+}
+
+.bottom-cont {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: #EF233C;
+  width: 100%;
+  height: 80px;  
+  border-radius: 30px;
+}
+
+.spacer {
+  flex-basis: 100%;
+  height: 80px;
+}
+
+.center {
+text-align: center;
+}
+/*h1 tag*/
+h1 {
+  font-family: Andale Mono, monospace;
+  font-size: 60px;
+  color: #ffff;
+  margin: 0;
+  padding: 25px;
+  align-content: center;
+  background-color:#EF233C ;
+}
+
+p {
+  font-family: Andale Mono, monospace;
+  padding: 10px;
+  margin: 0;
+}
 
 
-  /*search bar*/
-  input[name="teamId"], input[name="matchNumber"] {
-    width: 160px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    padding: 12px 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-align: center;
-  }
+/*search bar*/
+input[name="teamId"], input[name="matchNumber"] {
+  width: 160px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  padding: 12px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
-  /*spacing for all radio buttons*/
-  input[type="radio"] {
-    font-size: 20px;
-    color: white;
-    /*spaces in between the buttons*/
-    margin-left: 15px;
-    /*spaces between the radio button and the next div*/
-    margin-bottom: 12px;
-    /*makes buttons 1.5x bigger. Looks nice :)*/
-    transform: scale(1.5);
-  }
+/*spacing for all radio buttons*/
+input[type="radio"] {
+  font-size: 20px;
+  color: white;
+  /*spaces in between the buttons*/
+  margin-left: 15px;
+  /*spaces between the radio button and the next div*/
+  margin-bottom: 12px;
+  /*makes buttons 1.5x bigger. Looks nice :)*/
+  transform: scale(1.5);
+}
 
-  /*all textInput*/
-  .textInput {
-    /*spacing for textInput*/
-    margin-bottom: 12px;
-    margin-top: 12px;
-    width: 25px;
-    text-align: center;
-    transform: scale(2);
-    border-radius: 10%;
-  }
+/*all textInput*/
+.textInput {
+  /*spacing for textInput*/
+  margin-bottom: 12px;
+  margin-top: 12px;
+  width: 25px;
+  text-align: center;
+  transform: scale(2);
+  border-radius: 10%;
+}
 
-  #comments {
-    display: block;
-    width: 30%;
-    overflow: hidden;
-    resize: none;
-    min-height: 40px;
-    line-height: 25px;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border: 4px solid white;
-  }
+#comments {
+  display: block;
+  width: 30%;
+  overflow: hidden;
+  resize: none;
+  min-height: 40px;
+  line-height: 25px;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: 4px solid white;
+}
 
-  #comments[contenteditable]:empty::before {
-    content: "comment here...";
-    color: gray;
-  }
+#comments[contenteditable]:empty::before {
+  content: "comment here...";
+  color: gray;
+}
 
-  #pit-comments{
-    display: block;
-    width: 70%;
-    overflow: hidden;
-    resize: none;
-    min-height: 40px;
-    line-height: 25px;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    border: 4px solid white;
-  }
+#pit-comments{
+  display: block;
+  width: 70%;
+  overflow: hidden;
+  resize: none;
+  min-height: 40px;
+  line-height: 25px;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border: 4px solid white;
+}
 
-  #pit-comments[contenteditable]:empty::before {
-    content: "comment here...";
-    color: gray;
-  }
+#pit-comments[contenteditable]:empty::before {
+  content: "comment here...";
+  color: gray;
+}
 
-  #submit {
-    /*styles for submit button*/
-    background-color: #EF233C;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 30px;
-    cursor: pointer;
-    border-radius: 10px;
-  }
+#submit {
+  /*styles for submit button*/
+  background-color: #EF233C;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}

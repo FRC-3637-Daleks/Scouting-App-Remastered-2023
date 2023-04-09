@@ -24,12 +24,10 @@ mysql.init_app(app)
 
 #create connection to access data
 conn = mysql.connect()
-
 @app.route('/pitscouting')
 
 def pitscouting():
     return render_template("pitscouting.html")
-
 @app.route('/display', methods=["GET", "POST"])
 
 # define a function that is triggered when this URL appears in the browser address bar
@@ -41,7 +39,7 @@ def display():
     
     # literally just getting the team
     cursor = conn.cursor()
-    cursor.execute('SELECT Team FROM Auton;')
+    cursor.execute('SELECT Team FROM Pit ORDER BY Team;')
     team_1 = cursor.fetchall()
     team_1 = tuple(set(team_1))
     return render_template('display.html', result=result, team_1=team_1)

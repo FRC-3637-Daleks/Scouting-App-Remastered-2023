@@ -14,33 +14,33 @@ cursor = cnx.cursor()
 #sql queries
 #auton
 autonColor = "UPDATE Auton SET Color = 'X' WHERE Color IS NULL;"
-autonHigh = "UPDATE Auton SET High = 0 WHERE High IS NULL;"
-autonLow = "UPDATE Auton SET Low = 0 WHERE Low IS NULL;"
-autonMissed = "UPDATE Auton SET Missed = 0 WHERE Missed IS NULL;"
-autonOffPlatform = "UPDATE Auton SET Off_Platform = 'N' WHERE Off_Platform IS NULL;"
-autonBasketballShots = "UPDATE Auton SET Basketball_Shots_Made = 'N' WHERE Basketball_Shots_Made IS NULL;"
+autonHighCube = "UPDATE Auton SET High_Cube = 0 WHERE High_Cube IS NULL;"
+autonHighCone = "UPDATE Auton SET High_Cone = 0 WHERE High_Cone IS NULL;"
+autonMidCube = "UPDATE Auton SET Mid_Cube = 0 WHERE Mid_Cube IS NULL;"
+autonMidCone = "UPDATE Auton SET Mid_Cone = 0 WHERE Mid_Cone IS NULL;"
+autonLowCube = "UPDATE Auton SET Low_Cube = 0 WHERE Low_Cube IS NULL;"
+autonLowCone = "UPDATE Auton SET Low_Cone = 0 WHERE Low_Cone IS NULL;"
+autonOffPlatform = "UPDATE Auton SET Left_Platform = 'N' WHERE Left_Platform IS NULL;"
+autonOutOfCommunity = "UPDATE Auton SET Out_of_Community = 'N' WHERE Out_of_Community IS NULL;"
 
 #teleop
 teleopColor = "UPDATE Teleop SET Color = 'X' WHERE Color IS NULL;"
 teleopMoved = "UPDATE Teleop SET Moved = 'X' WHERE Moved IS NULL;"
-teleopHigh = "UPDATE Teleop SET High = 0 WHERE High IS NULL;"
-teleopLow = "UPDATE Teleop SET Low = 0 WHERE Low IS NULL;"
-teleopMissed = "UPDATE Teleop SET Missed = 0 WHERE Missed IS NULL;"
-teleopBurst = "UPDATE Teleop SET Burst = 0 WHERE Burst IS NULL;"
-teleopLaunchpad = "UPDATE Teleop SET Launchpad = 0 WHERE Launchpad IS NULL;"
+teleopHighCube = "UPDATE Teleop SET High_Cube = 0 WHERE High_Cube IS NULL;"
+teleopHighCone = "UPDATE Teleop SET High_Cone = 0 WHERE High_Cone IS NULL;"
+teleopMidCube = "UPDATE Teleop SET Mid_Cube = 0 WHERE Mid_Cube IS NULL;"
+teleopMidCone = "UPDATE Teleop SET Mid_Cone = 0 WHERE Mid_Cone IS NULL;"
+teleopLowCube = "UPDATE Teleop SET Low_Cube = 0 WHERE Low_Cube IS NULL;"
+teleopLowCone = "UPDATE Teleop SET Low_Cone = 0 WHERE Low_Cone IS NULL;"
 
 #endgame
 endgameColor = "UPDATE Endgame SET Color = 'X' WHERE Color IS NULL;"
-endgameClimb = "UPDATE Endgame SET Attempted_Climb = 'X' WHERE Attempted_Climb IS NULL;"
-endgameSuccessTier = "UPDATE Endgame SET Success_Tier = 0 WHERE Success_Tier IS NULL;"
-endgamePrepared = "UPDATE Endgame SET Prepared = 'X' WHERE Prepared IS NULL;"
-endgameClimbingSeconds = "UPDATE Endgame SET Climbing_Seconds = 'X' WHERE Climbing_Seconds IS NULL;"
+endgameClimb = "UPDATE Endgame SET Charge_Status = 'X' WHERE Charge_Status IS NULL;"
 endgameWin = "UPDATE Endgame SET Win = 'X' WHERE Win IS NULL;"
 
 #defense
 defenseColor = "UPDATE Defense SET Color = 'X' WHERE Color IS NULL;"
-defenseAttemptedBlock = "UPDATE Defense SET Blocked = 'X' WHERE Blocked IS NULL;"
-defenseHeldBalls = "UPDATE Defense SET Held_balls = 'X' WHERE Held_balls IS NULL;"
+defenseAttemptedBlock = "UPDATE Defense SET Blocked_Others = 'X' WHERE Blocked_Others IS NULL;"
 
 #comments
 commentsColor = "UPDATE Comments SET Color = 'X' WHERE Color IS NULL;"
@@ -49,20 +49,23 @@ commentsComments = "UPDATE Comments SET Insert_Comments = 'X' WHERE Insert_Comme
 cursor.execute(autonColor)
 print("Finished High in Auton!")
 
-cursor.execute(autonHigh)
+cursor.execute(autonHighCube)
+cursor.execute(autonHighCone)
 print("Finished High in Auton!")
 
-cursor.execute(autonLow)
+cursor.execute(autonMidCube)
+cursor.execute(autonMidCone)
+print("Finished Mid in Auton!")
+
+cursor.execute(autonLowCube)
+cursor.execute(autonLowCone)
 print("Finished Low in Auton!")
 
-cursor.execute(autonMissed)
-print("Finished Missed in Auton!")
-
 cursor.execute(autonOffPlatform)
-print("Finished Off_Platform in Auton!")
+print("Finished Left_Platform in Auton!")
 
-cursor.execute(autonBasketballShots)
-print("Finished Basketball shots in Auton!")
+cursor.execute(autonOutOfCommunity)
+print("Finished Out Of Community in Auton!")
                         
 cursor.execute(teleopColor)
 print("Finished Color in Teleop!")
@@ -70,20 +73,17 @@ print("Finished Color in Teleop!")
 cursor.execute(teleopMoved)
 print("Finished Moved in Teleop!")
 
-cursor.execute(teleopHigh)
+cursor.execute(teleopHighCone)
+cursor.execute(teleopHighCube)
 print("Finished Moved in Teleop!")
-                                    
-cursor.execute(teleopLow)
+
+cursor.execute(teleopMidCube)
+cursor.execute(teleopMidCone)
+print("Finished Mid in Teleop!")
+
+cursor.execute(teleopLowCube)
+cursor.execute(teleopLowCone)
 print("Finished Low in Teleop!")
-
-cursor.execute(teleopMissed)
-print("Finished Missed in Teleop!")
-
-cursor.execute(teleopBurst)
-print("Finished Burst in Teleop!")
-
-cursor.execute(teleopLaunchpad)
-print("Finished Launchpad in Teleop!")
 
 #endgame
 cursor.execute(endgameColor)
@@ -91,15 +91,6 @@ print("Finished Color in Endgame!")
 
 cursor.execute(endgameClimb)
 print("Finished Climb in Endgame!")
-
-cursor.execute(endgameSuccessTier)
-print("Finished Success Tier in Endgame!")
-
-cursor.execute(endgamePrepared)
-print("Finished Prepared in Endgame!")
-
-cursor.execute(endgameClimbingSeconds)
-print("Finished Climbing Seconds in Endgame!")
 
 cursor.execute(endgameWin)
 print("Finished Win in Endgame!")
@@ -110,9 +101,6 @@ print("Finished Color in Defense!")
 
 cursor.execute(defenseAttemptedBlock)
 print("Finished Attempted Block in Defense!")
-
-cursor.execute(defenseHeldBalls)
-print("Finished Held Balls in Defense!")
 
 #comments
 cursor.execute(commentsColor)

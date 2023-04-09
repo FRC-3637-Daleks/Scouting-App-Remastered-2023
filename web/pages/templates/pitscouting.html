@@ -40,7 +40,7 @@
             <p id="searchDescription">
                 <b>Enter Team ID Here:</b>
             </p>
-            <input required type="text" name="teamId" maxlength="10" placeholder="Team Number"></input>
+            <input required type="text" name="teamId" maxlength="4" placeholder="Team Number"></input>
             <!--only allow integer inputs in text-->
             <script>
                 document.getElementByName("teamId").onkeypress = function(e) {
@@ -52,7 +52,7 @@
             <p id="searchDescription">
                 <b>Robot Weight Here:</b>
             </p>
-            <input required type="text" name="PSW" maxlength="4" placeholder="Weight (lbs)"></input>
+            <input required type="text" name="PSW" maxlength="3" placeholder="Weight (lbs)"></input>
             <!--only allow integer inputs in text-->
             <script>
                 document.getElementByName("PSW").onkeypress = function(e) {
@@ -76,7 +76,7 @@
                 <p>
                     Length:
                 </p>
-                <input type="text" class="searchDescription" maxlength="4" name="PSL" placeholder="Length (inches)">
+                <input type="text" class="searchDescription" maxlength="2" name="PSL" placeholder="Length (inches)">
                 <!--only allow integer inputs in text-->
                 <script>
                     document.getElementByName("PSL").onkeypress = function(e) {
@@ -118,7 +118,7 @@
                     <b>Scoring Method</b>
                 </p>
                 <!--maybe add maxlength to the maxlength of TEXT in mySQL?-->
-                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="pit-comments" placeholder="How do they score pieces? Which nodes can they go for?"></textarea>
+                <textarea rows="15" cols="50" name="PSSD" maxlength = "300" id="pit-comments" placeholder="How do they score pieces? Which nodes can they go for? What are their cycle times?"></textarea>
             </div>
             <div id="Pit-Text">
                 <p>
