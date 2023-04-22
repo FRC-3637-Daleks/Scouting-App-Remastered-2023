@@ -24,7 +24,10 @@ mysql.init_app(app)
 
 #create connection to access data
 conn = mysql.connect()
+@app.route('/pitscouting')
 
+def pitscouting():
+    return render_template("pitscouting.html")
 @app.route('/display', methods=["GET", "POST"])
 
 # define a function that is triggered when this URL appears in the browser address bar
@@ -36,7 +39,7 @@ def display():
     
     # literally just getting the team
     cursor = conn.cursor()
-    cursor.execute('SELECT Team FROM Auton;')
+    cursor.execute('SELECT Team FROM Pit ORDER BY Team;')
     team_1 = cursor.fetchall()
     team_1 = tuple(set(team_1))
     return render_template('display.html', result=result, team_1=team_1)
@@ -60,14 +63,16 @@ def getData(form):
     defense_1 = cursor.fetchall()
     cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
     comments_1 = cursor.fetchall()
-    cursor.execute('SELECT * FROM Comments WHERE Team = %s', team)
+    cursor.execute('SELECT * FROM Pit WHERE Team = %s', team)
+    pit_1 = cursor.fetchall()
     # storing queries as a set of tuples
     auton_1=auton_1
     comments_1=comments_1
     defense_1=defense_1
     endgame_1=endgame_1
     teleop_1=teleop_1
-    return (auton_1, teleop_1, endgame_1, defense_1, comments_1)
+    pit_1 = pit_1
+    return (auton_1, teleop_1, endgame_1, defense_1, comments_1, pit_1)
 
 if __name__ == '__main__':
    app.run()

@@ -38,12 +38,18 @@ print ("<p>The team number is %s</p>" % TEAM)
 #get match number
 MN=data.getvalue('matchNumber')
 
-#auton high cube/cones placed
+#auton high cube placed
 AHCP=data.getvalue('AHCP')
-#auton mid cube/cones placed
+#auton mid cube placed
 AMCP=data.getvalue('AMCP')
-#auton low cube/cones placed
+#auton low cube placed
 ALCP=data.getvalue('ALCP')
+#auton high cones placed
+AHCO=data.getvalue('AHCO')
+#auton mid cones placed
+AMCO=data.getvalue('AMCO')
+#auton low cones placed
+ALCO=data.getvalue('ALCO')
 #this one is for on platform, radio buttons
 AP=data.getvalue('autonPlatform')
 #auton Out of Community radio buttons
@@ -52,12 +58,18 @@ AOC=data.getvalue('autonOutOfComminity')
 #teleop
 #teleop robot move, radio buttons
 TM=data.getvalue('teleopMove')
-#teleop high cube/cones placed
+#teleop high cube placed
 THCP=data.getvalue('THCP')
-#teleop mid cube/cones placed
+#teleop mid cube placed
 TMCP=data.getvalue('TMCP')
-#teleop low cube/cones placed
+#teleop low cube placed
 TLCP=data.getvalue('TLCP')
+#teleop high cones placed
+THCO=data.getvalue('THCO')
+#teleop mid cones placed
+TMCO=data.getvalue('TMCO')
+#teleop low cones placed
+TLCO=data.getvalue('TLCO')
 
 
 #Endgame charge status, radio buttons 
@@ -71,11 +83,41 @@ DAB = data.getvalue('defenseAttemptedBlock')
 #comments
 COMMENTS = data.getvalue('comments')
 
+#pit scouting stuff
+#Weight
+PSW = data.getvalue('PSW')
+#Length
+PSL = data.getvalue('PSL')
+#Width
+PSWD = data.getvalue('PSWD')
+#Intake
+PSID = data.getvalue('PSID')
+#Scoring Description
+PSSD = data.getvalue('PSSD')
+#Drivebase
+PSDD = data.getvalue('PSDD')
+#Auton
+PSAD = data.getvalue('PSAD')
+#Defense
+DEF = data.getvalue('DEF')
+#Starting Position
+SP = data.getvalue('SP')
+#Preferred Substation
+PS = data.getvalue('PS')
+#Triple Balance
+TB = data.getvalue('TB')
+#Preffered Piece
+PP = data.getvalue('PP')
+#Comments
+PSCD = data.getvalue('PSCD')
+#Photo
+PSP = data.getvalue('PSP')
+
 
 try:
  
-    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High, Mid, Low, Left_Platform, Out_of_Community) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    cursor.execute(add_Auton, (TEAM, MN, TC, AHCP, AMCP, ALCP, AP, AOC))
+    add_Auton = "INSERT INTO Auton (Team, Match_Number, Color, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone, Left_Platform, Out_of_Community) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(add_Auton, (TEAM, MN, TC, AHCP, AHCO, AMCP, AMCO, ALCP, ALCO, AP, AOC))
 
 except:
     print ("<p>Error adding Auton data</p>")
@@ -84,8 +126,8 @@ finally:
 
     try:
 
-        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High, Mid, Low) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THCP, TMCP, TLCP))
+        add_Teleop = "INSERT INTO Teleop (Team, Match_Number, Color, Moved, High_Cube, High_Cone, Mid_Cube, Mid_Cone, Low_Cube, Low_Cone) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        cursor.execute(add_Teleop, (TEAM, MN, TC, TM, THCP, THCO, TMCP, TMCO, TLCP, TLCO))
 
     except:
         print ("<p>Error adding Teleop data</p>")
@@ -121,8 +163,19 @@ finally:
                     print ("<p>Error adding Comments data</p>")
 
                 finally:
-
-                    print("<p>DONE :D</p>")
-                    cnx.commit()
-                    cursor.close()
-                    cnx.close()
+                    #print("<p>DONE :D</p>")
+                    #cnx.commit()
+                    #cursor.close()
+                    #cnx.close()
+                    try:
+                        add_Pit = "INSERT INTO Pit (Team, Length, Width, Weight, Intake, Scoring, Drivebase, Auton, Defense, Start_Position, Preferred_Substation, Triple_Balance, Preferred_Piece, Comments, Photo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                        cursor.execute(add_Pit, (TEAM, PSL, PSWD, PSW, PSID, PSSD, PSDD, PSAD, DEF, SP, PS, TB, PP, PSCD, PSP))
+                    
+                    except:
+                        print("<p>Error adding Pit data</p>")
+                    
+                    finally:
+                        print("<p>DONE :D</p>")
+                        cnx.commit()
+                        cursor.close()
+                        cnx.close()

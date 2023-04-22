@@ -50,8 +50,8 @@
     </div>
     <div class="container-row">
         <div class="left-cont">
-            {% if not(result[0])%}
-            <p id = "table-title">NO DATA</p>
+            {% if not(result[0]) or not(result[5])%}
+            <p id = "table-title">NO MATCH DATA</p>
             {% else %}
             <p id = "table-title"> 
                 Auton
@@ -63,9 +63,12 @@
                         <th>Team</th>
                         <th>Match Number</th>
                         <th>Color</th>
-                        <th>High</th>
-                        <th>Mid</th>
-                        <th>Low</th>
+                        <th>High Cubes</th>
+                        <th>High Cones</th>
+                        <th>Mid Cubes</th>
+                        <th>Mid Cones</th>
+                        <th>Low Cubes</th>
+                        <th>Low Cones</th>
                         <th>Left Platform</th>
                         <th>Out of Community</th> 
                     </tr>
@@ -81,6 +84,9 @@
                             <td>{{row[5]}}</td>
                             <td>{{row[6]}}</td>
                             <td>{{row[7]}}</td>
+                            <td>{{row[8]}}</td>
+                            <td>{{row[9]}}</td>
+                            <td>{{row[10]}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -102,9 +108,12 @@
                         <th>Match Number</th>
                         <th>Color</th>
                         <th>Moved</th>
-                        <th>High</th>
-                        <th>Mid</th>
-                        <th>Low</th>
+                        <th>High Cubes</th>
+                        <th>High Cones</th>
+                        <th>Mid Cubes</th>
+                        <th>Mid Cones</th>
+                        <th>Low Cubes</th>
+                        <th>Low Cones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -117,6 +126,9 @@
                         <td>{{row[4]}}</td>
                         <td>{{row[5]}}</td>
                         <td>{{row[6]}}</td>
+                        <td>{{row[7]}}</td>
+                        <td>{{row[8]}}</td>
+                        <td>{{row[9]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
@@ -212,6 +224,58 @@
                         <td>{{row[1]}}</td>
                         <td>{{row[2]}}</td>
                         <td id="comments">{{row[3]}}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container-row">
+        <div class="left-cont">
+            {% if not(result[5]) %}
+            {% else %}
+            <p id = "table-title">
+                Pit
+            </p>
+            <div class="key">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Length</th>
+                        <th>Width</th>
+                        <th>Weight</th>
+                        <th>Defense</th>
+                        <th>Start Position</th>
+                        <th>Preferred Substation</th>
+                        <th>Triple Balance</th>
+                        <th>Preferred Piece</th>
+                        <th>Intake</th>
+                        <th>Scoring</th>
+                        <th>Drivebase</th>
+                        <th>Auton</th>
+                        <th>Comments</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in result[5] %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[9]}}</td>
+                        <td>{{row[10]}}</td>
+                        <td>{{row[11]}}</td>
+                        <td>{{row[12]}}</td>
+                        <td>{{row[13]}}</td>
+                        <td id="comments">{{row[5]}}</td>
+                        <td id="comments">{{row[6]}}</td>
+                        <td id="comments">{{row[7]}}</td>
+                        <td id="comments">{{row[8]}}</td>
+			            <td id="comments">{{row[14]}}</td>
                     </tr>
                     {% endfor %}
                     </tbody>
